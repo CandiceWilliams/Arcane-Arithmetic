@@ -1,4 +1,4 @@
-package com.arcane.arithmetic.arcane_arithmetic;
+package com.arcane.arithmetic;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
