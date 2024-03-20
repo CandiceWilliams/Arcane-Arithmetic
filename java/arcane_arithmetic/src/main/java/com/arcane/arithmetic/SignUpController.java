@@ -12,9 +12,6 @@ import javafx.stage.Stage;
 
 public class SignUpController {
 	
-	private Stage stage;
-	private Scene scene;
-	private Parent root;
 	public Label signUpLabel;
 	public Label usernameLabel;
 	public Label passwordLabel;
@@ -22,14 +19,8 @@ public class SignUpController {
 	public Button signUpButton, backToSignInScreenButton;
 	
 	public void switchToSignInScene(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		String css = this.getClass().getResource("SignIn.css").toExternalForm();
-		scene.getStylesheets().add(css);
-		stage.setScene(scene);
-		stage.setTitle("Sign In");
-		stage.show();
+		SignInAndSignUpScreens tmp = new SignInAndSignUpScreens();
+		tmp.switchToSignInScene(event);
 	}
 	
 	public void signUpButtonClick(ActionEvent event) throws IOException {
