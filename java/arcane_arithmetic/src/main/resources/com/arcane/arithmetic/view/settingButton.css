@@ -1,0 +1,12 @@
+.settingButton{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/settings_icon.png');
+}
+.settingButton:pressed{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/settings_icon.png');
+}
+.settingButton:hover{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/settings_icon.png');
+}

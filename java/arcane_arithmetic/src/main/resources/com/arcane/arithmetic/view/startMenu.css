@@ -1,8 +1,33 @@
 .root{
 	-fx-background-image:url('../assets/startMenuBg.jpg')
-	
+}
+@font-face {
+	font-family: 'Vinque Rg';
+	src: url('../assets/vinque_rg.otf');
+}
+.button{
+	-fx-background-color: #3A0CA3;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #B5179E;	
+	-fx-font-size: 45;
+}
+.button:hover{
+	-fx-background-color: #3F37C9;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #B5179E;	
+	-fx-font-size: 45;
+}
+.button:pressed{
+	-fx-background-color: #4361EE;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #B5179E;	
+	-fx-font-size: 45;
+}
+.label{
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #7209B7;
 }
 
-#gameTitle{
-	
-}
