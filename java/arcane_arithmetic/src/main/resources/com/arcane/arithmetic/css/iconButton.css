@@ -1,0 +1,73 @@
+.settingButton{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/settings_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+.settingButton:pressed{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/settings_icon_clicked.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+.settingButton:hover{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/settings_icon_hover.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+.leaderBoardButton{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/leaderboard_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+.leaderBoardButton:pressed{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/leaderboard_icon_clicked.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+.leaderBoardButton:hover{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/leaderboard_icon_hover.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+.exitButton{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/exit_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+.exitButton:pressed{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/exit_icon_clicked.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+.exitButton:hover{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/exit_icon_hover.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
