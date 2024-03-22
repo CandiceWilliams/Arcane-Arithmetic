@@ -8,9 +8,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="startMenuVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="root" stylesheets="@startMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="startMenuVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="root" stylesheets="@../css/startMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="gameTitle" text=" Arcane Arithmetic ">
+      <Label fx:id="gameTitle" stylesheets="@../css/startMenu.css" text=" Arcane Arithmetic ">
          <font>
             <Font name="VinqueRg-Regular" size="130.0" />
          </font>
@@ -18,7 +18,7 @@
             <Insets bottom="60.0" left="60.0" right="20.0" top="40.0" />
          </VBox.margin>
       </Label>
-      <Button fx:id="startButton" mnemonicParsing="false" prefHeight="90.0" prefWidth="280.0" stylesheets="@startMenu.css" text="Start">
+      <Button fx:id="startButton" mnemonicParsing="false" prefHeight="90.0" prefWidth="280.0" stylesheets="@../css/startMenu.css" text="Start">
          <font>
             <Font size="45.0" />
          </font>
@@ -26,7 +26,7 @@
             <Insets bottom="20.0" left="120.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="tutButton" mnemonicParsing="false" prefHeight="90.0" prefWidth="280.0" stylesheets="@startMenu.css" text="Tutorial">
+      <Button fx:id="tutButton" mnemonicParsing="false" prefHeight="90.0" prefWidth="280.0" stylesheets="@../css/startMenu.css" text="Tutorial">
          <font>
             <Font size="45.0" />
          </font>
@@ -36,17 +36,17 @@
       </Button>
       <HBox prefHeight="53.0" prefWidth="1156.0">
          <children>
-            <Button fx:id="settingButton" maxHeight="85.0" maxWidth="85.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" styleClass="settingButton" stylesheets="@iconButton.css">
+            <Button fx:id="settingButton" maxHeight="85.0" maxWidth="85.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" styleClass="settingButton" stylesheets="@../css/iconButton.css">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="lbButton" maxHeight="85.0" maxWidth="85.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" styleClass="leaderBoardButton" stylesheets="@iconButton.css">
+            <Button fx:id="lbButton" maxHeight="85.0" maxWidth="85.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" styleClass="leaderBoardButton" stylesheets="@../css/iconButton.css">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="exitButton" maxHeight="85.0" maxWidth="85.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" styleClass="exitButton" stylesheets="@iconButton.css" />
+            <Button fx:id="exitButton" maxHeight="85.0" maxWidth="85.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" styleClass="exitButton" stylesheets="@../css/iconButton.css" />
          </children>
          <VBox.margin>
             <Insets left="120.0" />
@@ -59,10 +59,16 @@
                   <Font size="26.0" />
                </font>
                <HBox.margin>
-                  <Insets bottom="1.0" />
+                  <Insets bottom="1.0" top="25.0" />
                </HBox.margin>
             </Text>
          </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets top="50.0" />
+         </padding>
       </HBox>
    </children>
 </VBox>

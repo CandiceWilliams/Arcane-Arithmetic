@@ -7,5 +7,4 @@ import javafx.scene.image.*;
 
 
 public class StartController {
-   
 }

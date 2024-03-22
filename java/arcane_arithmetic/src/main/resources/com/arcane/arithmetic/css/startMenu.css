@@ -5,25 +5,29 @@
 	-fx-background-image:url('../assets/startMenuBg.jpg');
 	-fx-background-size: stretch;
 }
+
 .button{
-	-fx-background-color: #3A0CA3;
+	-fx-background-color: #2067e3;
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #B5179E;	
+	-fx-text-fill: #f29249;	
 	-fx-font-size: 45;
+	-fx-border-color: #1d4ea3;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 5;
 }
 .button:hover{
-	-fx-background-color: #3F37C9;
+	-fx-background-color: #2c71e8;	
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #B5179E;	
+	-fx-text-fill: #f29249;	
 	-fx-font-size: 45;
 }
 .button:pressed{
-	-fx-background-color: #4361EE;
+	-fx-background-color: #2965cf;
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #B5179E;	
+	-fx-text-fill: #f29249;	
 	-fx-font-size: 45;
 }
 .label{
@@ -35,4 +39,3 @@
 	-fx-background-size: 375;
 	-fx-background-radius: 20 20 20 20;
 }
-
