@@ -377,7 +377,6 @@
         ],
         "subject": "algebra"
     },
-
     {
         "question": "Solve the system of equations using Gaussian elimination: 2x + 3y - z = 5, 3x + 2y + 4z = 1, x - y + 2z = 3 What is the value of z?",
         "answer": "c) 1",
