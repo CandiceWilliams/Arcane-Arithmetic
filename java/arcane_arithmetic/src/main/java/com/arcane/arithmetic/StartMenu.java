@@ -18,7 +18,6 @@ public class StartMenu extends Application {
         stage.setTitle("Arcane Arithmetic");
         stage.setScene(scene);
         stage.setResizable(false);
-        
         stage.show();
     }
 
