@@ -54,7 +54,14 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CS2212 Western University Winter 2024" wrappingWidth="65.33672714233398" />
+            <Text fill="#934da1" strokeType="OUTSIDE" strokeWidth="0.0" text="CS2212 Western University Winter 2024" wrappingWidth="510.1367301940918">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="1.0" />
+               </HBox.margin>
+            </Text>
          </children>
       </HBox>
    </children>

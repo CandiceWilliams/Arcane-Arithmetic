@@ -1,10 +1,9 @@
+@font-face {
+	src: url('../assets/VinqueRg.otf');
+}
 .root{
 	-fx-background-image:url('../assets/startMenuBg.jpg');
 	-fx-background-size: stretch;
-}
-@font-face {
-	font-family: 'Vinque Rg';
-	src: url('../assets/vinque_rg.otf');
 }
 .button{
 	-fx-background-color: #3A0CA3;
