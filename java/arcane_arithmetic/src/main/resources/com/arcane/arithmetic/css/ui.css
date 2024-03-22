@@ -1,6 +1,12 @@
-.pane{
+.root{
     -fx-border-radius: 25px;
     -fx-border: 2px solid #7919A6;
+    -fx-background-color: black;
 }
 
-#
+#book{
+    -fx-background-size: stretch;
+    -fx-background-image: url("../assets/imgs/openedbook_pixelart.png");
+
+}
+

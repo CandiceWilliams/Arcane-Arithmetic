@@ -6,14 +6,35 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/ui.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.TutorialController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="623.0" styleClass="root" stylesheets="@../css/ui.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.TutorialController">
    <children>
-      <Button id="nextBtn" fx:id="Next" contentDisplay="GRAPHIC_ONLY" layoutX="510.0" layoutY="334.0" mnemonicParsing="false" stylesheets="@../css/ui.css" text="Button">
+      <Pane id="book" layoutX="19.0" layoutY="6.0" prefHeight="425.0" prefWidth="586.0" stylesheets="@../css/ui.css">
+         <children>
+            <Pane layoutX="59.0" layoutY="25.0" prefHeight="286.0" prefWidth="188.0">
+               <children>
+                  <Circle fill="DODGERBLUE" layoutX="61.0" layoutY="223.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="DODGERBLUE" layoutX="86.0" layoutY="265.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="DODGERBLUE" layoutX="133.0" layoutY="265.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label id="title" layoutX="33.0" layoutY="30.0" text="Question Type">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="350.0" layoutY="25.0" prefHeight="286.0" prefWidth="188.0">
+               <children>
+                  <Text layoutX="51.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor" textAlignment="CENTER" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Button id="nextBtn" fx:id="Next" contentDisplay="GRAPHIC_ONLY" layoutX="533.0" layoutY="380.0" mnemonicParsing="false" stylesheets="@../css/ui.css" text="Button">
          <graphic>
             <ImageView fitHeight="49.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -22,7 +43,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button id="backBtn" fx:id="Back" contentDisplay="GRAPHIC_ONLY" layoutX="23.0" layoutY="334.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="57.0" text="Button">
+      <Button id="backBtn" fx:id="Back" contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="380.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="57.0" text="Button">
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -34,28 +55,5 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label id="title" layoutX="198.0" layoutY="32.0" text="Question Type">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="149.0" fitWidth="302.0" layoutX="150.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/imgs/multiplechoice.jpg" />
-         </image>
-      </ImageView>
-      <Text layoutX="250.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor" textAlignment="CENTER" />
-      <Button contentDisplay="GRAPHIC_ONLY" layoutX="469.0" layoutY="174.0" mnemonicParsing="false" text="Button">
-         <graphic>
-            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/imgs/Icon_ArrowUp_1.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Circle fill="DODGERBLUE" layoutX="258.0" layoutY="276.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="300.0" layoutY="276.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="342.0" layoutY="276.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

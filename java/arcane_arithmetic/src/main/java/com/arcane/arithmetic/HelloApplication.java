@@ -14,8 +14,8 @@ public class HelloApplication extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("view/hello-view.fxml"));
         Scene scene = new Scene(root);
-        String css = this.getClass().getResource("css/ui.css").toExternalForm();
-        scene.getStylesheets().add(css);
+        //String css = this.getClass().getResource("css/ui.css").toExternalForm();
+        //scene.getStylesheets().add(css);
         stage.setTitle("Main Menu");
         stage.setScene(scene);
         stage.show();
