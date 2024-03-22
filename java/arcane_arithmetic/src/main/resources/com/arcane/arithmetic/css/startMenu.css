@@ -7,32 +7,33 @@
 }
 
 .button{
-	-fx-background-color: #2067e3;
+	-fx-background-color: #d50fd9;
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #f29249;	
+	-fx-text-fill: #fc9dee;	
 	-fx-font-size: 45;
-	-fx-border-color: #1d4ea3;
+	-fx-border-color: #a80aab;
 	-fx-border-radius: 15 15 15 15;
 	-fx-border-width: 5;
 }
 .button:hover{
-	-fx-background-color: #2c71e8;	
+	-fx-background-color: #e92fed;	
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #f29249;	
+	-fx-text-fill: #fc74e8;	
 	-fx-font-size: 45;
+	-fx-text-fill: #f2bfeb;
 }
 .button:pressed{
-	-fx-background-color: #2965cf;
+	-fx-background-color: #bf29c2;
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #f29249;	
+	-fx-text-fill: #fc74e8;	
 	-fx-font-size: 45;
 }
 .label{
 	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #b74df0;
+	-fx-text-fill: #d9a6f5;
 	-fx-border-color: #330452;
 	-fx-border-width: 13;
 	-fx-background-image: url('../assets/titleBg.jpg');
