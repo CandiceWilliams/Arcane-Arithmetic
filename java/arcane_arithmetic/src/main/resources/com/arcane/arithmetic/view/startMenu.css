@@ -1,5 +1,6 @@
 .root{
-	-fx-background-image:url('../assets/startMenuBg.jpg')
+	-fx-background-image:url('../assets/startMenuBg.jpg');
+	-fx-background-size: stretch;
 }
 @font-face {
 	font-family: 'Vinque Rg';
@@ -28,6 +29,11 @@
 }
 .label{
 	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #7209B7;
+	-fx-text-fill: #b74df0;
+	-fx-border-color: #330452;
+	-fx-border-width: 13;
+	-fx-background-image: url('../assets/titleBg.jpg');
+	-fx-background-size: 375;
+	-fx-background-radius: 20 20 20 20;
 }
 

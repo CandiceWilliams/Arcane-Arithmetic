@@ -1,0 +1,54 @@
+.settingButton{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/settings_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
+.settingButton:pressed{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/settings_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
+.settingButton:hover{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/settings_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
+.leaderBoardButton{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/leaderboard_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
+.leaderBoardButton:pressed{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/leaderboard_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
+.leaderBoardButton:hover{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/leaderboard_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
+.exitButton{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/exit_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
+.exitButton:pressed{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/exit_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
+.exitButton:hover{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/exit_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+}
