@@ -11,11 +11,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class StartController {
+public class DifficultyController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	
 	
 	public void switchToTopic(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
@@ -23,6 +22,5 @@ public class StartController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-	}
-
+	}	
 }

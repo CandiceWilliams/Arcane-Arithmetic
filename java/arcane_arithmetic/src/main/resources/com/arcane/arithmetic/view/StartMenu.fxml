@@ -18,7 +18,7 @@
             <Insets bottom="40.0" left="60.0" right="20.0" top="40.0" />
          </VBox.margin>
       </Label>
-      <Button fx:id="startButton" mnemonicParsing="false" prefHeight="90.0" prefWidth="280.0" stylesheets="@../css/startMenu.css" text="Start">
+      <Button fx:id="startButton" mnemonicParsing="false" onAction="#switchToTopic" prefHeight="90.0" prefWidth="280.0" stylesheets="@../css/startMenu.css" text="Start">
          <font>
             <Font size="45.0" />
          </font>
