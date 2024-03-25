@@ -2,7 +2,7 @@
 	src: url('../assets/VinqueRg.otf');
 }
 .root{
-	-fx-background-image:url('../assets/startMenuBg.jpg');
+	-fx-background-image:url('../assets/imgs/startMenuBg.jpg');
 	-fx-background-size: stretch;
 }
 
@@ -36,7 +36,7 @@
 	-fx-text-fill: #d9a6f5;
 	-fx-border-color: #330452;
 	-fx-border-width: 13;
-	-fx-background-image: url('../assets/titleBg.jpg');
+	-fx-background-image: url('../assets/imgs/titleBg.jpg');
 	-fx-background-size: 375;
 	-fx-background-radius: 20 20 20 20;
 }

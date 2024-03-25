@@ -2,7 +2,7 @@
 	src: url('../assets/VinqueRg.otf');
 }
 .root{
-	-fx-background-image:url('../assets/startMenuBg.jpg');
+	-fx-background-image:url('../assets/imgs/startMenuBg.jpg');
 	-fx-background-size: stretch;
 }
 .button{
