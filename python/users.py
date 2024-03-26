@@ -37,11 +37,6 @@ class User:
                 # Write the updated data back to the file
                 with open(file_path, 'w') as file:
                     json.dump(data, file, indent=4)
-
-            except FileNotFoundError:
-                print(f"File {file_path} not found.")
-            except json.JSONDecodeError:
-                print(f"File {file_path} does not contain valid JSON.")
             except Exception as e:
                 print(f"An error occurred: {e}")
                 
