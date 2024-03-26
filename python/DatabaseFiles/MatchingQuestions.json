@@ -1,0 +1,437 @@
+[
+        
+        {
+                "question": "Match the statistical terms with their definitions:",
+
+                "row1": {"a": "Mean", "b": " Median", "c":"Mode", "d":"Range", "e":"Standard Deviation"},
+
+                "row2": {"1": "The middle value of a dataset when arranged in ascending order.", "2": "The measure of the spread of values in a dataset around the mean.", "3": "The value that occurs most frequently in a dataset.", "4": "The arithmetic average of a set of values.", "5": "The difference between the maximum and minimum values in a dataset."},
+
+                "answer": [["a", 4], ["b", 1], ["c", 3], ["d", 2], ["e", 5]],
+
+                "difficulty": "easy",
+
+                "questionID": 68,
+
+                "subject": "statistics" 
+
+        }, 
+
+        {
+                "Question":  "Match the following types of modality with their corresponding definition:",
+
+                "Row1": {"a": "Unimodal", "b": "Bimodal", "c":"Multimodal"},
+
+                "Row2": {"1": "Distribution has more than one two peaks", "2": "Distribution is one that rises to a single peak and then declines", "3": "Distribution has two different peaks"},
+
+                "Answer": [["a", 2], ["b", 3], ["c", 1]],
+
+                "Difficulty": "easy",
+
+                "questionID": 69, 
+
+                "subject": "statistics" 
+
+        }, 
+
+        {
+                "question": "Match the following terms to their corresponding definition:",
+
+                "row1": {"a": "Experiment", "b": "Sample Space", "c": "Events", "d": "Mutually Exclusive"},
+
+                "row2": {"1": "Is the set of all possible outcomes of that experiment.", "2": "When A and B have no outcomes in common", "3": "any collection (subset) of outcomes contained in the sample space S", "4": "any action or process whose outcome is subject to uncertainty"},
+
+                "answer": [["b", 1], ["d", 2], ["c", 3], ["a", 4]],
+
+                "difficulty": "easy",
+
+                "questionID": 70, 
+
+                "subject": "statistics"
+
+        }, 
+
+        {
+                "question": "Match the following terms with their corresponding formulas:",
+
+                "row1": {"a": "Mean", "b": "Variance", "c": "Standard Deviation"},
+
+                "row2": {"1": "Σ(X-X̄)^2/n", "2": "√(Σ(X-X̄)^2/n)", "3": "(ΣX)/n"},
+
+                "answer": [["a", 3], ["b", 1], ["c", 2]],
+
+                "difficulty": "medium",
+
+                "questionID": 78, 
+
+                "subject": "statistics" 
+        }, 
+
+        {
+                "question": "Match the following statistical distributions with their characteristics:",
+
+                "row1": {"a": "Normal Distribution", "b": "Binomial Distribution", "c": "Poisson Distribution", "d": "Exponential Distribution"},
+
+                "row2": {"1": "Used to model the number of successes in a fixed number of independent Bernoulli trials", "2": "Describes the distribution of the time between events in a Poisson process.", "3": "Characterized by a symmetric, bell-shaped curve.", "4": "Models the number of events occurring in a fixed interval of time or space"},
+
+                "answer": [["a", 3], ["b", 1], ["c", 4], ["d", 2]],
+
+                "difficulty": "medium",
+
+                "questionID": 79, 
+
+                "subject": "statistics" 
+        },
+
+        {
+                "question": "Match the terms with their definitions: ",
+
+                "row1": {"a": "Skewness", "b": "Outlier","c": "Correlation", "d": "Probability"},
+                
+                "row2": {"1": "A measure of the asymmetry of the probability distribution of a real-valued random variable about its mean", "2": "An observation that lies an abnormal distance from other values in a dataset.", "3": "A measure of the strength and direction of the linear relationship between two variables.", "4": "A measure of the likelihood of a specific outcome or event occurring."},
+
+                "answer": [["a", 1], ["b", 2], ["c", 3], ["d", 4]], 
+
+                "difficulty": "medium",
+
+                "questionID": 80, 
+
+                "subject": "statistics"
+        }, 
+
+        {
+                "question": "Match the 5 types of sampling to their definitions:",
+
+                "row1": {"a": "Systematic sampling", "b": "Convenience sampling", "c": "Random sampling", "d": "Stratified sampling", "e": "Cluster sampling"},
+
+                "row2": {"1": "Readily available elements are sampled", "2": "​This method divides the population into groups called strata by some characteristic. For instance, the population might be separated into freshman, sophomores, juniors and seniors.A sample is taken from each of these strata using either random, systematic,or convenience sampling.", "3": "In a list of all elements in the population, every kth element is selected", "4": "Elements are selected randomly.", "5": "This method divides the population into groups– usually geographically. These groups are called clusters or blocks. The clusters are randomly selected, and each element in the selected clusters are used"},
+
+                "answer": [["b", 1], ["d", 2], ["a", 3], ["c", 4], ["e", 5]],
+
+                "difficulty": "difficult",
+
+                "questionID": 88, 
+
+                "subject": "statistics" 
+        }, 
+
+        {
+                "question": "Match the conditional probability terms with their definitions: ",
+
+                "row1": {"a": "P(A|B)", "b": "P(B|A)", "c": "P(A and B)", "d": "P(B)"},
+
+                "row2": {"1": "The probability of event A occurring given that event B has occurred.", "2": "The probability of event B occurring given that event A has occurred.", "3": "The probability of both event A and event B occurring.", "4": "The probability of event B occurring."},
+
+                "answer": [["a", 1], ["b", 2], ["c", 3], ["d", 4]],
+
+                "difficulty": "difficult",
+
+                "questionID": 89, 
+
+                "subject": "statistics" 
+        },
+
+        {
+                "question": "Match the following statistic concepts with their corresponding principles: ",
+
+                "row1": {"a": "Factorial n!", "b": "n^k", "c": "(nk)"},
+
+                "row2": {"1": "Product rule", "2": "Combination rule", "3": "Permutation principles"},
+
+                "answer": [["a", 3], ["b", 2], ["c", 1]],
+
+                "difficulty": "difficult",
+
+                "questionID": 90, 
+
+                "subject": "statistics" 
+        },
+
+        {
+                "question": "Match the following functions with their corresponding derivatives: ",
+
+                "row1": {"a": "f(x) = 3x^3 - 2x^2 + 4x -1", "b": "f(x) = sin(x) + cos(x)", "c": "f(x) = e^x + ln"},
+
+                "row2": {"1": "f´(x) = cos(x) - sin(x)", "2": "f´(x) = 9x^2 - 4x + 4", "3": "f´(x)= e^x + 1/x"},
+
+                "answer": [["a", 2], ["b", 3], ["c", 1]],
+
+                "difficulty": "easy",
+
+                "questionID": 38, 
+
+                "subject": "calculus" 
+        }, 
+
+        {
+                "question": "Match the following calculus terms with their definitions: ",
+
+                "row1": {"a": "Derivative", "b": "Integral", "c": "Limit", "d": "Function"},
+
+                "row2": {"1": "A mathematical operation that represents the area under the curve of a function.", "2": "A mathematical expression that describes a relationship between inputs and outputs.", "3": "The rate of change of a function with respect to its variable.", "4": "A foundational concept in calculus that describes the behavior of a function as an input approaches a certain value."},
+
+                "answer": [["a", 3], ["b", 1], ["c", 4], ["d", 2]],
+
+                "difficulty": "easy",
+
+                "questionID": 39, 
+
+                "subject": "calculus"
+        }, 
+
+        {
+                "question": "Perform the indicated function evaluations for f(x) = 3 - 5x - 2x^2: ",
+
+                "row1": {"a": "f(4)", "b": "f(0)", "c": "f(-3)"},
+
+                "row2": {"1": "3", "2": "-49", "3": "0"},
+
+                "answer": [["a", 2], ["b", 1], ["c", 3]],
+
+                "difficulty": "easy",
+
+                "questionID": 40, 
+
+                "subject": "calculus"
+        }, 
+
+        {
+                "question": "Match the following integrals with their corresponding functions: ",
+
+                "row1": {"a": "∫3x^2 dx", "b": "∫(1/x) dx", "c": "∫cos(x) dx"},
+
+                "row2": {"1": "ln|x| + C", "2": "sin(x) + C", "3": "x^3+C"},
+
+                "answer": [["a", 3], ["b", 1], ["c", 2]],
+
+                "difficulty": "medium",
+
+                "questionID": 48, 
+
+                "subject": "calculus"
+        }, 
+
+        {
+                "question": "Match the functions with their domains: ",
+
+                "row1": {"a": "f(x) = x^3-3x+1/12x-7", "b": "f(x) = 5/x^3+10x^2+9x", "c": "f(x) = √25-x^2"},
+
+                "row2": {"1": "-5<x<5", "2": "X = 7/12", "3": "X = 0,-1, -9"},
+
+                "answer": [["a", 2], ["b", 3], ["c", 1]],
+
+                "difficulty": "medium",
+
+                "questionID": 49, 
+
+                "subject": "calculus"
+        }, 
+
+        {
+                "question": "Match the following functions to their corresponding derivatives: ",
+
+                "row1": {"a": "f(x) = x^3 - 2x^3 + 5x -1", "b": "f(x) = e^xsin(x)", "c": "f(x) = ln(x)/x"},
+
+                "row2": {"1": "f´(x) = 3x^2-6x + 5", "2": "f´(x) = e^x(sin(x) + cos(x))", "3": "f´(x)= (1-ln(x)/x^2)"},
+
+                "answer": [["a", 1], ["b", 2], ["c", 3]],
+
+                "difficulty": "medium",
+
+                "questionID": 50, 
+
+                "subject": "calculus"
+        }, 
+
+        {
+                "question": "Match the function with the corresponding derivatives: ",
+
+                "row1": {"a": "f(x) = e^(x)sin(x)", "b": "f(x) = ln(x)/x^2", "c": "f(x) = √xcos(x)"},
+
+                "row2": {"1": "f´(x) = - √x(sin(x)+xcos(x))/2", "2": "f´(x) = e^x(sin(x) + cos(x))", "3": "f´(x) = (1-2ln(x))/x^3"},
+
+                "answer": [["a", 2], ["b", 3], ["c", 1]],
+
+                "difficulty": "difficult",
+
+                "questionID": 58, 
+
+                "subject": "calculus"
+        },
+
+        {
+                "question": "Match the corresponding double angle identities: ",
+
+                "row1": {"a": "sin(2x)", "b": "cos(2x)", "c": "tan(2x)"},
+
+                "row2": {"1": "cos^2(x) - sin^2(x)", "2": "2sin(x)cos(x)", "3": "2tan(x)/1-tan^2(x)"},
+
+                "answer": [["a", 2], ["b", 1], ["c", 3]],
+
+                "difficulty": "difficult",
+
+                "questionID": 59, 
+
+                "subject": "calculus"
+        }, 
+
+        {
+                "question": "Match the following integrals with their corresponding functions: ",
+
+                "row1": {"a": "∫x^2 cos(x) dx", "b": "∫dx/x^2+1", "c": "∫e^x dx"},
+
+                "row2": {"1": "x^3/3 - 2x^2/2 + 5x -1 + C", "2": "e^x sin(x) + C", "3": "ln(x) + C"},
+
+                "answer": [["a", 2], ["b", 1], ["c", 3]],
+
+                "difficulty": "difficult",
+
+                "questionID": 60, 
+
+                "subject": "calculus"
+        }, 
+
+        {
+                "question": "Match each matrix operation with its corresponding results: ",
+
+                "row1": {"a": "Addition", "b": "Scalar Multiplication", "c": "Determinant", "d": "Matrix Multiplication"},
+
+                "row2": {"1": "[[2,1], [-1,3]] + [[1,0], [2,1]]", "2": "2 x [[3,4], [1,2]]", "3": "[[3,2],[5,1]]", "4": "[[1,2], [3,4]] x [[1,0], [0,1]]"},
+
+                "answer": [["a", 1], ["b", 2], ["c", 3], ["d", 4]],
+
+                "difficulty": "easy",
+
+                "questionID": 8, 
+
+                "subject": "algebra"
+        }, 
+
+        {
+                "question": "Match each matrix property with its definition or characteristic: ",
+
+                "row1": {"a": "Symmetric matrix", "b": "Singular Matrix", "c": "Identity Matrix", "d": "Upper Triangular Matrix", "e": "Orthogonal Matrix", "f": "Invertible Matrix"},
+
+                "row2": {"1": "A matrix where the entries below the main diagonal are all zero.", "2": "A square matrix where all the entries are zero except for the diagonal entries, which are all ones.", "3": "A square matrix that is equal to its transpose.", "4": "A square matrix that, when multiplied by any other matrix of appropriate size, results in the original matrix.", "5": "A square matrix with a determinant equal to zero.", "6": "A square matrix where the inverse exists."},
+
+                "answer": [["a", 3], ["b", 5], ["c", 2], ["d", 1], ["e", 6], ["f", 4]],
+
+                "difficulty": "easy",
+
+                "questionID": 9, 
+
+                "subject": "algebra"
+        }, 
+
+        {
+                "question": "Match each matrix operation or concept with its corresponding description or characteristics: ",
+
+                "row1": {"a": "Eigenvector", "b": "Rank of a Matrix", "c": "Eigenvalue", "d": "Null Space", "e": "Determinant", "f": "Span"},
+
+                "row2": {"1": "A vector that, when multiplied by a matrix, produces a scalar multiple of itself.", "2": "The number of linearly independent rows or columns in a matrix.", "3": "A scalar representing the factor by which an eigenvector is scaled when multiplied by a matrix", "4": "The space of all vectors x such that Ax=0.", "5": "A scalar value associated with a square matrix, representing the scaling factor of the transformation described by the matrix.", "6": "The set of all possible linear combinations of a set of vectors."},
+
+                "answer": [["a", 1], ["b", 2], ["c", 3], ["d", 4], ["e", 5], ["f", 6]],
+
+                "difficulty": "easy",
+
+                "questionID": 10, 
+
+                "subject": "algebra"
+        }, 
+
+        {
+                "question": "Match the determinant of the following matrices: ",
+
+                "row1": {"a": "[[2,3], [5,4]]", "b": "[[1,7], [2,5]]", "c": "[[2,4], [6,4]]", "d": "[[4,9], [7,2]]"},
+
+                "row2": {"1": "-3", "2": "22", "3": "-14", "4": "-16"},
+
+                "answer": [["a", 3], ["b", 1], ["c", 4], ["d", 2]],
+
+                "difficulty": "medium",
+
+                "questionID": 18, 
+
+                "subject": "algebra"
+        },
+
+        {
+                "question": "Match the following matrix to its corresponding inverse matrix: ",
+
+                "row1": {"a": "[[3,1], [2,4]]", "b": "[[6,3], [7,2]]", "c": "[[1,2], [3,2]]"},
+
+                "row2": {"1": "[[0.4,-0.1], [-0.2, 0.3]]", "2": "[[-½, ½], [¾, -¼]]", "3": "[[-2/9, ⅓], [7/9, -⅔]]"},
+
+                "answer": [["a", 1], ["b", 3], ["c", 2]],
+
+                "difficulty": "medium",
+
+                "questionID": 19, 
+
+                "subject": "algebra"
+        },
+
+        {
+                "question": "Match the following system of linear equations: ",
+
+                "row1": {"a": "4x−2y=6, 3x+2y=8", "b": "3x+2y=7, x−4y=−5", "c": "2x−3y=4, 4x+y=7"},
+
+                "row2": {"1": "x=13/21, y=11/7", "2": "x=2, y =1", "3": "x=25/14, y=-1/7"},
+
+                "answer": [["a", 2], ["b", 1], ["c", 3]],
+
+                "difficulty": "medium",
+
+                "questionID": 20, 
+
+                "subject": "algebra"
+        },
+
+        {
+                "question": "Which of the following sets of vectors are bases for R2: ",
+
+                "row1": {"a": "{(0,1), (1,1)}", "b": "{(1,0), (0,1), (1,1)}", "c": "{(1,0), (−1,0)}", "d": "{(1,1), (1,−1)}", "e": "{((1,1), (2,2))}", "f": "{(1,2)}"},
+
+                "row2": {"1": "Bases for R2", "2": "Not a basis for R2"},
+
+                "answer": [["a", 1], ["b", 2], ["c", 2], ["d", 1], ["e", 2], ["f", 2]],
+
+                "difficulty": "difficult",
+
+                "questionID": 28, 
+
+                "subject": "algebra"
+        }, 
+
+        {
+                "question": "Match the following matrices A to their corresponding A^2 matrix: ",
+
+                "row1": {"a": "A = [[1,2], [5,5]]", "b": "A= [[5,2], [1,3]]", "c": "A= [[2,5], [3,1]]"},
+
+                "row2": {"1": "[[11,12], [30,35]]", "2": "[[27,16], [8,11]]", "3": "[[19,15], [9,16]]"},
+
+                "answer": [["a", 1], ["b", 2], ["c", 3]],
+
+                "difficulty": "difficult",
+
+                "questionID": 29, 
+
+                "subject": "algebra"
+        },
+
+        {
+                "question": "Match the corresponding matrices to their eigenvalues: ",
+
+                "row1": {"a": "A = [[1,2], [5,5]]", "b": "A= [[5,2], [1,3]]", "c": "A= [[1,1], [2,2]]"},
+
+                "row2": {"1": "λ=3+√14, λ = 3-√14", "2": "λ= 4+√3, λ= 4-√3", "3": "λ= 0, λ= 3"},
+
+                "answer": [["a", 1], ["b", 2], ["c", 3]],
+
+                "difficulty": "difficult",
+
+                "questionID": 30, 
+
+                "subject": "algebra"
+        }
+]  
