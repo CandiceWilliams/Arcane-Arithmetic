@@ -4,18 +4,7 @@ import json
 
 
 class User: 
-        def generate_id(length):
-            """ This function generates a random ID with the give length for a user
-            :param length: the length of the random ID
-            :type length: int
-            :return: a random ID
-            :rtype: string
-            """
-            
-            
-        
-        
-        
+     
         def __init__(self, username, password, name, privilege, id=""): 
                 self.username = username
                 self.password = password
