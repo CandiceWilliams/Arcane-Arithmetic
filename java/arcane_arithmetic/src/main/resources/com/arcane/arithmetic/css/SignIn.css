@@ -1,0 +1,25 @@
+@font-face {
+	src: url('../assets/VinqueRg.otf');
+}
+
+.root{
+	-fx-background-image:url("../imgs/assets/sign-in-up-background-image.jpg");
+	-fx-background-size: stretch;
+}
+
+#signInLabel{
+	-fx-font-family: "Vinque Rg";
+	-fx-text-fill: #b8f2fc;
+	-fx-font-size: 25;
+	-fx-border-width: 5;
+	-fx-border-color: black;
+	-fx-font-weight: bold;
+	-fx-background-image:url("../imgs/assets/sign-in-up-label-background.jpg");
+}
+
+#usernameLabel, #passwordLabel, #dontHaveAccountLabel{
+	-fx-font-family: "Vinque Rg";
+	-fx-text-fill: #b8f2fc;
+	-fx-font-size: 25;
+	-fx-font-weight: bold;
+}
