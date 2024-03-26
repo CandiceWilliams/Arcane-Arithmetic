@@ -6,6 +6,22 @@ import json
 class User: 
      
         def __init__(self, username, password, name, privilege, id=""): 
+                """
+                    Initialize method
+                    
+                    :param username: user's username
+                    :type username: string
+                    :param password: user's password
+                    :type password: string
+                    :param name: user's name
+                    :type name: string
+                    :param privilege: user's privilege
+                    :type privilege: string
+                    :param id: user's unique ID
+                    :type id: string
+                    :return: aa new user
+                    :rtype: User
+                """            
                 self.username = username
                 self.password = password
                 self.name = name
@@ -18,6 +34,13 @@ class User:
 
 
         def insertIntoDB(self):
+            """
+                This function inserts a new user into the database
+
+                :return: True if it is successful and False if user already exists 
+                :rtype: Boolean
+            """
+
             if User.getUserByUsername(self.username) != None : 
                 return False
             
@@ -42,6 +65,15 @@ class User:
             
             
         def getUserByID(id):
+            """
+                Returns the user with the given ID
+
+                :param id: User's unique ID
+                :type id: string
+                :return: The user with the given ID
+                :rtype: User
+            """
+
             with open("DatabaseFiles/users.json", 'r') as file:
                 data = json.load(file)
                 
@@ -55,6 +87,14 @@ class User:
         
     
         def getUserByUsername(username):
+            """
+                Returns the user with the give username
+
+                :param username: user's username
+                :type username: string
+                :return: The user with the given username
+                :rtype: User
+            """
             with open("DatabaseFiles/users.json", 'r') as file:
                 data = json.load(file)
                 
@@ -67,6 +107,16 @@ class User:
         
         
         def Authenticate(username, password) :
+            """
+                This function is used for log-in window
+
+                :param username: User's username
+                :type username: string
+                :param password: User's password
+                :type password: string
+                :return: True if the username and password, False otherwise
+                :rtype: Boolean
+            """
             with open("DatabaseFiles/users.json", 'r') as file:
                 data = json.load(file)
             
@@ -78,3 +128,5 @@ class User:
                             return False
             
             return False
+        
+        
