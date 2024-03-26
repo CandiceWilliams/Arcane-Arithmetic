@@ -53,6 +53,9 @@ public class SignInController {
     public void back(ActionEvent event) throws IOException {
     	Stage stage = (Stage) backButton.getScene().getWindow();
     	stage.close();
+		StartMenu SUCon = new StartMenu();
+		Stage startStage = new Stage();
+		SUCon.start(startStage);
     }
     public void signInButtonClick(ActionEvent event) throws IOException {
 
