@@ -1,6 +1,6 @@
 package com.arcane.arithmetic;
 
-import javafx.fxml.FXML;
+//import javafx.fxml.FXML;
 
 import java.io.IOException;
 
@@ -15,8 +15,14 @@ public class StartController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	
-	
+	TutorialController tutcon = new TutorialController();
+
+
+	public void openTutorial(ActionEvent event) throws IOException {
+		tutcon.switchToPage1(event);
+
+	}
+
 	public void switchToTopic(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());

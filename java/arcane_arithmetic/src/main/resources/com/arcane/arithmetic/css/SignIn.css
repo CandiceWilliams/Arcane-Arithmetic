@@ -1,9 +1,9 @@
 @font-face {
-	src: url('../assets/VinqueRg.otf');
+	src: url('../assets/fonts/VinqueRg.otf');
 }
 
 .root{
-	-fx-background-image:url("../imgs/assets/sign-in-up-background-image.jpg");
+	-fx-background-image:url("../assets/imgs/sign-in-up-background-image.jpg");
 	-fx-background-size: stretch;
 }
 
@@ -14,7 +14,7 @@
 	-fx-border-width: 5;
 	-fx-border-color: black;
 	-fx-font-weight: bold;
-	-fx-background-image:url("../imgs/assets/sign-in-up-label-background.jpg");
+	-fx-background-image:url("../assets/imgs/sign-in-up-label-background.jpg");
 }
 
 #usernameLabel, #passwordLabel, #dontHaveAccountLabel{
