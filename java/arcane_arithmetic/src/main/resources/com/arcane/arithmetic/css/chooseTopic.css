@@ -1,5 +1,5 @@
 @font-face {
-	src: url('../assets/fonts/VinqueRg.otf');
+	src: url('../assets/VinqueRg.otf');
 }
 .root{
 	-fx-background-image:url('../assets/imgs/startMenuBg.jpg');
@@ -10,7 +10,7 @@
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
 	-fx-text-fill: #fc9dee;	
-	-fx-font-size: 45;
+	-fx-font-size: 50;
 	-fx-border-color: #a80aab;
 	-fx-border-radius: 15 15 15 15;
 	-fx-border-width: 5;
@@ -20,7 +20,7 @@
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
 	-fx-text-fill: #fc74e8;	
-	-fx-font-size: 45;
+	-fx-font-size: 50;
 	-fx-text-fill: #f2bfeb;
 }
 .button:pressed{
@@ -28,14 +28,5 @@
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
 	-fx-text-fill: #fc74e8;	
-	-fx-font-size: 45;
-}
-.label{
-	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #d9a6f5;
-	-fx-border-color: #330452;
-	-fx-border-width: 13;
-	-fx-background-image: url('../assets/imgs/titleBg.jpg');
-	-fx-background-size: 375;
-	-fx-background-radius: 20 20 20 20;
+	-fx-font-size: 50;
 }

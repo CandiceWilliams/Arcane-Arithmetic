@@ -71,3 +71,27 @@
 	-fx-background-color: transparent;
 	-fx-border-color: transparent;
 }
+.backButton{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/imgs/back_icon.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+.backButton:pressed{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/imgs/back_icon_clicked.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+.backButton:hover{
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-image: url('../assets/imgs/back_icon_hover.png');
+	-fx-background-size: stretch;
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
