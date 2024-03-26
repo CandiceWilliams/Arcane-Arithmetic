@@ -3,7 +3,7 @@
         "question": "In a survey conducted among 500 students about their favorite sport, the following results were obtained: 180 students prefer basketball, 120 students prefer soccer, 100 students prefer tennis, 60 students prefer volleyball, 40 students prefer cricket. What percent of students preferred soccer?",
         "answer": "a) 24",
         "difficulty": "easy",
-        "question_id": 61,
+        "question_id": 1,
         "options": [
             "a) 24",
             "b) 30",
@@ -16,7 +16,7 @@
         "question": "A researcher is studying the relationship between hours of study and exam scores. After collecting data from a group of students, she finds the correlation coefficient between hours of study and exam scores to be 0.75. What does this correlation coefficient value indicate about the relationship between hours of study and exam scores?",
         "answer": "b) There is a strong positive relationship between hours of study and exam scores.",
         "difficulty": "easy",
-        "question_id": 62,
+        "question_id": 2,
         "options": [
             "a) There is a weak positive relationship between hours of study and exam scores.",
             "b) There is a strong positive relationship between hours of study and exam scores.",
@@ -29,7 +29,7 @@
         "question": "The town council wants to know how many pounds of recyclable trash a typical households generates in a week. Is this a statistical question?",
         "answer": "a) Yes, this is a statistical question",
         "difficulty": "easy",
-        "question_id": 63,
+        "question_id": 3,
         "options": [
             "a) Yes",
             "this is a statistical question",
@@ -42,7 +42,7 @@
         "question": "A parameter is: ",
         "answer": "b) a population characteristic",
         "difficulty": "easy",
-        "question_id": 64,
+        "question_id": 4,
         "options": [
             "a) a sample characteristic",
             "b) a population characteristic",
@@ -55,7 +55,7 @@
         "question": "A group of students took a math test, and their scores followed a normal distribution with a mean of 75 and a standard deviation of 10. If a student scored 85 on the test, what percentile does their score correspond to?",
         "answer": "d) 90th percentile",
         "difficulty": "medium",
-        "question_id": 71,
+        "question_id": 5,
         "options": [
             "a) 25th percentile",
             "b) 50th percentile",
@@ -68,7 +68,7 @@
         "question": "Failing to reject the null hypothesis when it is false is:",
         "answer": "d) Type II error",
         "difficulty": "medium",
-        "question_id": 72,
+        "question_id": 6,
         "options": [
             "a) Alpha",
             "b) Type I error",
@@ -81,7 +81,7 @@
         "question": "A national random sample of 20 ACT scores from 2010 is listed below. Calculate the sample mean and standard deviation. 29, 26, 13, 23, 23, 25, 17, 22, 17, 19, 12, 26, 30, 30, 18, 14, 12, 26, 17, 18",
         "answer": "d) 20.85, 5.94",
         "difficulty": "medium ",
-        "question_id": 73,
+        "question_id": 7,
         "options": [
             "a) 20.50, 5.79",
             "b) 20.50, 5.94",
@@ -94,7 +94,7 @@
         "question": "Select the order of sampling schemes from best to worst.",
         "answer": "a) simple random, stratified, convenience",
         "difficulty": "medium",
-        "question_id": 74,
+        "question_id": 8,
         "options": [
             "a) simple random, stratified, convenience",
             "b) simple random, convenience, stratified",
@@ -107,7 +107,7 @@
         "question": "A company produces bottles of juice, and the distribution of their fill volumes follows a normal distribution with a mean of 500 milliliters and a standard deviation of 10 milliliters. If a randomly selected bottle is found to have a fill volume of 490 milliliters, what is the z-score of this bottle?",
         "answer": "b) -1.0,",
         "difficulty": "difficult",
-        "question_id": 81,
+        "question_id": 9,
         "options": [
             "a) -0.5",
             "b) -1.0",
@@ -120,7 +120,7 @@
         "question": "A car dealership recorded the monthly sales of a specific car model over the past year. The mean monthly sales were 120 cars with a standard deviation of 15 cars. Assuming a normal distribution, what is the probability that in a randomly selected month, the dealership sold fewer than 100 cars?",
         "answer": "a) 0.1587",
         "difficulty": "difficult",
-        "question_id": 82,
+        "question_id": 10,
         "options": [
             "a) 0.1587",
             "b) 0.3413",
@@ -133,7 +133,7 @@
         "question": "Observational studies allows:",
         "answer": "a) population inference",
         "difficulty": "difficult",
-        "question_id": 83,
+        "question_id": 11,
         "options": [
             "a) population inference",
             "b) causal inference",
@@ -146,7 +146,7 @@
         "question": "The distribution of heights of American women aged 18 to 24 is approximately normally distributed with a mean of 65.5 inches and standard deviation of 2.5 inches. Calculate the z-score for a woman six feet tall.",
         "answer": "a) 2.60",
         "difficulty": "difficult",
-        "question_id": 84,
+        "question_id": 12,
         "options": [
             "a) 2.60",
             "b) 4.11",
@@ -157,40 +157,40 @@
     },
     {
         "question": "What is the derivative of the f(x)=3x^2-4x+2?",
-        "answer": "a) f´(x)=6x-4",
+        "answer": "a) f\u00b4(x)=6x-4",
         "difficulty": "easy ",
-        "question_id": 31,
+        "question_id": 13,
         "options": [
-            "a) f´(x)=6x-4",
-            "b) f´(x)=3x^2-4x",
-            "c) f´(x)=6x-4+2",
-            "d) f´(x)=6x^2-4"
+            "a) f\u00b4(x)=6x-4",
+            "b) f\u00b4(x)=3x^2-4x",
+            "c) f\u00b4(x)=6x-4+2",
+            "d) f\u00b4(x)=6x^2-4"
         ],
         "subject": "calculus "
     },
     {
         "question": "What is the derivative of f(x) = 4x^3 - 2x^2 + 5x - 1 with respect to x?",
-        "answer": "a) f´(x) = 12x^2 - 4x + 5",
+        "answer": "a) f\u00b4(x) = 12x^2 - 4x + 5",
         "difficulty": "easy ",
-        "question_id": 32,
+        "question_id": 14,
         "options": [
-            "a) f´(x) = 12x^2 - 4x + 5",
-            "b) f´(x) = 12x^2 - 4",
-            "c) f´(x) = 4x^3 - 2x^2 + 5",
-            "d) f´(x) = 12x - 4"
+            "a) f\u00b4(x) = 12x^2 - 4x + 5",
+            "b) f\u00b4(x) = 12x^2 - 4",
+            "c) f\u00b4(x) = 4x^3 - 2x^2 + 5",
+            "d) f\u00b4(x) = 12x - 4"
         ],
         "subject": "calculus "
     },
     {
-        "question": "If f(x) = ln(x) what is f´(x)?",
-        "answer": "a) f´(x)= 1/x",
+        "question": "If f(x) = ln(x) what is f\u00b4(x)?",
+        "answer": "a) f\u00b4(x)= 1/x",
         "difficulty": "easy",
-        "question_id": 33,
+        "question_id": 15,
         "options": [
-            "a) f´(x)= 1/x",
-            "b) f´(x) = ln(x)",
-            "c) f´(x) = x",
-            "d) f´(x) = e^x"
+            "a) f\u00b4(x)= 1/x",
+            "b) f\u00b4(x) = ln(x)",
+            "c) f\u00b4(x) = x",
+            "d) f\u00b4(x) = e^x"
         ],
         "subject": "calculus "
     },
@@ -198,7 +198,7 @@
         "question": "What is the integral of 4x^3?",
         "answer": "b) 2x^4",
         "difficulty": "easy",
-        "question_id": 34,
+        "question_id": 16,
         "options": [
             "a) x^4",
             "b) 2x^4",
@@ -211,7 +211,7 @@
         "question": "What is the integral of 2x+3 with respect to x?",
         "answer": "a) x^2+3x",
         "difficulty": "medium",
-        "question_id": 41,
+        "question_id": 17,
         "options": [
             "a) x^2+3x",
             "b) x^2+3",
@@ -221,28 +221,28 @@
         "subject": "calculus "
     },
     {
-        "question": "If f(x)=e^x what is f´(x)?",
-        "answer": "a) f´(x) = e^x",
+        "question": "If f(x)=e^x what is f\u00b4(x)?",
+        "answer": "a) f\u00b4(x) = e^x",
         "difficulty": "medium",
-        "question_id": 42,
+        "question_id": 18,
         "options": [
-            "a) f´(x) = e^x",
-            "b) f´(x) = e^x+1",
-            "c) f´(x) = e^x-1",
-            "d) f´(x) = e^(x+1) + 1"
+            "a) f\u00b4(x) = e^x",
+            "b) f\u00b4(x) = e^x+1",
+            "c) f\u00b4(x) = e^x-1",
+            "d) f\u00b4(x) = e^(x+1) + 1"
         ],
         "subject": "calculus "
     },
     {
         "question": "What is the second derivative of f(x) = 4x^3 - 2x^2 + 5x - 1 with respect to x?",
-        "answer": "c) f´(x) = 24x-4",
+        "answer": "c) f\u00b4(x) = 24x-4",
         "difficulty": "medium",
-        "question_id": 43,
+        "question_id": 19,
         "options": [
-            "a) f´(x) = 12x^2 - 4x + 5",
-            "b) f´(x) = 12x^2 - 4",
-            "c) f´(x) = 24x-4",
-            "d) f´(x) = 12x - 4"
+            "a) f\u00b4(x) = 12x^2 - 4x + 5",
+            "b) f\u00b4(x) = 12x^2 - 4",
+            "c) f\u00b4(x) = 24x-4",
+            "d) f\u00b4(x) = 12x - 4"
         ],
         "subject": "calculus "
     },
@@ -250,7 +250,7 @@
         "question": "What is the antiderivative of cos(x) with respect to x?",
         "answer": "a) - sin(x)",
         "difficulty": "medium",
-        "question_id": 44,
+        "question_id": 20,
         "options": [
             "a) - sin(x)",
             "b) sin(x)",
@@ -261,27 +261,27 @@
     },
     {
         "question": "What is the derivative of f(x)=sin(x)+cos(x)?",
-        "answer": "a) f´(x)=cos(x)−sin(x)",
+        "answer": "a) f\u00b4(x)=cos(x)\u2212sin(x)",
         "difficulty": "difficult",
-        "question_id": 51,
+        "question_id": 21,
         "options": [
-            "a) f´(x)=cos(x)−sin(x)",
-            "b) f´(x)=sin(x)−cos(x)",
-            "c) f´(x)=cos(x)+sin(x)",
-            "d) f´(x)=sin(x)"
+            "a) f\u00b4(x)=cos(x)\u2212sin(x)",
+            "b) f\u00b4(x)=sin(x)\u2212cos(x)",
+            "c) f\u00b4(x)=cos(x)+sin(x)",
+            "d) f\u00b4(x)=sin(x)"
         ],
         "subject": "calculus "
     },
     {
         "question": "What is the antiderivative of 5x^4 with respect to x?",
-        "answer": "d) (⅚)x^6 + C",
+        "answer": "d) (\u215a)x^6 + C",
         "difficulty": "difficult",
-        "question_id": 52,
+        "question_id": 22,
         "options": [
             "a) (5/5)x^5 + C",
             "b) (5/4) x^4 + C",
             "c) (5/3) x^3 + C",
-            "d) (⅚)x^6 + C"
+            "d) (\u215a)x^6 + C"
         ],
         "subject": "calculus "
     },
@@ -289,7 +289,7 @@
         "question": "What is the integral of 1/x with respect to x?",
         "answer": "b) ln|x| + C",
         "difficulty": "difficult",
-        "question_id": 53,
+        "question_id": 23,
         "options": [
             "a) ln(x)",
             "b) ln|x| + C",
@@ -299,15 +299,15 @@
         "subject": "calculus "
     },
     {
-        "question": "What is the derivative of f(x) = √x + x^2 with respect to x?",
-        "answer": "a) f´(x) = (1/2√x) + 2x",
+        "question": "What is the derivative of f(x) = \u221ax + x^2 with respect to x?",
+        "answer": "a) f\u00b4(x) = (1/2\u221ax) + 2x",
         "difficulty": "difficult",
-        "question_id": 54,
+        "question_id": 24,
         "options": [
-            "a) f´(x) = (1/2√x) + 2x",
-            "b) f´(x) =  (1/2√x) + 2",
-            "c) f´(x) = (1/√x) + 2x",
-            "d) f´(x) = √x + 2x"
+            "a) f\u00b4(x) = (1/2\u221ax) + 2x",
+            "b) f\u00b4(x) =  (1/2\u221ax) + 2",
+            "c) f\u00b4(x) = (1/\u221ax) + 2x",
+            "d) f\u00b4(x) = \u221ax + 2x"
         ],
         "subject": "calculus "
     },
@@ -315,7 +315,7 @@
         "question": "If A and B are both invertible matrices of the same size, which of the following is always true?",
         "answer": "a) AB is invertible",
         "difficulty": "easy",
-        "question_id": 1,
+        "question_id": 25,
         "options": [
             "a) AB is invertible",
             "b) AB is not invertible",
@@ -327,7 +327,7 @@
         "question": "Find the determinant of the matrix C = [[4, 5, 2], [3, 1, 6], [2, 0, 3]].",
         "answer": "b) -14",
         "difficulty": "easy",
-        "question_id": 2,
+        "question_id": 26,
         "options": [
             "a) 14",
             "b) -14",
@@ -340,7 +340,7 @@
         "question": "What is the determinant of the following matrix C = [[1,2], [3,6]]?",
         "answer": "a) 0",
         "difficulty": "easy",
-        "question_id": 3,
+        "question_id": 27,
         "options": [
             "a) 0",
             "b) 1",
@@ -354,7 +354,7 @@
         "question": "What is the rank of this matrix [[1,2,3], [0,1,4], [5,6,0]]?",
         "answer": "c) 3",
         "difficulty": "easy",
-        "question_id": 4,
+        "question_id": 28,
         "options": [
             "a) 1",
             "b) 2",
@@ -367,7 +367,7 @@
         "question": "Given the system of equations:1x+2y = 5, 3x-y = 2 What is the value of y?",
         "answer": "b) 2",
         "difficulty": "medium",
-        "question_id": 12,
+        "question_id": 29,
         "options": [
             "a) 1",
             "b) 2",
@@ -381,7 +381,7 @@
         "question": "Solve the system of equations using Gaussian elimination: 2x + 3y - z = 5, 3x + 2y + 4z = 1, x - y + 2z = 3 What is the value of z?",
         "answer": "c) 1",
         "difficulty": "difficult",
-        "question_id": 21,
+        "question_id": 30,
         "options": [
             "a) -2",
             "b) 2",
@@ -394,7 +394,7 @@
         "question": "Calculate the dot product of vectors v = [2, -3, 1] and w = [4, 1, 2].",
         "answer": "c) -9",
         "difficulty": "difficulty",
-        "question_id": 22,
+        "question_id": 31,
         "options": [
             "a) -5",
             "b) 5",
@@ -405,14 +405,14 @@
     },
     {
         "question": "Given the matrix H = [[-1, 2], [3, 4]], what is its characteristic polynomial?",
-        "answer": "c)λ^2−3λ−6",
+        "answer": "c)\u03bb^2\u22123\u03bb\u22126",
         "difficulty": "difficult",
-        "question_id": 23,
+        "question_id": 32,
         "options": [
-            "a)λ^2−3λ+6",
-            "b)λ^2 + λ - 6",
-            "c)λ^2−3λ−6",
-            "d)λ^2+3λ−6"
+            "a)\u03bb^2\u22123\u03bb+6",
+            "b)\u03bb^2 + \u03bb - 6",
+            "c)\u03bb^2\u22123\u03bb\u22126",
+            "d)\u03bb^2+3\u03bb\u22126"
         ],
         "subject": "algebra"
     },
@@ -420,7 +420,7 @@
         "question": "What is the eigenvalue of the matrix [[4,2], [1,3]]?",
         "answer": "d) 4",
         "difficulty": "difficult ",
-        "question_id": 24,
+        "question_id": 33,
         "options": [
             "a) 1",
             "b) 2",
