@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="startMenuVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="root" stylesheets="@../css/startMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="startMenuVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="root" stylesheets="@../css/startMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.artithmetic.StartController">
    <children>
       <Label fx:id="gameTitle" stylesheets="@../css/startMenu.css" text=" Arcane Arithmetic ">
          <font>
@@ -26,7 +26,7 @@
             <Insets bottom="20.0" left="120.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="tutButton" mnemonicParsing="false" prefHeight="90.0" prefWidth="280.0" stylesheets="@../css/startMenu.css" text="Tutorial">
+      <Button fx:id="tutButton" mnemonicParsing="false" onAction="#openTutorial" prefHeight="90.0" prefWidth="280.0" stylesheets="@../css/startMenu.css" text="Tutorial">
          <font>
             <Font size="45.0" />
          </font>
@@ -47,21 +47,6 @@
                </HBox.margin>
             </Button>
             <Button fx:id="exitButton" maxHeight="85.0" maxWidth="85.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" styleClass="exitButton" stylesheets="@../css/iconButton.css" />
-         </children>
-         <VBox.margin>
-            <Insets left="120.0" />
-         </VBox.margin>
-      </HBox>
-      <HBox alignment="BOTTOM_LEFT" prefHeight="113.0" prefWidth="1280.0">
-         <children>
-            <Text fill="#934da1" strokeType="OUTSIDE" strokeWidth="0.0" text="CS2212 Western University Winter 2024" wrappingWidth="510.1367301940918">
-               <font>
-                  <Font name="Berlin Sans FB" size="26.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="30.0" />
-               </HBox.margin>
-            </Text>
             <VBox alignment="BOTTOM_RIGHT" prefHeight="130.0" prefWidth="724.0">
                <children>
                   <Text fill="#934da1" strokeType="OUTSIDE" strokeWidth="0.0" text="Group 49">
@@ -96,6 +81,21 @@
                   </Text>
                </children>
             </VBox>
+         </children>
+         <VBox.margin>
+            <Insets left="120.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="BOTTOM_LEFT" prefHeight="113.0" prefWidth="1280.0">
+         <children>
+            <Text fill="#934da1" strokeType="OUTSIDE" strokeWidth="0.0" text="CS2212 Western University Winter 2024" wrappingWidth="510.1367301940918">
+               <font>
+                  <Font name="Berlin Sans FB" size="26.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </Text>
          </children>
          <VBox.margin>
             <Insets />

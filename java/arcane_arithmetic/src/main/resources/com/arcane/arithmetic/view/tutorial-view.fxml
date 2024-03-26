@@ -27,7 +27,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="350.0" layoutY="25.0" prefHeight="286.0" prefWidth="188.0">
+            <Pane layoutX="350.0" layoutY="25.0" prefHeight="286.0" prefWidth="188.0" stylesheets="@../css/ui.css">
                <children>
                   <Text layoutX="51.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor" textAlignment="CENTER" />
                </children>

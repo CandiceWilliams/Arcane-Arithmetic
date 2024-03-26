@@ -38,6 +38,7 @@ public class TutorialController {
         scene.getStylesheets().add(css);
         window.setScene(scene);
         window.showAndWait();
+        
     }
     public void switchToPage2(ActionEvent event){
 
