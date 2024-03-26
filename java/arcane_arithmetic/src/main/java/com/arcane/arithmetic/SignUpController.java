@@ -2,6 +2,7 @@ package com.arcane.arithmetic;
 
 import java.io.IOException;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -13,7 +14,8 @@ public class SignUpController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	private javafx.scene.control.Button signUpButton;
+	@FXML
+    private javafx.scene.control.Button signUpButton;
 	
     public void switchToSignInScene(ActionEvent event) throws IOException {
     	Parent root = FXMLLoader.load(getClass().getResource("view/SignIn.fxml"));

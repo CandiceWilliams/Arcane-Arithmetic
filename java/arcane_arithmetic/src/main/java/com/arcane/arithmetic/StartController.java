@@ -26,6 +26,9 @@ public class StartController {
 	}
 
 	public void switchToSignInScene(ActionEvent event) throws IOException {
+		Node source = (Node)event.getSource();
+		Stage stage = (Stage)source.getScene().getWindow();
+		stage.close();
     	SIcon.switchToSignInScene(event);
     }
 	
