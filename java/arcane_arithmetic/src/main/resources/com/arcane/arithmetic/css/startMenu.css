@@ -5,7 +5,6 @@
 	-fx-background-image:url('../assets/imgs/startMenuBg.jpg');
 	-fx-background-size: stretch;
 }
-
 .button{
 	-fx-background-color: #d50fd9;
 	-fx-background-radius: 20 20 20 20;

@@ -1,6 +1,10 @@
 @font-face {
 	src: url('../assets/VinqueRg.otf');
 }
+.root{
+	-fx-background-image:url('../assets/imgs/startMenuBg.jpg');
+	-fx-background-size: stretch;
+}
 .backButton{
 	-fx-background-radius: 10 10 10 10;
 	-fx-background-image: url('../assets/imgs/back_icon.png');
@@ -24,4 +28,52 @@
 	-fx-background-repeat: no-repeat;
 	-fx-background-color: transparent;
 	-fx-border-color: transparent;
+}
+.labelRanking{
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #d9a6f5;
+	-fx-border-color: #330452;
+	-fx-border-width: 5;
+	-fx-background-image: url('../assets/imgs/titleBg.jpg');
+	-fx-background-size: 375;
+	-fx-background-radius: 20 20 20 20;
+}
+.title{
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #d9a6f5;
+	-fx-border-color: #330452;
+	-fx-border-width: 13;
+	-fx-background-image: url('../assets/imgs/titleBg.jpg');
+	-fx-background-size: 375;
+	-fx-background-radius: 20 20 20 20;
+}
+.table-view {
+    -fx-background-color: transparent;
+    -fx-font-family: 'Vinque Rg';
+    -fx-font-size: 15;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+.table-view .column-header, .table-view .filler{
+    -fx-background-color: linear-gradient(to bottom, #AB3DDB, #FB4796);
+    -fx-padding: 0 0 5px 0;
+}
+
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+.table-row-cell:odd{
+    -fx-background-color: #000000;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell:even{
+    -fx-background-color: #000000;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
 }

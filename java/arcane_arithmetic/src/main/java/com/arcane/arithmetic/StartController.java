@@ -31,5 +31,4 @@ public class StartController {
 		stage.setScene(scene);
 		stage.show();
 	}
-
 }
