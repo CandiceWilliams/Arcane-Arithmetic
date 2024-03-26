@@ -13,7 +13,7 @@ public class SignUpController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	
+	private javafx.scene.control.Button signUpButton;
 	
     public void switchToSignInScene(ActionEvent event) throws IOException {
     	Parent root = FXMLLoader.load(getClass().getResource("view/SignIn.fxml"));
@@ -26,11 +26,10 @@ public class SignUpController {
         stage.show();
     }
     public void switchToTopic(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
-		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+    	StartController startCon = new StartController();
+    	Stage stage = (Stage) signUpButton.getScene().getWindow();
+    	stage.close();
+    	startCon.switchToTopicScene(event);
 	}
     public void signUpButtonClick(ActionEvent event) throws IOException {
 

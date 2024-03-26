@@ -49,8 +49,6 @@ public class SignInController {
     	Stage stage = (Stage) loginButton.getScene().getWindow();
     	stage.close();
     	startCon.switchToTopicScene(event);
-    	
-		
 	}
     public void back(ActionEvent event) throws IOException {
     	Stage stage = (Stage) backButton.getScene().getWindow();
