@@ -17,6 +17,7 @@ public class StartMenu extends Application {
         String leadboardCss = this.getClass().getResource("css/Leaderboard.css").toExternalForm();
         stage.setTitle("Arcane Arithmetic");
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.setResizable(false);
         stage.show();
     }

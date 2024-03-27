@@ -23,41 +23,18 @@ public class SignInController {
 	private BorderPane pane;
 	@FXML
 	private javafx.scene.control.Button backButton, loginButton;
-	
-	String css = this.getClass().getResource("css/SignIn.css").toExternalForm();
-	
-	public void switchToSignInScene(ActionEvent event) throws IOException {
-		Stage window = new Stage();
-		window.initModality(Modality.APPLICATION_MODAL);
-		pane = (BorderPane) FXMLLoader.load(getClass().getResource("view/SignIn.fxml"));
-		scene = new Scene(pane);
-		scene.getStylesheets().add(css);
-		window.setScene(scene);
-		window.showAndWait();
+
+	public void switchToSignUpScene(ActionEvent event) throws IOException {
+		StartController SUCon = new StartController();
+		SUCon.switchToSignUpScene(event);
 	}
-    public void switchToSignUpScene(ActionEvent event) throws IOException {
-    	root = FXMLLoader.load(getClass().getResource("view/SignUp.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        String SUcss = this.getClass().getResource("css/SignUp.css").toExternalForm();
-        scene = new Scene(root);
-        scene.getStylesheets().add(SUcss);
-        stage.setScene(scene);
-        stage.show();
-    }
+
     public void switchToTopic(ActionEvent event) throws IOException {
-    	StartController startCon = new StartController();
-    	Stage stage = (Stage) loginButton.getScene().getWindow();
-    	stage.close();
-    	startCon.switchToTopicScene(event);
+    	StartController SCCon = new StartController();
+		SCCon.switchToTopicScene(event);
 	}
     public void back(ActionEvent event) throws IOException {
-    	Stage stage = (Stage) backButton.getScene().getWindow();
-    	stage.close();
-		StartMenu SUCon = new StartMenu();
-		Stage startStage = new Stage();
-		SUCon.start(startStage);
-    }
-    public void signInButtonClick(ActionEvent event) throws IOException {
-
+		StartController SCCon = new StartController();
+		SCCon.switchToStartMenu(event);
     }
 }

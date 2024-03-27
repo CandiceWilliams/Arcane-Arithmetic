@@ -17,10 +17,7 @@ public class DifficultyController {
 	private Parent root;
 	
 	public void switchToTopic(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
-		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		StartController SCCon = new StartController();
+		SCCon.switchToTopicScene(event);
 	}	
 }
