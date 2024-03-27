@@ -21,9 +21,8 @@ public class StartController {
 
 	
 	public void openTutorial(ActionEvent event) throws IOException {
-		TutorialController tutcon = new TutorialController();
-		tutcon.switchToPage1(event);
-
+		tutcon.switchToQuestionTypeMC(event);
+		
 	}
 
 	public void switchToSignInScene(ActionEvent event) throws IOException {
