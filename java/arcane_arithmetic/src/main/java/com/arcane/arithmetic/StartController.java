@@ -18,10 +18,10 @@ public class StartController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	@FXML
-	private Button startButton;
+	@FXML private Button startButton, settingButton;
 	
 	TutorialController tutcon = new TutorialController();
+	SettingsController settingsCon = new SettingsController();
 	SignInController SIcon = new SignInController();
 	ExitController Exitcon = new ExitController();
 	
@@ -29,8 +29,15 @@ public class StartController {
 		tutcon.startTutorial(event);
 
 	}
+
+	public void openSettings(ActionEvent event) throws IOException {
+		Stage thisStage = (Stage)settingButton.getScene().getWindow();
+		settingsCon.startSettings(event, thisStage);
+
+	}
+
 	public void openSignIn(ActionEvent event) throws IOException {
-		Stage thisStage = (Stage) startButton.getScene().getWindow();
+		Stage thisStage = (Stage)startButton.getScene().getWindow();
 		SIcon.popUpSignInScene(event, thisStage);
 	}
 	public void openExit(ActionEvent event) throws IOException {
@@ -42,28 +49,6 @@ public class StartController {
 		Parent root = FXMLLoader.load(getClass().getResource("view/StartMenu.fxml"));
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.centerOnScreen();
-		stage.show();
-	}
-
-	public void switchToSignInScene(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("view/SignIn.fxml"));
-		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
-		scene = new Scene(root);
-		String SIcss = this.getClass().getResource("css/SignUp.css").toExternalForm();
-		scene.getStylesheets().add(SIcss);
-		stage.setScene(scene);
-		stage.centerOnScreen();
-		stage.show();
-    }
-
-	public void switchToSignUpScene(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("view/SignUp.fxml"));
-		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		String SUcss = this.getClass().getResource("css/SignUp.css").toExternalForm();
-		scene.getStylesheets().add(SUcss);
 		stage.setScene(scene);
 		stage.centerOnScreen();
 		stage.show();

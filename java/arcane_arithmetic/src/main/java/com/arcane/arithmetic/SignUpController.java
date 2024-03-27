@@ -14,7 +14,7 @@ public class SignUpController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	public static Stage startMenuStage;
+	private static Stage startMenuStage;
 
 	@FXML
     private javafx.scene.control.Button signUpButton;
@@ -29,5 +29,9 @@ public class SignUpController {
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
 		scene = new Scene(root);
 		startMenuStage.setScene(scene);
+	}
+
+	public static void storeStartMenuStage(Stage startMenuStage){
+		SignUpController.startMenuStage = startMenuStage;
 	}
 }

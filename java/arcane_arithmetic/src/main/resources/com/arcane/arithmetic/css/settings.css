@@ -1,0 +1,29 @@
+@font-face {
+	src: url('../assets/fonts/VinqueRg.otf');
+}
+.root{
+    -fx-border-radius: 25px;
+    -fx-background-image: url('../assets/imgs/settingsBackgroundImage.jpg');
+}
+
+#optionsLabel{
+    -fx-font-family: 'Vinque Rg';
+    -fx-alignment: center;
+    -fx-font-size: 40px;
+    -fx-background-color: black;
+}
+
+#soundEffectsLabel, #musicLabel, #fullScreenLabel{
+    -fx-font-family: 'Vinque Rg';
+    -fx-alignment: center;
+    -fx-font-size: 25px;
+    -fx-background-color: black;
+}
+
+#soundCheckBox > .box, #musicCheckBox > .box, #fullScreenCheckBox > .box{
+    -fx-padding: 10px;
+}
+
+#soundCheckBox > .box > .mark, #musicCheckBox > .box > .mark, #fullScreenCheckBox > .box > .mark{
+    -fx-padding: 10px;
+}

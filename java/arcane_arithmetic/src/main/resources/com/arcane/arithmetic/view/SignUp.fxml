@@ -9,7 +9,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.SignUpController">
     <top>
-        <AnchorPane prefHeight="396.0" prefWidth="725.0" stylesheets="@../css/SignUp.css" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="396.0" prefWidth="725.0" stylesheets="@../css/signUp.css" BorderPane.alignment="CENTER">
             <children>
                 <Label fx:id="signUpLabel" layoutX="7.0" layoutY="6.0" prefHeight="49.0" prefWidth="711.0" text="  Create a new account">
                     <font>
