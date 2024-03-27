@@ -14,15 +14,20 @@ public class SignUpController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+	public static Stage startMenuStage;
+
 	@FXML
     private javafx.scene.control.Button signUpButton;
 
     public void switchToSignInScene(ActionEvent event) throws IOException {
-        StartController SUCon = new StartController();
-        SUCon.switchToSignInScene(event);
+        SignInController SICon = new SignInController();
+        SICon.switchToSignInScene(event);
     }
     public void switchToTopic(ActionEvent event) throws IOException {
-    	StartController startCon = new StartController();
-    	startCon.switchToTopicScene(event);
+		Stage stage = (Stage)signUpButton.getScene().getWindow();
+		stage.close();
+		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
+		scene = new Scene(root);
+		startMenuStage.setScene(scene);
 	}
 }
