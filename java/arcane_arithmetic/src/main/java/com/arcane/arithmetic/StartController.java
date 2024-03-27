@@ -10,18 +10,27 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 public class StartController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+	@FXML
+	private Button startButton;
 	
 	TutorialController tutcon = new TutorialController();
+	SignInController SIcon = new SignInController();
 	
 	public void openTutorial(ActionEvent event) throws IOException {
 		tutcon.startTutorial(event);
 
+	}
+	public void openSignIn(ActionEvent event) throws IOException {
+		Stage thisStage = (Stage) startButton.getScene().getWindow();
+		SIcon.popUpSignInScene(event, thisStage);
 	}
 
 	public void switchToStartMenu(ActionEvent event) throws IOException {
