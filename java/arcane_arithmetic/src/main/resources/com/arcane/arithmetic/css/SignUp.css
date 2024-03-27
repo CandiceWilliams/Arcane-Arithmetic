@@ -3,7 +3,7 @@
 }
 
 .root{
-	-fx-background-image:url("../assets/imgs/sign-in-up-background-image.jpg");
+	-fx-background-image: url("../assets/imgs/sign-in-up-background.jpg");
 	-fx-background-size: stretch;
 }
 
@@ -22,4 +22,29 @@
 	-fx-text-fill: #ffbdd6;
 	-fx-font-size: 25;
 	-fx-font-weight: bold;
+}
+.button{
+	-fx-background-color: #d50fd9;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #fc9dee;	
+	-fx-font-size: 18;
+	-fx-border-color: #a80aab;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 3;
+}
+.button:hover{
+	-fx-background-color: #e92fed;	
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #fc74e8;	
+	-fx-font-size: 18;
+	-fx-text-fill: #f2bfeb;
+}
+.button:pressed{
+	-fx-background-color: #bf29c2;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #fc74e8;	
+	-fx-font-size: 18;
 }

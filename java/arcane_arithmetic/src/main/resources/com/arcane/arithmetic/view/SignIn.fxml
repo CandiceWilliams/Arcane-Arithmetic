@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.SignInController">
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.SignInController">
     <top>
-        <AnchorPane prefHeight="396.0" prefWidth="725.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="396.0" prefWidth="725.0" stylesheets="@../css/SignIn.css" BorderPane.alignment="CENTER">
             <children>
                 <Label fx:id="signInLabel" layoutX="5.0" layoutY="6.0" prefHeight="50.0" prefWidth="712.0" text="  Sign in to access your account">
                     <font>
@@ -23,7 +23,7 @@
                     </font>
                 </Label>
                 <TextField layoutX="235.0" layoutY="92.0" prefHeight="26.0" prefWidth="447.0" promptText="enter username" />
-                <Button fx:id="loginButton" layoutX="235.0" layoutY="238.0" mnemonicParsing="false" onAction="#signInButtonClick" prefHeight="42.0" prefWidth="307.0" text="Let's Do This!">
+                <Button fx:id="loginButton" layoutX="235.0" layoutY="238.0" mnemonicParsing="false" onAction="#switchToTopic" prefHeight="42.0" prefWidth="307.0" styleClass="textButton" text="Let's Do This!">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -33,7 +33,7 @@
                         <Font size="24.0" />
                     </font>
                 </Label>
-                <Hyperlink layoutX="220.0" layoutY="344.0" onAction="#switchToSignUpScene" text="Click here to create a new account">
+                <Hyperlink layoutX="220.0" layoutY="344.0" onAction="#switchToSignUpScene" stylesheets="@../css/SignIn.css" text="Click here to create a new account">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -44,6 +44,7 @@
                     </font>
                 </Label>
                 <TextField layoutX="235.0" layoutY="165.0" prefHeight="26.0" prefWidth="447.0" promptText="enter password" />
+            <Button fx:id="backButton" layoutX="42.0" layoutY="230.0" mnemonicParsing="false" onAction="#back" prefHeight="58.0" prefWidth="58.0" styleClass="backButton" stylesheets="@../css/SignIn.css" />
             </children>
         </AnchorPane>
     </top>
