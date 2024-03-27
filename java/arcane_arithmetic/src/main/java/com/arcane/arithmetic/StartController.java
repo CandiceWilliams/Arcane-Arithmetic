@@ -20,7 +20,7 @@ public class StartController {
 	TutorialController tutcon = new TutorialController();
 	
 	public void openTutorial(ActionEvent event) throws IOException {
-		tutcon.switchToQuestionTypeMC(event);
+		tutcon.startTutorial(event);
 
 	}
 
