@@ -18,8 +18,7 @@ public class StartController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	@FXML
-	private Button startButton;
+	@FXML private Button startButton, settingButton;
 	
 	TutorialController tutcon = new TutorialController();
 	SettingsController settingsCon = new SettingsController();
@@ -31,12 +30,13 @@ public class StartController {
 	}
 
 	public void openSettings(ActionEvent event) throws IOException {
-		settingsCon.startSettings(event);
+		Stage thisStage = (Stage)settingButton.getScene().getWindow();
+		settingsCon.startSettings(event, thisStage);
 
 	}
 
 	public void openSignIn(ActionEvent event) throws IOException {
-		Stage thisStage = (Stage) startButton.getScene().getWindow();
+		Stage thisStage = (Stage)startButton.getScene().getWindow();
 		SIcon.popUpSignInScene(event, thisStage);
 	}
 

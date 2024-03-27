@@ -17,13 +17,13 @@ public class SignInController {
 	public Stage stage;
 	public Scene scene;
 	public Parent root;
-	public static Stage startMenuStage;
+	private static Stage startMenuStage;
 
 	@FXML private BorderPane pane;
 	@FXML private Button backButton, loginButton;
 
 	public void popUpSignInScene(ActionEvent event, Stage startMenuStage) throws IOException {
-		SignInController.startMenuStage = startMenuStage; SignUpController.startMenuStage = startMenuStage;
+		storeStartMenuStage(startMenuStage); SignUpController.storeStartMenuStage(startMenuStage);
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);
 		pane = (BorderPane) FXMLLoader.load(getClass().getResource("view/SignIn.fxml"));
@@ -66,4 +66,8 @@ public class SignInController {
 		Stage stage = (Stage)backButton.getScene().getWindow();
 		stage.close();
     }
+
+	public static void storeStartMenuStage(Stage startMenuStage){
+		SignInController.startMenuStage = startMenuStage;
+	}
 }
