@@ -8,8 +8,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -21,10 +19,8 @@ public class SignInController {
 	public Parent root;
 	public static Stage startMenuStage;
 
-	@FXML
-	private BorderPane pane;
-	@FXML
-	private javafx.scene.control.Button backButton, loginButton;
+	@FXML private BorderPane pane;
+	@FXML private Button backButton, loginButton;
 
 	public void popUpSignInScene(ActionEvent event, Stage startMenuStage) throws IOException {
 		SignInController.startMenuStage = startMenuStage; SignUpController.startMenuStage = startMenuStage;
@@ -32,7 +28,7 @@ public class SignInController {
 		window.initModality(Modality.APPLICATION_MODAL);
 		pane = (BorderPane) FXMLLoader.load(getClass().getResource("view/SignIn.fxml"));
 		scene = new Scene(pane);
-		String SIcss = this.getClass().getResource("css/SignIn.css").toExternalForm();
+		String SIcss = this.getClass().getResource("css/signIn.css").toExternalForm();
 		scene.getStylesheets().add(SIcss);
 		window.setScene(scene);
 		window.showAndWait();
@@ -42,7 +38,7 @@ public class SignInController {
 		root = FXMLLoader.load(getClass().getResource("view/SignIn.fxml"));
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
-		String SIcss = this.getClass().getResource("css/SignIn.css").toExternalForm();
+		String SIcss = this.getClass().getResource("css/signIn.css").toExternalForm();
 		scene.getStylesheets().add(SIcss);
 		stage.setScene(scene);
 		stage.show();
@@ -52,7 +48,7 @@ public class SignInController {
 		root = FXMLLoader.load(getClass().getResource("view/SignUp.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
-		String SUcss = this.getClass().getResource("css/SignUp.css").toExternalForm();
+		String SUcss = this.getClass().getResource("css/signUp.css").toExternalForm();
 		scene.getStylesheets().add(SUcss);
 		stage.setScene(scene);
 		stage.show();
