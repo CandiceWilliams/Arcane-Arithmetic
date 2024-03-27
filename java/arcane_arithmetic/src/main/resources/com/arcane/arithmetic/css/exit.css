@@ -1,0 +1,35 @@
+@font-face {
+	src: url('../assets/fonts/VinqueRg.otf');
+}
+.root{
+	-fx-background-image:url('../assets/imgs/sign-in-up-background.jpg');
+	-fx-background-size: stretch;
+}
+.Label{
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #a6bcf5;
+}
+.button{
+	-fx-background-color: #6392db;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #a6bcf5;	
+	-fx-font-size: 30;
+	-fx-border-color: #4571b5;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 5;
+}
+.button:hover{
+	-fx-background-color: #79a7ed;	
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #4571b5;	
+	-fx-font-size: 30;
+}
+.button:pressed{
+	-fx-background-color: #547ebf;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #4571b5;	
+	-fx-font-size: 30;
+}

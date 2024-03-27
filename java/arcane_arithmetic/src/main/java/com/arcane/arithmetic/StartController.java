@@ -23,6 +23,7 @@ public class StartController {
 	
 	TutorialController tutcon = new TutorialController();
 	SignInController SIcon = new SignInController();
+	ExitController Exitcon = new ExitController();
 	
 	public void openTutorial(ActionEvent event) throws IOException {
 		tutcon.startTutorial(event);
@@ -31,6 +32,10 @@ public class StartController {
 	public void openSignIn(ActionEvent event) throws IOException {
 		Stage thisStage = (Stage) startButton.getScene().getWindow();
 		SIcon.popUpSignInScene(event, thisStage);
+	}
+	public void openExit(ActionEvent event) throws IOException {
+		Stage thisStage = (Stage) startButton.getScene().getWindow();
+		Exitcon.popUpExitScene(event, thisStage);
 	}
 
 	public void switchToStartMenu(ActionEvent event) throws IOException {

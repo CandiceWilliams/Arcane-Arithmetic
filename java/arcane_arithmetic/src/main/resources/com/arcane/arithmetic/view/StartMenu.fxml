@@ -46,7 +46,7 @@
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="exitButton" maxHeight="85.0" maxWidth="85.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" styleClass="exitButton" stylesheets="@../css/iconButton.css" />
+            <Button fx:id="exitButton" maxHeight="85.0" maxWidth="85.0" minHeight="85.0" minWidth="85.0" mnemonicParsing="false" onAction="#openExit" prefHeight="85.0" prefWidth="85.0" styleClass="exitButton" stylesheets="@../css/iconButton.css" />
             <VBox alignment="BOTTOM_RIGHT" prefHeight="130.0" prefWidth="724.0">
                <children>
                   <Text fill="#934da1" strokeType="OUTSIDE" strokeWidth="0.0" text="Group 49">
