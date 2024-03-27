@@ -35,6 +35,7 @@ public class SettingsController {
             scene = new Scene(pane);
             scene.getStylesheets().add(css);
             window.setScene(scene);
+            window.setTitle("Settings");
             window.showAndWait();
         }
         else {

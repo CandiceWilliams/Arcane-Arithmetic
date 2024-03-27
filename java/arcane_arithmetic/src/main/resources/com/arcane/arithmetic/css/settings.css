@@ -3,21 +3,25 @@
 }
 .root{
     -fx-border-radius: 25px;
-    -fx-background-image: url('../assets/imgs/settingsBackgroundImage.jpg');
+    -fx-background-image: url('../assets/imgs/settings-background.jpg');
 }
 
 #optionsLabel{
     -fx-font-family: 'Vinque Rg';
     -fx-alignment: center;
     -fx-font-size: 40px;
-    -fx-background-color: black;
+    -fx-background-color: #fa9e69;
+    -fx-border-color: #fa9155;
+    -fx-border-width:7;
 }
 
 #soundEffectsLabel, #musicLabel, #fullScreenLabel{
     -fx-font-family: 'Vinque Rg';
     -fx-alignment: center;
     -fx-font-size: 25px;
-    -fx-background-color: black;
+    -fx-background-color: #fcac7e;
+    -fx-border-color: #fa965c;
+    -fx-border-width: 5;
 }
 
 #soundCheckBox > .box, #musicCheckBox > .box, #fullScreenCheckBox > .box{
@@ -26,4 +30,28 @@
 
 #soundCheckBox > .box > .mark, #musicCheckBox > .box > .mark, #fullScreenCheckBox > .box > .mark{
     -fx-padding: 10px;
+}
+.button{
+	-fx-background-color: #ff8d5c;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: white;	
+	-fx-font-size: 24;
+	-fx-border-color: #e37444;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 5;
+}
+.button:hover{
+	-fx-background-color: #ff9f75;	
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #4571b5;	
+	-fx-font-size: 24;
+}
+.button:pressed{
+	-fx-background-color: #f77339;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #4571b5;	
+	-fx-font-size: 24;
 }
