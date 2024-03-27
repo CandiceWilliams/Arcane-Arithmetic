@@ -1,0 +1,48 @@
+@font-face {
+	src: url('../assets/fonts/VinqueRg.otf');
+}
+.root{
+    -fx-border-radius: 25px;
+    -fx-background-color: black;
+}
+
+#book{
+    -fx-background-size: stretch;
+    -fx-background-image: url("../assets/imgs/openedbook_pixelart.png");
+}
+.button{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+#circle{
+    -fx-fill: #f4bc8c;
+}
+
+#circle.curr{
+    -fx-fill: #a57855;
+}
+
+#text{
+    -fx-font-family: 'Garamond';
+    -fx-font-size: 15px;
+    -fx-line-spacing: 2px;
+}
+
+#title{
+    -fx-font-family: 'Vinque Rg';
+    -fx-text-alignment: center;
+    -fx-font-size: 25px;
+}
+
+#subtitle{
+    -fx-font-family: 'Vinque Rg';
+    -fx-text-alignment: center;
+    -fx-font-size: 21px;
+}
+label{
+    -fx-text-alignment: center;
+}
+
+
+

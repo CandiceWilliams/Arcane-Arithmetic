@@ -19,7 +19,7 @@ public class StartController {
 
 
 	public void openTutorial(ActionEvent event) throws IOException {
-		tutcon.switchToPage1(event);
+		tutcon.switchToQuestionTypeMC(event);
 
 	}
 
