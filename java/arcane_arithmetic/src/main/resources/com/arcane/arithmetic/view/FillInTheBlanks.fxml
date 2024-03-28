@@ -3,40 +3,81 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/multiplechoice.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.FillInTheBlanksController">
-   <children>
-      <HBox alignment="CENTER" prefHeight="78.0" prefWidth="1280.0" styleClass="topbar">
+
+<BorderPane stylesheets="@../css/fillintheblanks.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.FillInTheBlanksController">
+   <center>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="1280.0" stylesheets="@../css/multiplechoice.css">
          <children>
-            <Label prefHeight="78.0" prefWidth="426.0" text=" Question 1/20">
+            <GridPane prefHeight="244.0" prefWidth="1280.0" styleClass="mcAnswerBox">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="419.0585632324219" minWidth="10.0" prefWidth="172.86552734375" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="932.372314453125" minWidth="10.0" prefWidth="868.13447265625" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.05865478515625" minWidth="10.0" prefWidth="157.627685546875" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="90.59313049316407" minHeight="10.0" prefHeight="59.293093872070315" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="175.6793025970459" minHeight="10.0" prefHeight="147.9069061279297" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Text fx:id="questionText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="question" text="1231231232131" textAlignment="CENTER" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </GridPane>
+            <GridPane prefHeight="326.0" prefWidth="1280.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="417.9241027832031" minWidth="10.0" prefWidth="201.98618774414064" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="935.3517089843751" minWidth="10.0" prefWidth="867.8896484375001" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.76556396484375" minWidth="10.0" prefWidth="182.7103515624999" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="218.8" minHeight="10.0" prefHeight="166.91033325195312" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="101.45862426757813" minHeight="0.0" prefHeight="6.837908935546864" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="152.36209106445312" minHeight="10.0" prefHeight="152.36209106445312" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="ansText" prefHeight="73.0" prefWidth="782.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Button fx:id="submitButton" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="94.0" prefWidth="299.0" styleClass="submitButton" stylesheets="@../css/fillintheblanks.css" text="Submit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="78.0" prefWidth="1280.0" styleClass="topbar" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="questionNum" prefHeight="78.0" prefWidth="426.0" text=" Question 1/20">
                <font>
                   <Font size="30.0" />
-               </font></Label>
-            <Label alignment="CENTER" prefHeight="78.0" prefWidth="426.0" text="Time Remaining: 60s">
+               </font>
+            </Label>
+            <Label fx:id="timeRemaining" alignment="CENTER" prefHeight="78.0" prefWidth="426.0" text="Time Remaining: 60s">
                <font>
                   <Font size="30.0" />
-               </font></Label>
-            <Label alignment="CENTER_RIGHT" prefHeight="78.0" prefWidth="426.0" text="Total Points: 0 ">
+               </font>
+            </Label>
+            <Label fx:id="points" alignment="CENTER_RIGHT" prefHeight="78.0" prefWidth="426.0" text="Total Points: 0 ">
                <font>
                   <Font size="30.0" />
-               </font></Label>
+               </font>
+            </Label>
          </children>
       </HBox>
-      <Pane prefHeight="234.0" prefWidth="1280.0">
-         <children>
-            <Label layoutX="240.0" layoutY="15.0" prefHeight="166.0" prefWidth="829.0" styleClass="question" text="ouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknafouhiflajfaknaf" />
-         </children>
-      </Pane>
-      <Pane prefHeight="329.0" prefWidth="1280.0" styleClass="mcAnswerBox">
-         <children>
-            <TextField layoutX="254.0" layoutY="70.0" prefHeight="73.0" prefWidth="782.0" />
-            <Button layoutX="538.0" layoutY="180.0" mnemonicParsing="false" onAction="#submitAnswer" prefHeight="88.0" prefWidth="217.0" styleClass="submitButton" stylesheets="@../css/fillintheblanks.css" text="Submit" />
-         </children>
-      </Pane>
-      <HBox prefHeight="76.0" prefWidth="1280.0" styleClass="bottombar" stylesheets="@../css/multiplechoice.css" />
-   </children>
-</VBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="76.0" prefWidth="1280.0" styleClass="bottombar" stylesheets="@../css/multiplechoice.css" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

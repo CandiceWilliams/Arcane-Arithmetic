@@ -100,11 +100,11 @@
 	-fx-font-weight: bold;
 }
 .question{
-	-fx-font-family: "Vinque Rg";
+	-fx-font-family: 'Garamond';
 	-fx-text-fill: #fad2f7;
-	-fx-font-size: 36;
+	-fx-font-size: 60;
 	-fx-font-weight: bold;
-}
+}	
 .topbar{
 	-fx-background-image: url('../assets/imgs/topbar.png');
 	-fx-background-size: stretch;
