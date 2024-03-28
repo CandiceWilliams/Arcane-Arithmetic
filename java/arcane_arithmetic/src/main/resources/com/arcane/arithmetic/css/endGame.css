@@ -1,0 +1,39 @@
+@font-face {
+	src: url('../assets/fonts/VinqueRg.otf');
+}
+.root{
+	-fx-background-image:url('../assets/imgs/endgame-bg.jpg');
+	-fx-background-size: repeat;
+}
+.topLabel{
+	-fx-background-image:url('../assets/imgs/endgame-toplabel.png');
+	-fx-background-size: stretch;
+	-fx-font-family: 'Garamond';
+	-fx-text-fill: white;
+	-fx-font-size: 46;
+	-fx-font-weight: bold;
+}
+.scoreText{
+	-fx-font-family: "Vinque Rg";
+	-fx-text-fill: white;
+	-fx-font-size: 60;
+	-fx-font-weight: bold;
+}
+.nextButton{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-image: url('../assets/imgs/Icon_ArrowUp_1.png');
+    -fx-background-size: stretch;
+}
+.nextButton:hover{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-image: url('../assets/imgs/Icon_ArrowUp_1_hover.png');
+    -fx-background-size: stretch;
+}
+.nextButton:pressed{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-image: url('../assets/imgs/Icon_ArrowUp_1_clicked.png');
+    -fx-background-size: stretch;
+}
