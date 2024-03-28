@@ -1,0 +1,119 @@
+@font-face {
+	src: url('../assets/fonts/VinqueRg.otf');
+}
+.root{
+	-fx-background-image:url('../assets/imgs/multiplechoice-background.gif');
+	-fx-background-size: stretch;
+}
+.buttonA{
+	-fx-background-color: #ff5ca0;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #ffc9e0;	
+	-fx-font-size: 45;
+	-fx-border-color: #ff2b84;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 5;
+}
+.buttonA:hover{
+	-fx-background-color: #fa78ae;	
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-font-size: 45;
+}
+.buttonA:pressed{
+	-fx-background-color: #ff4291;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-font-size: 45;
+}
+.buttonB{
+	-fx-background-color: #69e1ff;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #cbeef7;	
+	-fx-font-size: 45;
+	-fx-border-color: #28d2fc;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 5;
+}
+.buttonB:hover{
+	-fx-background-color: #8be6fc;	
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-font-size: 45;
+}
+.buttonB:pressed{
+	-fx-background-color: #13c2ed;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-font-size: 45;
+}
+.buttonC{
+	-fx-background-color: #fff34a;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #fffbc7;	
+	-fx-font-size: 45;
+	-fx-border-color: #e3d512;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 5;
+}
+.buttonC:hover{
+	-fx-background-color: #fcf477;	
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-font-size: 45;
+}
+.buttonC:pressed{
+	-fx-background-color: #ebde2a;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-font-size: 45;
+}
+.buttonD{
+	-fx-background-color: #54ff45;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #befcb8;	
+	-fx-font-size: 45;
+	-fx-border-color: #21e010;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 5;
+}
+.buttonD:hover{
+	-fx-background-color: #80fa75;	
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-font-size: 45;
+}
+.buttonD:pressed{
+	-fx-background-color: #24eb13;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-font-size: 45;
+}
+.label{
+	-fx-font-family: "Vinque Rg";
+	-fx-text-fill: white;
+	-fx-font-size: 36;
+	-fx-font-weight: bold;
+}
+.question{
+	-fx-font-family: "Vinque Rg";
+	-fx-text-fill: #fad2f7;
+	-fx-font-size: 36;
+	-fx-font-weight: bold;
+}
+.topbar{
+	-fx-background-image: url('../assets/imgs/topbar.png');
+	-fx-background-size: stretch;
+}
+.bottombar{
+	-fx-background-image: url('../assets/imgs/bottombar.png');
+	-fx-background-size: stretch;
+}
+.mcAnswerBox{
+	-fx-background-image: url('../assets/imgs/multiplechoice-answer-bg.png');
+	-fx-background-size: stretch;
+}
