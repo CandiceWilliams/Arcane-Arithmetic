@@ -35,6 +35,7 @@ public class SignInController {
 	}
 
 	public void switchToSignInScene(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		root = FXMLLoader.load(getClass().getResource("view/SignIn.fxml"));
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
@@ -45,6 +46,7 @@ public class SignInController {
 	}
 
 	public void switchToSignUpScene(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		root = FXMLLoader.load(getClass().getResource("view/SignUp.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
@@ -55,6 +57,7 @@ public class SignInController {
 	}
 
     public void switchToTopic(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		Stage stage = (Stage)loginButton.getScene().getWindow();
 		stage.close();
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
@@ -63,6 +66,7 @@ public class SignInController {
 	}
 
     public void back(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		Stage stage = (Stage)backButton.getScene().getWindow();
 		stage.close();
     }

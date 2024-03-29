@@ -20,10 +20,12 @@ public class SignUpController {
     private javafx.scene.control.Button signUpButton;
 
     public void switchToSignInScene(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
         SignInController SICon = new SignInController();
         SICon.switchToSignInScene(event);
     }
     public void switchToTopic(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		Stage stage = (Stage)signUpButton.getScene().getWindow();
 		stage.close();
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));

@@ -26,26 +26,30 @@ public class StartController {
 	ExitController Exitcon = new ExitController();
 	
 	public void openTutorial(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		tutcon.startTutorial(event);
 
 	}
 
 	public void openSettings(ActionEvent event) throws IOException {
-		Stage thisStage = (Stage)settingButton.getScene().getWindow();
-		settingsCon.startSettings(event, thisStage);
-
+		SettingsController.settingsCon.loadSound();
+		Stage thisStage = (Stage)startButton.getScene().getWindow();
+		settingsCon.startSettings(event);
 	}
 
 	public void openSignIn(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		Stage thisStage = (Stage)startButton.getScene().getWindow();
 		SIcon.popUpSignInScene(event, thisStage);
 	}
 	public void openExit(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		Stage thisStage = (Stage) startButton.getScene().getWindow();
 		Exitcon.popUpExitScene(event, thisStage);
 	}
 
 	public void switchToStartMenu(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/StartMenu.fxml"));
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
@@ -55,6 +59,7 @@ public class StartController {
 	}
 	
 	public void switchToTopicScene(ActionEvent event) throws IOException{
+		SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
@@ -64,6 +69,7 @@ public class StartController {
 	}
 	
 	public void switchToLeaderboard(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/Leaderboard.fxml"));
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
@@ -73,6 +79,7 @@ public class StartController {
 	}
 
 	public void switchToDifficulty(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseDifficulty.fxml"));
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);

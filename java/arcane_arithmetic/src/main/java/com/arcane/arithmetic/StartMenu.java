@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class StartMenu extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StartMenu.class.getResource("view/StartMenu.fxml"));
@@ -20,6 +21,7 @@ public class StartMenu extends Application {
         stage.centerOnScreen();
         stage.setResizable(false);
         stage.show();
+        SettingsController.settingsCon.initSettings(stage);
     }
 
     public static void main(String[] args) {
