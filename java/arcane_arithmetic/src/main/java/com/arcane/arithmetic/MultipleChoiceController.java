@@ -45,16 +45,16 @@ public class MultipleChoiceController {
 		ans4.setText("ans4");
 	}
 	public void answerA(ActionEvent event){
-		
+		SettingsController.settingsCon.loadSound();
 	}
 	public void answerB(ActionEvent event){
-		
+		SettingsController.settingsCon.loadSound();
 	}
 	public void answerC(ActionEvent event){
-	
+		SettingsController.settingsCon.loadSound();
 	}
 	public void answerD(ActionEvent event){
-	
+		SettingsController.settingsCon.loadSound();
 	}
 
 }

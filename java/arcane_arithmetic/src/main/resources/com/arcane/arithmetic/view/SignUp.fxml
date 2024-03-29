@@ -44,6 +44,10 @@
                 </Button>
                 <TextField layoutX="284.0" layoutY="166.0" prefHeight="26.0" prefWidth="405.0" promptText="enter new password" />
                 <TextField layoutX="284.0" layoutY="245.0" prefHeight="26.0" prefWidth="405.0" promptText="re-enter password" />
+            <Label fx:id="existedUsername" layoutX="284.0" layoutY="122.0" prefHeight="18.0" prefWidth="397.0" styleClass="errorLabel" text="Username already exists." visible="false" />
+            <Label fx:id="pwSpecial" layoutX="284.0" layoutY="198.0" prefHeight="18.0" prefWidth="397.0" styleClass="errorLabel" text="Password must not contain special characters." visible="false" />
+            <Label fx:id="pwDiff" layoutX="284.0" layoutY="276.0" prefHeight="18.0" prefWidth="397.0" styleClass="errorLabel" text="Password is different." visible="false" />
+            <Label fx:id="usernameTooLong" layoutX="284.0" layoutY="140.0" prefHeight="18.0" prefWidth="397.0" styleClass="errorLabel" text="Username must be between 3 and 12 characters." visible="false" />
             </children>
         </AnchorPane>
     </top>

@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -21,6 +22,7 @@ public class SignInController {
 
 	@FXML private BorderPane pane;
 	@FXML private Button backButton, loginButton;
+	@FXML private Label errorLabel;
 
 	public void popUpSignInScene(ActionEvent event, Stage startMenuStage) throws IOException {
 		storeStartMenuStage(startMenuStage); SignUpController.storeStartMenuStage(startMenuStage);
@@ -58,11 +60,14 @@ public class SignInController {
 
     public void switchToTopic(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
+		//if username exists
 		Stage stage = (Stage)loginButton.getScene().getWindow();
 		stage.close();
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
 		scene = new Scene(root);
 		startMenuStage.setScene(scene);
+//		//if username doesn't exist
+//		errorLabel.setVisible(true);
 	}
 
     public void back(ActionEvent event) throws IOException {

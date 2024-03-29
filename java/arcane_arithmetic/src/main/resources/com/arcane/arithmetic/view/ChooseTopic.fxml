@@ -19,17 +19,17 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" onAction="#switchToDifficulty" prefHeight="175.0" prefWidth="815.0" text="Calculus" GridPane.columnIndex="1">
+      <Button mnemonicParsing="false" onAction="#calculus" prefHeight="175.0" prefWidth="815.0" text="Calculus" GridPane.columnIndex="1">
          <font>
             <Font size="70.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" onAction="#switchToDifficulty" prefHeight="175.0" prefWidth="722.0" text="Linear Algebra" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Button mnemonicParsing="false" onAction="#algebra" prefHeight="175.0" prefWidth="722.0" text="Linear Algebra" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <font>
             <Font size="50.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" onAction="#switchToDifficulty" prefHeight="175.0" prefWidth="630.0" text="Intro Stats" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Button mnemonicParsing="false" onAction="#stats" prefHeight="175.0" prefWidth="630.0" text="Intro Stats" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
             <Font size="70.0" />
          </font>

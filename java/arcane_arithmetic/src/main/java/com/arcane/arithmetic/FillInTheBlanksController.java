@@ -41,6 +41,7 @@ public class FillInTheBlanksController {
 		question.getChildren().add(text);
 	}
 	public void submitAnswer(ActionEvent event){
+		SettingsController.settingsCon.loadSound();
 		if(ansText.getText()=="") {
 			
 		}
