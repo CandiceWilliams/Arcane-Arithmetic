@@ -3,32 +3,59 @@ import json
 import random
 
 class MCQuestions: 
+    """
+    Represents a collection of multiple-choice questions with methods to handle them.
+    """
 
     questions = []
 
     def __init__(self, question, answer, question_id, difficulty, subject, options):
+        """
+        Initializes a MCQuestions object with provided attributes.
+
+        Args:
+            question (str): The main question text.
+            answer (str): The correct answer to the question.
+            question_id (int): Identifier for the question.
+            difficulty (str): Difficulty level of the question.
+            subject (str): Subject category of the question.
+            options (array of str): The list of options for the question.
+        """
+
         self.question = question
         self.answer = answer
         self.question_id = question_id
         self.difficulty = difficulty
         self.subject = subject
         self.options = options 
+        
         MCQuestions.questions.append(self)
 
 
+    def parseJsonFile():
+        """
+        Parses a JSON file containing multiple-choice questions and populates the questions list.
+        """
 
-    def parseJsonFile() :
         with open("MCQuestions.json", 'r') as file:
             data = json.load(file)
 
 
         for obj in data:
             MCQuestions(obj["question"], obj["answer"], obj["question_id"], obj["difficulty"], obj["subject"], obj["options"])
+       
 
-
-
-    # Returns the question with the given ID
+    #Returns the question with the given ID
     def getQuestionByID(id): 
+        """
+        Returns the question with the given ID.
+
+        Args:
+            id (int): The ID of the question to retrieve.
+
+        Returns:
+            MCQuestions or None: The multiple-choice question if found, None otherwise.
+        """
 
         for i in MCQuestions.questions:
             if id == i.question_id :
@@ -36,34 +63,52 @@ class MCQuestions:
 
         return None
 
-
-    # Returns a random question with the given subject
+    #Returns a random question with the given subject
     def getRandomQuestionBySubject(subject):
+        """
+        Returns a random question with the given subject.
+
+        Args:
+            subject (str): The subject category of the question to retrieve.
+
+        Returns:
+            MCQuestions: A random multiple-choice question with the specified subject.
+        """
+
         Qs = []
 
-        # Take all questions with the specified subject
+        #Take all questions with the specified subject
         for i in MCQuestions.questions :
             if i.subject == subject:
                 Qs.append(i)
 
         return random.choice(Qs)
 
+    
+    #Returns a random question with the given difficulty level
+    def getRandomQuestionByDifficulty(difficulty):
+        """
+        Returns a random question with the given difficulty level.
 
-    # Returns a random question with the given difficulty level
-    def getRandomQuestionByDifficulty(difficulty): 
+        Args:
+            difficulty (str): The difficulty level of the question to retrieve.
+
+        Returns:
+            MCQuestions: A random multiple-choice question with the specified difficulty level.
+        """
+
         Qs = []
 
-        # Take all questions with the specified difficulty
+        #Take all questions with the specified difficulty
         for i in MCQuestions.questions :
             if i.difficulty == difficulty:
-                Qs.append(i)
+               Qs.append(i)
 
         return random.choice(Qs)
-
-
+    
 
 MCQuestions.parseJsonFile()
-
 print(MCQuestions.getRandomQuestionBySubject("algebra").question)
 print("\n")
-print(MCQuestions.getRandomQuestionByDifficulty("easy").question)
+print(MCQuestions.getRandomQuestionByDifficulty("easy").options)
+
