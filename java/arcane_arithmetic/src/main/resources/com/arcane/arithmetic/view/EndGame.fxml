@@ -63,7 +63,7 @@
                   <Font size="42.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="127.0" prefWidth="131.0" styleClass="nextButton" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="nextButton" mnemonicParsing="false" prefHeight="127.0" prefWidth="131.0" styleClass="nextButton" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
          </children>
          <VBox.margin>
             <Insets top="30.0" />

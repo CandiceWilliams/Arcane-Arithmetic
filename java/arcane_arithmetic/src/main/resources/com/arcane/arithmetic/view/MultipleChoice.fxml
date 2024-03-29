@@ -28,7 +28,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextFlow prefHeight="66.0" prefWidth="874.0" styleClass="question" stylesheets="@../css/multiplechoice.css" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <TextFlow fx:id="question" prefHeight="66.0" prefWidth="874.0" styleClass="question" stylesheets="@../css/multiplechoice.css" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
                         <Text fx:id="questionText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="question" text="123123123123131" textAlignment="JUSTIFY" wrappingWidth="395.68359375">
                            <font>
