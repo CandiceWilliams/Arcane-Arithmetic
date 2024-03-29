@@ -19,13 +19,10 @@ public class LeaderboardController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-	@FXML
-	private Label yourRanking;
-	@FXML
-	private TableView leaderboardTable;
-	@FXML
-	private TableColumn rankCol, usernameCol, pointsCol;
-	
+	@FXML private Label yourRanking;
+	@FXML private TableView leaderboardTable;
+	@FXML private TableColumn rankCol, usernameCol, pointsCol;
+	String leadboardCss = this.getClass().getResource("css/Leaderboard.css").toExternalForm();
 	
 	public void updateLeaderboard(ActionEvent event) throws IOException {
 		leaderboardTable.setEditable(false);

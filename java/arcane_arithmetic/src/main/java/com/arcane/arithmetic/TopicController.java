@@ -12,11 +12,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class TopicController {
-	private Stage stage;
-	private Scene scene;
-	private Parent root;
 	private String topic;
-	
 	public void calculus(ActionEvent event) throws IOException {
 		topic = "calculus";
 		StartController SCCon = new StartController();

@@ -15,7 +15,6 @@ public class StartMenu extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         String css = this.getClass().getResource("css/StartMenu.css").toExternalForm();
         String buttonCss = this.getClass().getResource("css/iconButton.css").toExternalForm();
-        String leadboardCss = this.getClass().getResource("css/Leaderboard.css").toExternalForm();
         stage.setTitle("Arcane Arithmetic");
         stage.setScene(scene);
         stage.centerOnScreen();

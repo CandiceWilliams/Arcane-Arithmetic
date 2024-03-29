@@ -12,9 +12,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class DifficultyController {
-	private Stage stage;
-	private Scene scene;
-	private Parent root;
 	private String diff; 
 	public void easy(ActionEvent event) throws IOException {
 		diff = "easy";
@@ -31,6 +28,9 @@ public class DifficultyController {
 		StartController SCCon = new StartController();
 		SCCon.switchToTopicScene(event);
 	}	
+	public String getDiff() {
+		return diff;
+	}
 	public void startGame(ActionEvent event) throws IOException {
 		
 	}

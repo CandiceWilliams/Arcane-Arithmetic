@@ -22,15 +22,12 @@ public class FillInTheBlanksController {
 	private Parent root;
 	public int num=0;
 	public int pointsNum=0;
-	@FXML
-	private TextFlow question;
-	@FXML
-	private Label questionNum, timeRemaining, points;
-	@FXML 
-	private TextField ansText;
-	@FXML
-	private Button powerup1,powerup2,powerup3;
+	@FXML private TextFlow question;
+	@FXML private Label questionNum, timeRemaining, points;
+	@FXML private TextField ansText;
+	@FXML private Button powerup1,powerup2,powerup3;
 	String css = this.getClass().getResource("css/multiplechoice.css").toExternalForm();
+	
 	public void createQuestion(ActionEvent event) throws IOException{
 		//Set top bar stats (question number, points)
 		questionNum.setText("Question " + num);

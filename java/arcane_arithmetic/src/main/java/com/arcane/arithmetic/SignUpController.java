@@ -11,16 +11,10 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class SignUpController {
-
-	private Stage stage;
 	private Scene scene;
-	private Parent root;
 	private static Stage startMenuStage;
-
-	@FXML
-    private javafx.scene.control.Button signUpButton;
-	@FXML
-	private Label existedUsername,usernameTooLong,pwSpecial,pwDiff;
+	@FXML private javafx.scene.control.Button signUpButton;
+	@FXML private Label existedUsername,usernameTooLong,pwSpecial,pwDiff;
 
     public void switchToSignInScene(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
