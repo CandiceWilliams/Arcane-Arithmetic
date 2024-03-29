@@ -100,7 +100,11 @@ public class SettingsController {
     public void fullScreenCheckBoxClick(){
         loadSound();
         fullScreenOn = fullScreenCheckBox.isSelected();
-
+        if(fullScreenOn) {
+        	startMenuStage.setMaximized(true);
+        } else {
+        	startMenuStage.setMaximized(false);
+        }
     }
 
     public void back(ActionEvent event) {

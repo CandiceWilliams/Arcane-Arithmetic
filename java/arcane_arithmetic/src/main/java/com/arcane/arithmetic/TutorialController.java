@@ -28,7 +28,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TutorialController {
-    private Stage window = new Stage();
+    private Stage stage;
     private Scene scene;
     @FXML private AnchorPane pane;
     @FXML private Button backSlide;
@@ -86,7 +86,8 @@ public class TutorialController {
 
 
     public void startTutorial(ActionEvent event) throws IOException{
-        window.initModality(Modality.APPLICATION_MODAL);
+    	Stage window = new Stage();
+    	window.initModality(Modality.APPLICATION_MODAL);
         window.resizableProperty().setValue(Boolean.FALSE);
         pane = (AnchorPane) FXMLLoader.load(getClass().getResource("view/Tutorial_1-1.fxml"));
 

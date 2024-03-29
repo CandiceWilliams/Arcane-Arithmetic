@@ -30,13 +30,10 @@
 	-fx-border-color: transparent;
 }
 .labelRanking{
-	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #d9a6f5;
-	-fx-border-color: #330452;
-	-fx-border-width: 5;
-	-fx-background-image: url('../assets/imgs/titleBg.jpg');
-	-fx-background-size: 375;
-	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: "Vinque Rg";
+	-fx-text-fill: white;
+	-fx-font-size: 42;
+	-fx-font-weight: bold;
 }
 .title{
 	-fx-font-family: 'Vinque Rg';
