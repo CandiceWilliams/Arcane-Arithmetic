@@ -10,8 +10,8 @@
     -fx-font-family: 'Vinque Rg';
     -fx-alignment: center;
     -fx-font-size: 40px;
-    -fx-background-color: #fa9e69;
-    -fx-border-color: #fa9155;
+    -fx-background-color: #de4b21;
+    -fx-border-color: #c7350c;
     -fx-border-width:7;
 }
 
@@ -19,8 +19,8 @@
     -fx-font-family: 'Vinque Rg';
     -fx-alignment: center;
     -fx-font-size: 25px;
-    -fx-background-color: #fcac7e;
-    -fx-border-color: #fa965c;
+    -fx-background-color: #de4b21;
+    -fx-border-color: #c7350c;
     -fx-border-width: 5;
 }
 

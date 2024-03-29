@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class LeaderboardController {
@@ -25,6 +26,17 @@ public class LeaderboardController {
 	@FXML
 	private TableColumn rankCol, usernameCol, pointsCol;
 	
+	
+	public void updateLeaderboard(ActionEvent event) throws IOException {
+		leaderboardTable.setEditable(false);
+//		rankCol.setCellValueFactory(new PropertyValueFactory<>("rank"));
+//		usernameCol.setCellValueFactory(new PropertyValueFactory<>("username"));
+//		pointsCol.setCellValueFactory(new PropertyValueFactory<>("points"));
+//		leaderboardTable.getColumns().addAll(rankCol,usernameCol,pointsCol);
+		//Data data = new data(rank, username, points);
+		//leaderboardTable.getItems().add(data);
+		leaderboardTable.refresh();
+	}
 	public void switchToStart(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/StartMenu.fxml"));
