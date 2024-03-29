@@ -24,27 +24,24 @@
 	-fx-font-weight: bold;
 }
 .button{
-	-fx-background-color: #d50fd9;
+	-fx-background-color: #2fd2fa;
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #fc9dee;	
+	-fx-text-fill: #cbeef7;	
 	-fx-font-size: 18;
-	-fx-border-color: #a80aab;
+	-fx-border-color: #00beed;
 	-fx-border-radius: 15 15 15 15;
 	-fx-border-width: 3;
 }
 .button:hover{
-	-fx-background-color: #e92fed;	
+	-fx-background-color: #57deff;	
 	-fx-background-radius: 20 20 20 20;
-	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #fc74e8;	
+	-fx-font-family: 'Vinque Rg';	
 	-fx-font-size: 18;
-	-fx-text-fill: #f2bfeb;
 }
 .button:pressed{
-	-fx-background-color: #bf29c2;
+	-fx-background-color: #13c2ed;
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
-	-fx-text-fill: #fc74e8;	
 	-fx-font-size: 18;
 }

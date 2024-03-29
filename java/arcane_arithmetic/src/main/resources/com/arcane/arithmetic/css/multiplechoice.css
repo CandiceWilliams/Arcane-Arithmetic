@@ -28,17 +28,17 @@
 	-fx-font-size: 45;
 }
 .buttonB{
-	-fx-background-color: #69e1ff;
+	-fx-background-color: #2fd2fa;
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
 	-fx-text-fill: #cbeef7;	
 	-fx-font-size: 45;
-	-fx-border-color: #28d2fc;
+	-fx-border-color: #00beed;
 	-fx-border-radius: 15 15 15 15;
 	-fx-border-width: 5;
 }
 .buttonB:hover{
-	-fx-background-color: #8be6fc;	
+	-fx-background-color: #57deff;	
 	-fx-background-radius: 20 20 20 20;
 	-fx-font-family: 'Vinque Rg';
 	-fx-font-size: 45;

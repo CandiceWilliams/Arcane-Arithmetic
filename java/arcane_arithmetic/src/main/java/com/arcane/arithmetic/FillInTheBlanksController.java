@@ -19,6 +19,8 @@ public class FillInTheBlanksController {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
+	public int num=0;
+	public int pointsNum=0;
 	@FXML
 	private TextFlow question;
 	@FXML
@@ -28,8 +30,6 @@ public class FillInTheBlanksController {
 	String css = this.getClass().getResource("css/multiplechoice.css").toExternalForm();
 	public void createQuestion(ActionEvent event) throws IOException{
 		//Set top bar stats (question number, points)
-		int num=0;
-		int pointsNum=0;
 		questionNum.setText("Question " + num);
 		points.setText("Points: " + pointsNum);
 		//Set question text
