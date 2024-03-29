@@ -12,6 +12,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.io.File;
@@ -63,19 +64,21 @@ public class SettingsController {
 
     public void loadSound(){
         // call this method whenever a button is pressed from another class
-        System.out.println(soundOn);
         if (soundOn) {
             playSound();
         }
     }
 
     public void playSound(){
+        boolean playing = buttonClickSoundMediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
+        if (playing) buttonClickSoundMediaPlayer.stop();
         buttonClickSoundMediaPlayer.play();
         buttonClickSoundMediaPlayer.setOnEndOfMedia(buttonClickSoundMediaPlayer::stop);
     }
 
 
     public void musicCheckBoxClick(){
+        loadSound();
         musicOn = musicCheckBox.isSelected();
         loadMusic();
     }
@@ -95,20 +98,13 @@ public class SettingsController {
     }
 
     public void fullScreenCheckBoxClick(){
+        loadSound();
         fullScreenOn = fullScreenCheckBox.isSelected();
-        loadFullScreen();
-    }
 
-    public void loadFullScreen(){
-        if (fullScreenOn){
-
-        }
-        else {
-
-        }
     }
 
     public void back(ActionEvent event) {
+        SettingsController.settingsCon.loadSound();
         window.close();
     }
 

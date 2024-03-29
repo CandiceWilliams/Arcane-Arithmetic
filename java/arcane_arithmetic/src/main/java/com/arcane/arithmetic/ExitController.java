@@ -38,11 +38,13 @@ public class ExitController {
 		window.showAndWait();
 	}
 	public void confirmExit(ActionEvent event) throws IOException{
+		SettingsController.settingsCon.loadSound();
 		Stage stage = (Stage)YesButton.getScene().getWindow();
 		stage.close();
 		startMenuStage.close();
 	}
 	public void returnToMain(ActionEvent event) throws IOException{
+		SettingsController.settingsCon.loadSound();
 		Stage stage = (Stage)NoButton.getScene().getWindow();
 		stage.close();
 	}

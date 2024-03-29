@@ -19,7 +19,7 @@ public class StartMenu extends Application {
         stage.setTitle("Arcane Arithmetic");
         stage.setScene(scene);
         stage.centerOnScreen();
-        stage.setResizable(false);
+        stage.setResizable(false);      
         stage.show();
         SettingsController.settingsCon.initSettings(stage);
     }
