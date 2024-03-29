@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -27,6 +28,8 @@ public class FillInTheBlanksController {
 	private Label questionNum, timeRemaining, points;
 	@FXML 
 	private TextField ansText;
+	@FXML
+	private Button powerup1,powerup2,powerup3;
 	String css = this.getClass().getResource("css/multiplechoice.css").toExternalForm();
 	public void createQuestion(ActionEvent event) throws IOException{
 		//Set top bar stats (question number, points)
