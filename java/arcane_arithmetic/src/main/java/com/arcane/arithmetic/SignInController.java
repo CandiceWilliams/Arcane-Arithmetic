@@ -31,7 +31,7 @@ public class SignInController {
 	@FXML private Button backButton, loginButton;
 	@FXML private Label errorLabel;
 	@FXML private TextField username,password;
-
+	
 	public void popUpSignInScene(ActionEvent event, Stage startMenuStage) throws IOException {
 		storeStartMenuStage(startMenuStage); SignUpController.storeStartMenuStage(startMenuStage);
 		Stage window = new Stage();
@@ -91,8 +91,8 @@ public class SignInController {
 			errorLabel.setVisible(true);
 		} else {
 			ObjectMapper objectMapper = new ObjectMapper();
-			User userSU = objectMapper.readValue(content.toString(), User.class);
-			if(userSU.getPassword().equals(password.getText())) {
+			User user = objectMapper.readValue(content.toString(), User.class);
+			if(user.getPassword().equals(password.getText())) {
 				Stage stage = (Stage)loginButton.getScene().getWindow();
 				stage.close();
 				Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
