@@ -46,7 +46,7 @@
 }
 .table-view {
     -fx-background-color: transparent;
-    -fx-font-family: 'Vinque Rg';
+    -fx-font-family: 'Garamond';
     -fx-font-size: 15;
 }
 .table-view .column-header-background .filler {

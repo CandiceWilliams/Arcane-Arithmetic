@@ -5,27 +5,18 @@ import javafx.fxml.FXML;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import javafx.stage.Stage;
 
 public class MultipleChoiceController {
-	private Stage stage;
-	private Scene scene;
-	private Parent root;
-	@FXML
-	private Button ans1,ans2,ans3,ans4;
-	@FXML
-	private TextFlow question;
-	@FXML
-	private Label questionNum, timeRemaining, points;
+	@FXML private Button ans1,ans2,ans3,ans4;
+	@FXML private TextFlow question;
+	@FXML private Label questionNum, timeRemaining, points;
+	@FXML private Button powerup1,powerup2,powerup3;
 	String css = this.getClass().getResource("css/multiplechoice.css").toExternalForm();
+	
 	public void createQuestion(ActionEvent event) throws IOException{
 		//Set top bar stats (question number, points)
 		int num=0;
@@ -43,16 +34,16 @@ public class MultipleChoiceController {
 		ans4.setText("ans4");
 	}
 	public void answerA(ActionEvent event){
-		
+		SettingsController.settingsCon.loadSound();
 	}
 	public void answerB(ActionEvent event){
-		
+		SettingsController.settingsCon.loadSound();
 	}
 	public void answerC(ActionEvent event){
-	
+		SettingsController.settingsCon.loadSound();
 	}
 	public void answerD(ActionEvent event){
-	
+		SettingsController.settingsCon.loadSound();
 	}
 
 }

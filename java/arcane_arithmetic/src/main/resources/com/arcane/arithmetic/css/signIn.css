@@ -69,3 +69,8 @@
 	-fx-font-family: 'Vinque Rg';
 	-fx-font-size: 18;
 }
+.errorLabel{
+	-fx-font-family: "Garamond";
+	-fx-font-size: 16;
+	-fx-text-fill: "red";
+}

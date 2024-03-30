@@ -45,6 +45,7 @@
                 </Label>
                 <TextField layoutX="235.0" layoutY="165.0" prefHeight="26.0" prefWidth="447.0" promptText="enter password" />
             <Button fx:id="backButton" layoutX="42.0" layoutY="230.0" mnemonicParsing="false" onAction="#back" prefHeight="58.0" prefWidth="58.0" styleClass="backButton" stylesheets="@../css/signIn.css" />
+            <Label fx:id="errorLabel" layoutX="235.0" layoutY="198.0" prefHeight="18.0" prefWidth="268.0" styleClass="errorLabel" text="Username or password is incorrect." visible="false" />
             </children>
         </AnchorPane>
     </top>

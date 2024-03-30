@@ -1,7 +1,5 @@
 package com.arcane.arithmetic;
 
-//import javafx.fxml.FXML;
-
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -12,12 +10,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 public class StartController {
 	private Stage stage;
 	private Scene scene;
-	private Parent root;
 	@FXML private Button startButton, settingButton;
 	
 	TutorialController tutcon = new TutorialController();

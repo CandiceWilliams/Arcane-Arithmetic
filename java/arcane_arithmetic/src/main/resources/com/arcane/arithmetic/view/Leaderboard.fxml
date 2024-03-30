@@ -37,7 +37,7 @@
                   <Insets left="30.0" />
                </padding>
             </Label>
-            <Label fx:id="yourRanking" prefHeight="99.0" prefWidth="312.0" styleClass="labelRanking" text="num">
+            <Label fx:id="yourRanking" prefHeight="99.0" prefWidth="312.0" styleClass="labelRanking" text="N/A">
                <font>
                   <Font size="40.0" />
                </font>

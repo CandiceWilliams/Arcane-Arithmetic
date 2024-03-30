@@ -51,3 +51,6 @@
 	-fx-background-image: url('../assets/imgs/multiplechoice-answer-bg.png');
 	-fx-background-size: stretch;
 }
+.powerupButton{
+	-fx-background-color: transparent;
+}

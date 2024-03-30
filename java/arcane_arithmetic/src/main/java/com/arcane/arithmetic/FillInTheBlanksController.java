@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -21,13 +22,12 @@ public class FillInTheBlanksController {
 	private Parent root;
 	public int num=0;
 	public int pointsNum=0;
-	@FXML
-	private TextFlow question;
-	@FXML
-	private Label questionNum, timeRemaining, points;
-	@FXML 
-	private TextField ansText;
+	@FXML private TextFlow question;
+	@FXML private Label questionNum, timeRemaining, points;
+	@FXML private TextField ansText;
+	@FXML private Button powerup1,powerup2,powerup3;
 	String css = this.getClass().getResource("css/multiplechoice.css").toExternalForm();
+	
 	public void createQuestion(ActionEvent event) throws IOException{
 		//Set top bar stats (question number, points)
 		questionNum.setText("Question " + num);
@@ -38,6 +38,7 @@ public class FillInTheBlanksController {
 		question.getChildren().add(text);
 	}
 	public void submitAnswer(ActionEvent event){
+		SettingsController.settingsCon.loadSound();
 		if(ansText.getText()=="") {
 			
 		}

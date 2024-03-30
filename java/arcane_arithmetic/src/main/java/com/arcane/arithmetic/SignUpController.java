@@ -7,17 +7,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class SignUpController {
-
-	private Stage stage;
 	private Scene scene;
-	private Parent root;
 	private static Stage startMenuStage;
-
-	@FXML
-    private javafx.scene.control.Button signUpButton;
+	@FXML private javafx.scene.control.Button signUpButton;
+	@FXML private Label existedUsername,usernameTooLong,pwSpecial,pwDiff;
 
     public void switchToSignInScene(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -25,13 +22,22 @@ public class SignUpController {
         SICon.switchToSignInScene(event);
     }
     public void switchToTopic(ActionEvent event) throws IOException {
-		SettingsController.settingsCon.loadSound();
+    	//if no error
+    	SettingsController.settingsCon.loadSound();
 		Stage stage = (Stage)signUpButton.getScene().getWindow();
 		stage.close();
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
 		scene = new Scene(root);
 		startMenuStage.setScene(scene);
 		SettingsController.settingsCon.loadFullScreen();
+//		//username already exists
+//		existedUsername.setVisible(true);
+//		//username too long
+//		usernameTooLong.setVisible(true);
+//		//password has special characters
+//		pwSpecial.setVisible(true);
+//		//password and confirm password are different
+//		pwDiff.setVisible(true);
 	}
 
 	public static void storeStartMenuStage(Stage startMenuStage){
