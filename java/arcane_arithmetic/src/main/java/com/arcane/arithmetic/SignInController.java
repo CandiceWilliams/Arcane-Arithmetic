@@ -31,6 +31,7 @@ public class SignInController {
 		String SIcss = this.getClass().getResource("css/signIn.css").toExternalForm();
 		scene.getStylesheets().add(SIcss);
 		window.setScene(scene);
+		window.setResizable(false);
 		window.showAndWait();
 	}
 
@@ -63,6 +64,7 @@ public class SignInController {
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
 		scene = new Scene(root);
 		startMenuStage.setScene(scene);
+		SettingsController.settingsCon.loadFullScreen();
 	}
 
     public void back(ActionEvent event) throws IOException {

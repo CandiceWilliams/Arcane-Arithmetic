@@ -31,6 +31,7 @@ public class SignUpController {
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
 		scene = new Scene(root);
 		startMenuStage.setScene(scene);
+		SettingsController.settingsCon.loadFullScreen();
 	}
 
 	public static void storeStartMenuStage(Stage startMenuStage){

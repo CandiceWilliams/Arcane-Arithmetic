@@ -44,6 +44,7 @@ public class LeaderboardController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+		SettingsController.settingsCon.loadFullScreen();
 	}
 
 }

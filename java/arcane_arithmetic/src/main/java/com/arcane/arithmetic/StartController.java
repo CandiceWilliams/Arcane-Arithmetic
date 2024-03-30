@@ -54,8 +54,8 @@ public class StartController {
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.centerOnScreen();
 		stage.show();
+		SettingsController.settingsCon.loadFullScreen();
 	}
 	
 	public void switchToTopicScene(ActionEvent event) throws IOException{
@@ -64,8 +64,8 @@ public class StartController {
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.centerOnScreen();
 		stage.show();
+		SettingsController.settingsCon.loadFullScreen();
 	}
 	
 	public void switchToLeaderboard(ActionEvent event) throws IOException {
@@ -74,8 +74,8 @@ public class StartController {
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.centerOnScreen();
 		stage.show();
+		SettingsController.settingsCon.loadFullScreen();
 	}
 
 	public void switchToDifficulty(ActionEvent event) throws IOException {
@@ -84,7 +84,7 @@ public class StartController {
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.centerOnScreen();
 		stage.show();
+		SettingsController.settingsCon.loadFullScreen();
 	}
 }
