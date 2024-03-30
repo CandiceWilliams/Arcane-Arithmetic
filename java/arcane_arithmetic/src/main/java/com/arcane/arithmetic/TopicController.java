@@ -24,7 +24,7 @@ public class TopicController {
 		SCCon.switchToDifficulty(event);
 	}
 	public void stats(ActionEvent event) throws IOException {
-		topic = "stats";
+		topic = "statistics";
 		StartController SCCon = new StartController();
 		SCCon.switchToDifficulty(event);
 	}

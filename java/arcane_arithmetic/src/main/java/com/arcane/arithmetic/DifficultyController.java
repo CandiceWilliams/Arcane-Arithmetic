@@ -28,7 +28,7 @@ public class DifficultyController {
 
 	}	
 	public void hard(ActionEvent event) throws IOException {
-		diff = "hard";
+		diff = "difficult";
 
 	}	
 	public String getDiff() {
