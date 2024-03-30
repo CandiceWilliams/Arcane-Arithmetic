@@ -15,6 +15,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class SignUpController {
 	private Scene scene;
 	private static Stage startMenuStage;
@@ -29,7 +31,7 @@ public class SignUpController {
     }
     public void switchToTopic(ActionEvent event) throws IOException {
     	SettingsController.settingsCon.loadSound();
-    	if(password.getText()!=confirmPassword.getText()) {
+    	if(!password.getText().equals(confirmPassword.getText())) {
     		pwDiff.setVisible(true);	
     	} else if(username.getText().length()<3 || username.getText().length()>12) {
     		usernameTooLong.setVisible(true);
@@ -61,12 +63,19 @@ public class SignUpController {
 	    		} else if(content.toString()=="{\"Error\":\"No field specified\"}"){
 	    			
 	    		} else {
+	    			ObjectMapper objectMapper = new ObjectMapper();
+	    			User userSU = objectMapper.readValue(content.toString(), User.class);
+	    			
 	    			Stage stage = (Stage)signUpButton.getScene().getWindow();
 	    			stage.close();
 	    			Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
 	    			scene = new Scene(root);
 	    			startMenuStage.setScene(scene);
 	    			SettingsController.settingsCon.loadFullScreen();
+	    			existedUsername.setVisible(false);
+	    			pwSpecial.setVisible(false);
+	    			pwDiff.setVisible(false);	
+	    			usernameTooLong.setVisible(false);
 	    		}
 	    	} catch (Exception e) {
 	    		e.printStackTrace();

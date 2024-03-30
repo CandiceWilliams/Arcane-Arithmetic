@@ -9,9 +9,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class SignInController {	
 
@@ -23,6 +30,7 @@ public class SignInController {
 	@FXML private BorderPane pane;
 	@FXML private Button backButton, loginButton;
 	@FXML private Label errorLabel;
+	@FXML private TextField username,password;
 
 	public void popUpSignInScene(ActionEvent event, Stage startMenuStage) throws IOException {
 		storeStartMenuStage(startMenuStage); SignUpController.storeStartMenuStage(startMenuStage);
@@ -61,15 +69,41 @@ public class SignInController {
 
     public void switchToTopic(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
-		//if username exists
-		Stage stage = (Stage)loginButton.getScene().getWindow();
-		stage.close();
-		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
-		scene = new Scene(root);
-		startMenuStage.setScene(scene);
-		SettingsController.settingsCon.loadFullScreen();
-//		//if username doesn't exist
-//		errorLabel.setVisible(true);
+		
+		String urlString= "http://127.0.0.1:5000/database/users/get?username="+username.getText();
+		
+		URL url = new URL(urlString);
+		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		con.setRequestMethod("GET");
+		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		
+		String inputLine;
+		StringBuilder content = new StringBuilder();
+		
+		while ((inputLine = in.readLine()) != null) {
+			content.append(inputLine);
+		}
+		in.close();
+		con.disconnect();
+		if(content.toString()=="{\"Error\":\"User Not Found\"}") {
+			errorLabel.setVisible(true);
+		} else if(content.toString()=="{\"Error\":\"No field specified\"}") {
+			errorLabel.setVisible(true);
+		} else {
+			ObjectMapper objectMapper = new ObjectMapper();
+			User userSU = objectMapper.readValue(content.toString(), User.class);
+			if(userSU.getPassword().equals(password.getText())) {
+				Stage stage = (Stage)loginButton.getScene().getWindow();
+				stage.close();
+				Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
+				scene = new Scene(root);
+				startMenuStage.setScene(scene);
+				SettingsController.settingsCon.loadFullScreen();
+				errorLabel.setVisible(false);
+			} else {
+				errorLabel.setVisible(true);
+			}
+		}
 	}
 
     public void back(ActionEvent event) throws IOException {
