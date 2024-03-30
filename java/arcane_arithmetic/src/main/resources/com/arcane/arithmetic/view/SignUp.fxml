@@ -16,7 +16,7 @@
                         <Font size="20.0" />
                     </font>
                 </Label>
-                <TextField layoutX="284.0" layoutY="91.0" prefHeight="26.0" prefWidth="405.0" promptText="enter new username" />
+                <TextField fx:id="username" layoutX="284.0" layoutY="91.0" prefHeight="26.0" prefWidth="405.0" promptText="enter new username" />
                 <Button fx:id="signUpButton" layoutX="284.0" layoutY="321.0" mnemonicParsing="false" onAction="#switchToTopic" prefHeight="42.0" prefWidth="307.0" text="Let's Do This!">
                     <font>
                         <Font size="18.0" />
@@ -42,8 +42,8 @@
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <TextField layoutX="284.0" layoutY="166.0" prefHeight="26.0" prefWidth="405.0" promptText="enter new password" />
-                <TextField layoutX="284.0" layoutY="245.0" prefHeight="26.0" prefWidth="405.0" promptText="re-enter password" />
+                <TextField fx:id="password" layoutX="284.0" layoutY="166.0" prefHeight="26.0" prefWidth="405.0" promptText="enter new password" />
+                <TextField fx:id="confirmPassword" layoutX="284.0" layoutY="245.0" prefHeight="26.0" prefWidth="405.0" promptText="re-enter password" />
             <Label fx:id="existedUsername" layoutX="284.0" layoutY="122.0" prefHeight="18.0" prefWidth="397.0" styleClass="errorLabel" text="Username already exists." visible="false" />
             <Label fx:id="pwSpecial" layoutX="284.0" layoutY="198.0" prefHeight="18.0" prefWidth="397.0" styleClass="errorLabel" text="Password must not contain special characters." visible="false" />
             <Label fx:id="pwDiff" layoutX="284.0" layoutY="276.0" prefHeight="18.0" prefWidth="397.0" styleClass="errorLabel" text="Password is different." visible="false" />

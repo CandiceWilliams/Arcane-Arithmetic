@@ -13,7 +13,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class SignInController {
+public class SignInController {	
 
 	public Stage stage;
 	public Scene scene;
