@@ -56,3 +56,33 @@
     -fx-border-style: solid;
     -fx-border-width: 1;
 }
+#loadTableButton{
+    -fx-background-color: #2fd2fa;
+    -fx-background-radius: 20 20 20 20;
+    -fx-font-family: 'Vinque Rg';
+    -fx-text-fill: white;
+    -fx-font-size: 38;
+    -fx-border-color: #00beed;
+    -fx-border-radius: 15 15 15 15;
+    -fx-border-width: 3;
+}
+#loadTableButton:hover{
+    -fx-background-color: #57deff;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: white;
+	-fx-font-size: 38;
+	-fx-border-color: #00beed;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 3;
+}
+#loadTableButton:pressed{
+    -fx-background-color: #13c2ed;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: white;
+	-fx-font-size: 38;
+	-fx-border-color: #00beed;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 3;
+}
