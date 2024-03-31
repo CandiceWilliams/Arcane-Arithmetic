@@ -84,8 +84,8 @@ public class CheatsModePasswordPromptController {
         }
     }
 
-    public boolean isCheatsOn(){
+    public static boolean isCheatsOn(){
         return cheatsOn;
     }
-    
+
 }
