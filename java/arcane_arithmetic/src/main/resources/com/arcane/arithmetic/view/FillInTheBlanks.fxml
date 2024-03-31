@@ -33,7 +33,7 @@
                <children>
                   <TextFlow fx:id="question" prefHeight="150.0" prefWidth="983.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Text fx:id="questionText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="question" text="1231231232131" textAlignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="question" text="1231231232131" textAlignment="CENTER" />
                      </children>
                   </TextFlow>
                </children>

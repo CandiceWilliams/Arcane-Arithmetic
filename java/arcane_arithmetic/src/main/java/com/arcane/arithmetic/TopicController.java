@@ -15,9 +15,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class TopicController {
-	private String topic;
+	private static String topic;
 	public void calculus(ActionEvent event) throws IOException {
-		topic = "calculus";
+		this.topic = "calculus";
 		StartController SCCon = new StartController();
 		SCCon.switchToDifficulty(event);
 	}

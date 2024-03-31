@@ -1,6 +1,8 @@
 package com.arcane.arithmetic;
 
 import com.almasb.fxgl.time.TimerAction;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -12,9 +14,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 import java.util.Scanner;
 
 import static com.almasb.fxgl.dsl.FXGLForKtKt.getGameTimer;
@@ -33,9 +38,12 @@ public class GameLoop {
     private Stage stage;
     private Scene scene;
 
+
     public void StartGameLoop(ActionEvent event) throws IOException {
         topic = topicCon.getTopic();
         difficulty = diffCon.getDiff();
+        System.out.println(difficulty);
+
 
         while(questionsAnswered != TOTAL_QUESTIONS){
 
@@ -56,18 +64,38 @@ public class GameLoop {
                 if (responseCode != 200){
                     throw new RuntimeException("HttpResponseCode: " + responseCode);
                 }
+
                 else{
-                    String inline = "";
-                    Scanner scanner = new Scanner(url.openStream());
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    StringBuilder responseStrBuilder = new StringBuilder();
+
+                    String inputStr;
+                    //Scanner scanner = new Scanner(url.openStream());
 
                     //Write all JSON data into a string using a scanner
-                    while(scanner.hasNext()){
-                        inline += scanner.nextLine();
+                    while((inputStr = reader.readLine()) != null){
+                        responseStrBuilder.append((inputStr));
                     }
 
-                    scanner.close();
+                    JsonNode json = objMapper.readTree(responseStrBuilder.toString());
+                    String question = json.at("/question").toString();
+                    String answer = json.at("/answer").toString();
+                    String id = json.at("/question_id").toString();
 
-                    fillQuestion = objMapper.readValue(url, Fill_Question.class);
+		            question = question.substring(1, question.length() - 1);
+                    answer = answer.substring(1, answer.length() - 1);
+                    //id = id.substring(1, id.length() - 1);
+
+                    fillQuestion.setQuestion(question);
+                    fillQuestion.setAnswer(answer);
+                    fillQuestion.setQuestion_id(Integer.parseInt(id));
+
+
+                    reader.close();
+                    connection.disconnect();
+
+
+                    //fillQuestion = objMapper.readValue(url, Fill_Question.class);
                 }
             }catch (IOException e) {
                 System.out.println("Unable to establish valid connection to API");
@@ -80,6 +108,7 @@ public class GameLoop {
                 scene = new Scene(root);
                 stage.show();
 
+                System.out.println(fillQuestion.getQuestion());
                 FillInTheBlanksController fbController = new FillInTheBlanksController();
                 isCorrect = fbController.displayQuestion(fillQuestion.getQuestion(), fillQuestion.getAnswer());
                 if (isCorrect){

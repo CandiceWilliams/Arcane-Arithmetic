@@ -29,7 +29,7 @@ public class FillInTheBlanksController{
 	@FXML private Button powerup1,powerup2,powerup3,submitButton;
 	private String answer;
 	private boolean isCorrect = false;
-	String css = this.getClass().getResource("css/multiplechoice.css").toExternalForm();
+	String css = this.getClass().getResource("css/fillintheblanks.css").toExternalForm();
 
 	EventHandler<ActionEvent> submitAnswer = new EventHandler<ActionEvent>() {
 		public void handle(ActionEvent e)

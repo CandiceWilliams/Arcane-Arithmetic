@@ -12,7 +12,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class DifficultyController {
-	private String diff;
+	private static String diff;
 
 	public void switchToTopic(ActionEvent event) throws IOException {
 		StartController SCCon = new StartController();
@@ -29,7 +29,7 @@ public class DifficultyController {
 		startGame(event);
 	}	
 	public void hard(ActionEvent event) throws IOException {
-		diff = "difficult";
+		diff = "hard";
 		startGame(event);
 	}	
 	public String getDiff() {

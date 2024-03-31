@@ -15,6 +15,7 @@ public class StartController {
 	private Stage stage;
 	private Scene scene;
 	@FXML private Button startButton, settingButton;
+	private String difficulty, topic;
 	
 	TutorialController tutcon = new TutorialController();
 	SignInController SIcon = new SignInController();
