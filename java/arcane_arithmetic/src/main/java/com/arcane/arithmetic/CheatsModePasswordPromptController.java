@@ -83,4 +83,8 @@ public class CheatsModePasswordPromptController {
             cheatsOffStatusLabel.setVisible(true);
         }
     }
+
+    public boolean isCheatsOn(){
+        return cheatsOn;
+    }
 }
