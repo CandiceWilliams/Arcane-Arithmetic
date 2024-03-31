@@ -45,12 +45,6 @@ public class TutorialController2 {
 
     String css = this.getClass().getResource("css/tutorial.css").toExternalForm();
 
-//    public void initialize(){
-//        subtitle.setText("Multiple Choice");
-//        title.setText("QuestionType");
-//        nextImg.setOnAction(fillEvent);
-//
-//    }
     EventHandler<ActionEvent> fiftyEvent = new EventHandler<ActionEvent>() {
         public void handle(ActionEvent e)
         {
