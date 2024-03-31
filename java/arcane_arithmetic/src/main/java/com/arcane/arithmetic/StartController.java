@@ -27,9 +27,8 @@ public class StartController {
 
 	}
 
-	public void openSettings(ActionEvent event) throws IOException {
+	public void openSettings(ActionEvent event) {
 		SettingsController.settingsCon.loadSound();
-		Stage thisStage = (Stage)startButton.getScene().getWindow();
 		settingsCon.startSettings(event);
 	}
 

@@ -8,26 +8,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="345.0" prefWidth="410.0" stylesheets="@../css/settings.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.SettingsController">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" stylesheets="@../css/settings.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.SettingsController">
    <children>
-      <Label fx:id="optionsLabel" layoutX="92.0" layoutY="14.0" prefHeight="68.0" prefWidth="226.0" text="Options" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="optionsLabel" layoutX="153.0" layoutY="14.0" prefHeight="68.0" prefWidth="226.0" text="Options" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font></Label>
       <Label fx:id="soundEffectsLabel" layoutX="44.0" layoutY="102.0" prefHeight="50.0" prefWidth="186.0" text="Sound Effects" textFill="WHITE" />
       <Label fx:id="musicLabel" layoutX="44.0" layoutY="162.0" prefHeight="50.0" prefWidth="186.0" text="Music" textFill="WHITE" />
       <Label fx:id="fullScreenLabel" layoutX="44.0" layoutY="220.0" prefHeight="50.0" prefWidth="186.0" text="Full Screen" textFill="WHITE" />
-      <ImageView fitHeight="68.0" fitWidth="133.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="68.0" fitWidth="133.0" layoutX="38.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/imgs/gear.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="133.0" layoutX="337.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="68.0" fitWidth="133.0" layoutX="408.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/imgs/gear.png" />
          </image>
       </ImageView>
-      <Button fx:id="backButton" layoutY="294.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="418.0" text="Back" />
+      <Button fx:id="backButton" layoutY="444.0" mnemonicParsing="false" onAction="#back" prefHeight="55.0" prefWidth="500.0" text="Back" />
       <CheckBox fx:id="soundCheckBox" layoutX="266.0" layoutY="107.0" mnemonicParsing="false" onAction="#soundCheckBoxClick" prefHeight="34.0" prefWidth="36.0" selected="true" />
       <CheckBox fx:id="musicCheckBox" layoutX="266.0" layoutY="167.0" mnemonicParsing="false" onAction="#musicCheckBoxClick" prefHeight="34.0" prefWidth="36.0" selected="true" />
       <CheckBox fx:id="fullScreenCheckBox" layoutX="266.0" layoutY="225.0" mnemonicParsing="false" onAction="#fullScreenCheckBoxClick" prefHeight="34.0" prefWidth="36.0" />
@@ -46,5 +46,7 @@
             <Image url="@../assets/imgs/gamepad.png" />
          </image>
       </ImageView>
+      <Button layoutX="14.0" layoutY="280.0" mnemonicParsing="false" onAction="#switchToInstructorPasswordPrompt" prefHeight="158.0" prefWidth="268.0" text="Instructor Dashbord" />
+      <Button layoutX="299.0" layoutY="280.0" mnemonicParsing="false" onAction="#switchToCheatsModePasswordPrompt" prefHeight="158.0" prefWidth="193.0" text="Cheats Mode" />
    </children>
 </AnchorPane>

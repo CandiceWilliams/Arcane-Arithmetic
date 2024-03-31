@@ -3,12 +3,11 @@ package com.arcane.arithmetic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -113,6 +112,20 @@ public class SettingsController {
     public void back(ActionEvent event) {
         SettingsController.settingsCon.loadSound();
         window.close();
+    }
+
+    public void switchToInstructorPasswordPrompt(ActionEvent event) throws IOException {
+        SettingsController.settingsCon.loadSound();
+        window.close();
+        InstructorPasswordPromptController instructCon = new InstructorPasswordPromptController();
+        instructCon.popUpWindow(startMenuStage);
+    }
+
+    public void switchToCheatsModePasswordPrompt(ActionEvent event) throws IOException {
+        SettingsController.settingsCon.loadSound();
+        window.close();
+        CheatsModePasswordPromptController cheatsCon = new CheatsModePasswordPromptController();
+        cheatsCon.popUpWindow();
     }
 
     public static void storeStartMenuStage(Stage startMenuStage){
