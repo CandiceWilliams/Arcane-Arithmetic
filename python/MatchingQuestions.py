@@ -48,9 +48,7 @@ class MatchingQuestions:
         
         MatchingQuestions.questions.append(self)
 
-        MatchingQuestions.questions.append(self)
 
-    
     def parseJsonFile() :
         """
         Parses a JSON file containing matching questions and populates the questions list.
@@ -67,7 +65,8 @@ class MatchingQuestions:
         for obj in data:
             MatchingQuestions(obj["question"], obj["row1"], obj["row2"], obj["answer"], obj["question_id"], obj["difficulty"], obj["subject"])
 
-        
+
+
     # Returns the question with the given ID
     def getQuestionByID(id): 
         """

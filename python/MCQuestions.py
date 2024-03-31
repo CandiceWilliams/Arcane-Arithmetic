@@ -41,14 +41,9 @@ class MCQuestions:
         self.difficulty = difficulty
         self.subject = subject
         self.options = options 
-        
         MCQuestions.questions.append(self)
 
 
-    def parseJsonFile():
-        """
-        Parses a JSON file containing multiple-choice questions and populates the questions list.
-        """
 
     def parseJsonFile() :
         """
@@ -65,9 +60,10 @@ class MCQuestions:
 
         for obj in data:
             MCQuestions(obj["question"], obj["answer"], obj["question_id"], obj["difficulty"], obj["subject"], obj["options"])
-       
 
-    #Returns the question with the given ID
+
+
+    # Returns the question with the given ID
     def getQuestionByID(id): 
         """
         Returns the question with the given ID.
@@ -85,7 +81,8 @@ class MCQuestions:
 
         return None
 
-    #Returns a random question with the given subject
+
+    # Returns a random question with the given subject
     def getRandomQuestionBySubject(subject):
         """
         Returns a random question with the given subject.
@@ -98,25 +95,13 @@ class MCQuestions:
         """
         Qs = []
 
-        #Take all questions with the specified subject
+        # Take all questions with the specified subject
         for i in MCQuestions.questions :
             if i.subject == subject:
                 Qs.append(i)
 
         return random.choice(Qs)
 
-    
-    #Returns a random question with the given difficulty level
-    def getRandomQuestionByDifficulty(difficulty):
-        """
-        Returns a random question with the given difficulty level.
-
-        Args:
-            difficulty (str): The difficulty level of the question to retrieve.
-
-        Returns:
-            MCQuestions: A random multiple-choice question with the specified difficulty level.
-        """
 
     # Returns a random question with the given difficulty level
     def getRandomQuestionByDifficulty(difficulty): 
@@ -131,11 +116,12 @@ class MCQuestions:
         """
         Qs = []
 
-        #Take all questions with the specified difficulty
+        # Take all questions with the specified difficulty
         for i in MCQuestions.questions :
             if i.difficulty == difficulty:
-               Qs.append(i)
+                Qs.append(i)
 
         return random.choice(Qs)
-    
+
+
 
