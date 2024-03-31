@@ -6,6 +6,13 @@ public class User{
 	private String id;
 	private String name;
 	private String privilege;
+	public User(String username, String password, String id, String name, String privilege) {
+		this.username = username;
+		this.password = password;
+		this.id = id;
+		this.name = name;
+		this.privilege = privilege;
+	}
 	public void setUsername(String username){
 		this.username = username;
 	}
