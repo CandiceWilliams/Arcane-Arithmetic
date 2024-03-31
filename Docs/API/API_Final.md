@@ -208,6 +208,11 @@ public class Main {
 
     ```
 
+    - **To get a question with a specific subject and difficulty**:
+    ```
+    http://127.0.0.1:5000/database/questions/get?subject=calculus&difficulty=easy&type=mc
+    ```
+
     **Make sure to specify the type of the question**:
         - Matching : matching
         - Multiple choice : mc
@@ -312,4 +317,88 @@ http://127.0.0.1:5000/database/questions/get?id=5&type=mc
 
 ```json
 {"Error": "Question Not Found"}
+```
+
+
+# Ranks
+
+## To insert a new rank: 
+
+- structure of the data parameter: 
+```json
+{
+    "totalPoints": 10,
+    "totalWon": 14,
+    "totalPlayed": 24,
+    "totalCorrect": 20,
+    "totalIncorrect": 4,
+    "ownerID": "the user id who owns this record"
+}
+
+```
+- Example URL
+```
+127.0.0.1:5000/database/ranks/insert?data={"totalPoints": 10, "totalWon": 14, "totalPlayed": 24, "totalCorrect": 20, "totalIncorrect": 4, "ownerID": "the user id who owns this record"}
+```
+
+- **you can use this URL to update an existing record by reinserting it**
+
+## To get the rank of a user by user ID:
+
+```
+127.0.0.1:5000/database/ranks/get?id=userID
+```
+
+- Example return value :
+
+```json
+    {
+        "totalPoints": 10,
+        "totalWon": 20,
+        "totalPlayed": 30,
+        "totalCorrect": 40,
+        "totalIncorrect": 2,
+        "ownerID": "sss"
+    }
+```
+
+- If there is no record with the specified ID
+```json
+{"Error": "Record not found"}
+```
+
+## To delete a rank by user ID
+
+```
+127.0.0.1:5000/database/ranks/delete?id=userID
+```
+- Returns "ok" if successful 
+
+
+## To get all records
+
+```
+127.0.0.1:5000/database/ranks/getall
+```
+
+- Example output: 
+```json
+[
+    {
+        "totalPoints": 10,
+        "totalWon": 10,
+        "totalPlayed": 10,
+        "totalCorrect": 10,
+        "totalIncorrect": 10,
+        "ownerID": "8nwwEYXxEF"
+    },
+    {
+        "totalPoints": 10,
+        "totalWon": 20,
+        "totalPlayed": 30,
+        "totalCorrect": 40,
+        "totalIncorrect": 2,
+        "ownerID": "sss"
+    }
+]
 ```

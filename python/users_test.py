@@ -2,7 +2,7 @@ import users
 
 
 
-u = users.User("j", "password123", "aaaaa", "admin")
+u = users.User("abcd", "password123", "aaaaa", "admin")
 
 if u.insertIntoDB() == False:
     print("Already exist")

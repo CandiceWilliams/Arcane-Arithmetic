@@ -4,8 +4,8 @@ import users
 from MatchingQuestions import MatchingQuestions 
 from FillInTheBlank import FillInTheBlank
 from MCQuestions import MCQuestions
-
-
+import random
+from ranks import Record
 
 def convertToJsonString(username, password, id, name, privilege):
     return '''{{"username": "{}","password": "{}","id": "{}","name": "{}","privilege": "{}"}}'''.format(username, password, id, name, privilege)
@@ -109,8 +109,39 @@ def questionsHandler():
         response.headers['Content-Type'] = 'application/json'
         return response
     
+    if subject not in valid_subjects:
+        response = Response('''{"Error": "Invalid Argument 'subject'"}''')
+        response.headers['Content-Type'] = 'application/json'
+        return response
+    
+    if difficulty not in valid_difficulties:
+        response = Response('''{"Error": "Invalid Argument 'difficulty'"}''')
+        response.headers['Content-Type'] = 'application/json'
+        return response
+    
     if type == None:
         response = Response('''{"Error": "Missing Argument 'type'"}''')
+        response.headers['Content-Type'] = 'application/json'
+        return response
+    
+    if subject != None and difficulty != None:
+        questionStorage = []
+        
+        for i in MatchingQuestions.questions:
+            if (i.subject == subject and i.difficulty == difficulty):
+                questionStorage.append(i)
+                
+        for i in MCQuestions.questions:
+            if (i.subject == subject and i.difficulty == difficulty):
+                questionStorage.append(i)
+        
+        for i in FillInTheBlank.questions:
+            if (i.subject == subject and i.difficulty == difficulty):
+                questionStorage.append(i)
+        
+        q = random.choice(questionStorage)
+        json_string = json.dumps(q, default=lambda o: o.to_serializable(), indent=4)
+        response = Response(json_string)
         response.headers['Content-Type'] = 'application/json'
         return response
         
@@ -118,13 +149,10 @@ def questionsHandler():
     if id != None:
         id = int(id)
         if type == "matching":
-            MatchingQuestions.parseJsonFile()
             q = MatchingQuestions.getQuestionByID(id)
         elif type == "mc":
-            MCQuestions.parseJsonFile()
             q = MCQuestions.getQuestionByID(id)
         else:
-            FillInTheBlank.parseJsonFile()
             q = FillInTheBlank.getQuestionByID(id)
         
         if q == None:
@@ -147,13 +175,10 @@ def questionsHandler():
             response.headers['Content-Type'] = 'application/json'
             return response
         if type == "matching":
-            MatchingQuestions.parseJsonFile()
             q = MatchingQuestions.getRandomQuestionByDifficulty(difficulty)
         elif type == "mc":
-            MCQuestions.parseJsonFile()
             q = MCQuestions.getRandomQuestionByDifficulty(difficulty)
         else:
-            FillInTheBlank.parseJsonFile()
             q = FillInTheBlank.getRandomQuestionByDifficulty(difficulty)
         
         json_string = json.dumps(q, default=lambda o: o.to_serializable(), indent=4)
@@ -167,13 +192,10 @@ def questionsHandler():
             return response
         
         if type == "matching":
-            MatchingQuestions.parseJsonFile()
             q = MatchingQuestions.getRandomQuestionBySubject(subject)
         elif type == "mc":
-            MCQuestions.parseJsonFile()
             q = MCQuestions.getRandomQuestionBySubject(subject)
         else:
-            FillInTheBlank.parseJsonFile()
             q = FillInTheBlank.getRandomQuestionBySubject(subject)
         
         json_string = json.dumps(q, default=lambda o: o.to_serializable(), indent=4)
@@ -186,15 +208,52 @@ def questionsHandler():
         return response
         
         
-        
-           
-            
-        
-
-
-
+##########################################################################Ranks#####################################################################################
+@app.route("/database/ranks/insert")
+def insertRank():
+    data = request.args.get("data")
+    if data == None:
+        return '{"Error": "no parameter specified"}'
+    
+    data = json.loads(data)
+    
+    r = Record(data["totalPoints"],data["totalWon"],data["totalPlayed"],data["totalCorrect"],data["totalIncorrect"],data["ownerID"])
+    return r.insertIntoDB()
+    
+@app.route("/database/ranks/get")
+def getRankByID():
+    id = request.args.get("id")
+    if id == None:
+        return '{"Error": "no parameter specified"}'
+    
+    r = Record.getByID(id)
+    
+    if r == "":
+        return '{"Error": "Record not found"}'
+    else:
+        return r
+    
+    
+@app.route("/database/ranks/delete")
+def deleteRankByID():
+    id = request.args.get("id")
+    if id == None:
+        return '{"Error": "no parameter specified"}'
+    
+    Record.deleteByID(id)
+    
+    return "ok"
+    
+    
+@app.route("/database/ranks/getall")
+def getAllRanks():
+    return Record.getAll()
+    
 
 
 
 if __name__ == '__main__':
+    MatchingQuestions.parseJsonFile()
+    MCQuestions.parseJsonFile()
+    FillInTheBlank.parseJsonFile()
     app.run(debug=False)

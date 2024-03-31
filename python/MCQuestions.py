@@ -50,9 +50,9 @@ class MCQuestions:
         Parses a JSON file containing multiple-choice questions and populates the questions list.
         """
         if system == "Windows":
-            filedir = "DatabaseFiles\\FillInTheBlank.json"
+            filedir = "DatabaseFiles\\MCQuestions.json"
         else:
-            filedir = "DatabaseFiles/FillInTheBlank.json"
+            filedir = "DatabaseFiles/MCQuestions.json"
         
         with open(filedir, 'r') as file:
             data = json.load(file)

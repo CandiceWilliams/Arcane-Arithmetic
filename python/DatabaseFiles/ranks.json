@@ -1,0 +1,18 @@
+[
+    {
+        "totalPoints": 10,
+        "totalWon": 10,
+        "totalPlayed": 10,
+        "totalCorrect": 10,
+        "totalIncorrect": 10,
+        "ownerID": "8nwwEYXxEF"
+    },
+    {
+        "totalPoints": 10,
+        "totalWon": 20,
+        "totalPlayed": 30,
+        "totalCorrect": 40,
+        "totalIncorrect": 2,
+        "ownerID": "sss"
+    }
+]

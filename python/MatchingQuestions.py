@@ -5,7 +5,6 @@ import platform
 system = platform.system()
 
 class MatchingQuestions:
-    system = platform.system()
     
     
     """
@@ -54,9 +53,9 @@ class MatchingQuestions:
         Parses a JSON file containing matching questions and populates the questions list.
         """
         if system == "Windows":
-            filedir = "DatabaseFiles\\FillInTheBlank.json"
+            filedir = "DatabaseFiles\\MatchingQuestions.json"
         else:
-            filedir = "DatabaseFiles/FillInTheBlank.json"
+            filedir = "DatabaseFiles/MatchingQuestions.json"
         
         with open(filedir, 'r') as file:
             data = json.load(file)
