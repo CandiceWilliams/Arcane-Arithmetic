@@ -31,56 +31,62 @@ public class SignUpController {
     }
     public void switchToTopic(ActionEvent event) throws IOException {
     	SettingsController.settingsCon.loadSound();
-    	if(!password.getText().equals(confirmPassword.getText())) {
-    		pwDiff.setVisible(true);	
-    	} else if(username.getText().length()<3 || username.getText().length()>12) {
-    		usernameTooLong.setVisible(true);
-    	} else {
-	    	String newUser = "{\"username\": \"" + username.getText() + "\", \"password\": \""+ password.getText()+
-	    			"\", \"name\": \""+username.getText() + "\", \"privilege\": \"user\"}";
-	    	try {
-	    		String urlString = "http://127.0.0.1:5000/database/users/insert?data=";
-	    		urlString += newUser;
-	    		
-	    		URL url = new URL(urlString);
-	    		HttpURLConnection con = (HttpURLConnection) url.openConnection();
-	    		con.setRequestMethod("GET");
-	    		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-	    		
-	    		String inputLine;
-	    		StringBuilder content = new StringBuilder();
-	    		
-	    		while ((inputLine = in.readLine()) != null) {
-	    			content.append(inputLine);
-	    		}
-	    		in.close();
-	    		con.disconnect();
-	    		
-	    		if(content.toString()=="{\"Error\":\"Invalid Input\"}") {
-	    			pwSpecial.setVisible(true);
-	    		} else if(content.toString()=="{\"Error\":\"User already exists\"}") {
-	    			existedUsername.setVisible(true);
-	    		} else if(content.toString()=="{\"Error\":\"No field specified\"}"){
-	    			
-	    		} else {
-	    			ObjectMapper objectMapper = new ObjectMapper();
-	    			User user = objectMapper.readValue(content.toString(), User.class);
-	    			
-	    			Stage stage = (Stage)signUpButton.getScene().getWindow();
-	    			stage.close();
-	    			Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
-	    			scene = new Scene(root);
-	    			startMenuStage.setScene(scene);
-	    			SettingsController.settingsCon.loadFullScreen();
-	    			existedUsername.setVisible(false);
-	    			pwSpecial.setVisible(false);
-	    			pwDiff.setVisible(false);	
-	    			usernameTooLong.setVisible(false);
-	    		}
-	    	} catch (Exception e) {
-	    		e.printStackTrace();
-	    	}
-    	}
+//    	if(!password.getText().equals(confirmPassword.getText())) {
+//    		pwDiff.setVisible(true);	
+//    	} else if(username.getText().length()<3 || username.getText().length()>12) {
+//    		usernameTooLong.setVisible(true);
+//    	} else {
+//	    	String newUser = "{\"username\": \"" + username.getText() + "\", \"password\": \""+ password.getText()+
+//	    			"\", \"name\": \""+username.getText() + "\", \"privilege\": \"user\"}";
+//	    	try {
+//	    		String urlString = "http://127.0.0.1:5000/database/users/insert?data=";
+//	    		urlString += newUser;
+//	    		
+//	    		URL url = new URL(urlString);
+//	    		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+//	    		con.setRequestMethod("GET");
+//	    		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+//	    		
+//	    		String inputLine;
+//	    		StringBuilder content = new StringBuilder();
+//	    		
+//	    		while ((inputLine = in.readLine()) != null) {
+//	    			content.append(inputLine);
+//	    		}
+//	    		in.close();
+//	    		con.disconnect();
+//	    		
+//	    		if(content.toString()=="{\"Error\":\"Invalid Input\"}") {
+//	    			pwSpecial.setVisible(true);
+//	    		} else if(content.toString()=="{\"Error\":\"User already exists\"}") {
+//	    			existedUsername.setVisible(true);
+//	    		} else if(content.toString()=="{\"Error\":\"No field specified\"}"){
+//	    			
+//	    		} else {
+//	    			ObjectMapper objectMapper = new ObjectMapper();
+//	    			User user = objectMapper.readValue(content.toString(), User.class);
+//	    			
+//	    			Stage stage = (Stage)signUpButton.getScene().getWindow();
+//	    			stage.close();
+//	    			Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
+//	    			scene = new Scene(root);
+//	    			startMenuStage.setScene(scene);
+//	    			SettingsController.settingsCon.loadFullScreen();
+//	    			existedUsername.setVisible(false);
+//	    			pwSpecial.setVisible(false);
+//	    			pwDiff.setVisible(false);	
+//	    			usernameTooLong.setVisible(false);
+//	    		}
+//	    	} catch (Exception e) {
+//	    		e.printStackTrace();
+//	    	}
+//    	}
+    	Stage stage = (Stage)signUpButton.getScene().getWindow();
+		stage.close();
+		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
+		scene = new Scene(root);
+		startMenuStage.setScene(scene);
+		SettingsController.settingsCon.loadFullScreen();
 	}
 
 	public static void storeStartMenuStage(Stage startMenuStage){
