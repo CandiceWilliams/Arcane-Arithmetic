@@ -5,5 +5,180 @@
         "difficulty": "easy",
         "question_id": 1,
         "subject": "statistics"
+    },
+    {
+        "question": "The heights (in inches) of five students are 60, 62, 65, 68, and 70. What is the mean height of these five students?",
+        "answer": "65",
+        "difficulty": "easy ",
+        "question_id": 2,
+        "subject": "statistics"
+    },
+    {
+        "question": "The weights (in kilograms) of six packages are 3, 4, 5, 6, 7, and 8. What is the median weight of these six packages?",
+        "answer": "5.5",
+        "difficulty": "easy",
+        "question_id": 3,
+        "subject": "statistics"
+    },
+    {
+        "question": "The mean (average) monthly income of a group of ten people is $3,500. If the monthly incomes of nine people are $3,200, $3,400, $3,600, $3,700, $3,800, $4,000, $4,200, $4,300, and $4,500, what is the monthly income of the tenth person?",
+        "answer": "3800",
+        "difficulty": "medium",
+        "question_id": 4,
+        "subject": "statistics"
+    },
+    {
+        "question": "The average score of a student in five exams was 85. If the scores in four exams were 80, 90, 85, and 88, what was the score in the fifth exam?",
+        "answer": "88",
+        "difficulty": "medium",
+        "question_id": 5,
+        "subject": "statistics"
+    },
+    {
+        "question": "In a game, a player rolls a fair six-sided die. If they roll a 1 or a 2, they win $5. If they roll a 3 or a 4, they win $10. If they roll a 5 or a 6, they win $20. What is the expected value of this game?",
+        "answer": "11.67",
+        "difficulty": "difficult",
+        "question_id": 6,
+        "subject": "statistics"
+    },
+    {
+        "question": "The College Board reports that 2% of the two million high school students who take the SAT each year receive special accommodations because of documented disabilities. Consider a random sample of 25 students who have recently taken the test. What is the probability that exactly 1 received a special accommodation?",
+        "answer": "0.3079",
+        "difficulty": "difficult",
+        "question_id": 7,
+        "subject": "statistics"
+    },
+    {
+        "question": "A toll bridge charges $1.00 for passenger cars and 2.50 for other vehicles. Suppose that during the day-time hours, 60% of all vehicles are passenger cars. If 25 vehicles cross the bridge during a particular daytime period, what is the resulting expected toll revenue?",
+        "answer": "40",
+        "difficulty": "difficult",
+        "question_id": 8,
+        "subject": "statistics"
+    },
+    {
+        "question": " The derivative of f(x) = 5x^3 - 2x^2 + 3x - 1 with respect to x is?",
+        "answer": "f\u00b4(x) = 15x^2  - 4x + 3",
+        "difficulty": "easy ",
+        "question_id": 9,
+        "subject": "calculus"
+    },
+    {
+        "question": "The integral of 3x^2 with respect to x is? __ + C ",
+        "answer": "x^3 + C",
+        "difficulty": "easy ",
+        "question_id": 10,
+        "subject": "calculus"
+    },
+    {
+        "question": "The antiderivative of sin(x) with respect to x is? __ + C",
+        "answer": " -cos(x) + C",
+        "difficulty": "easy ",
+        "question_id": 11,
+        "subject": "calculus"
+    },
+    {
+        "question": "The integral of (1/1+x^2) with respect to x is? __ + C",
+        "answer": "arctan(x) + C",
+        "difficulty": "medium",
+        "question_id": 12,
+        "subject": "calculus"
+    },
+    {
+        "question": "If f(x) = cos(x^2) what is f\u00b4(x)?",
+        "answer": "-2xsin(x^2)",
+        "difficulty": "medium",
+        "question_id": 13,
+        "subject": "calculus"
+    },
+    {
+        "question": "If f(x) = e^sin(x), then f\u00b4(x) is?",
+        "answer": "(e^sin(x))cos(x)",
+        "difficulty": "medium",
+        "question_id": 14,
+        "subject": "calculus"
+    },
+    {
+        "question": "The derivative of f(x) = e^(2x) sin(x) with respect to x is?",
+        "answer": " 2e^(2x)sin(x)+e^(2x)cos(x)",
+        "difficulty": "difficult",
+        "question_id": 15,
+        "subject": "calculus"
+    },
+    {
+        "question": " The derivative of f(x) = ln(2x^2-1) with respect to x is? __ / __",
+        "answer": "4x/2(x^2)-1",
+        "difficulty": "difficult",
+        "question_id": 16,
+        "subject": "calculus"
+    },
+    {
+        "question": "The antiderivative of (2/xln(x)) with respect to x is? __ + C",
+        "answer": "2ln|ln(x)| + C",
+        "difficulty": "difficult",
+        "question_id": 17,
+        "subject": "calculus"
+    },
+    {
+        "question": " Find Determinant of the Matrix [[1, 2, 5, 7, 10], [1, 2, 3, 6, 7], [1, 1, 3, 5, 5], [1, 1, 2, 4, 5], [1, 1, 1, 1, 1]]?",
+        "answer": "-10",
+        "difficulty": "easy",
+        "question_id": 18,
+        "subject": "algebra"
+    },
+    {
+        "question": "In a dataset, the __________ is the middle value when the data is arranged in ascending order. ",
+        "answer": "median",
+        "difficulty": "easy ",
+        "question_id": 19,
+        "subject": "algebra"
+    },
+    {
+        "question": "In statistics, the __________ is the most frequently occurring value in a dataset.",
+        "answer": "mode ",
+        "difficulty": "easy ",
+        "question_id": 20,
+        "subject": "algebra"
+    },
+    {
+        "question": "Consider the following system of equations: x+ y+ z=2, x+3y+3z=0, x+3y+6z=3. Use Gaussian elimination to put the augmented coefficient matrix into row echelon form. The result will be  [1, 1, 1, a],[ 0, 1, 1, b], [ 0, 0, 1, c], where a = __, b = __, c = __?",
+        "answer": "[a=2, b=-1, c=1]",
+        "difficulty": "medium",
+        "question_id": 21,
+        "subject": "algebra"
+    },
+    {
+        "question": "Find the cross product of u = [1, -2, 3] and v = [4, 1, -1]?",
+        "answer": "[-4, -13, 9]",
+        "difficulty": "medium ",
+        "question_id": 22,
+        "subject": "algebra"
+    },
+    {
+        "question": "Solve the system of linear equations: 2x+y=5, 3x-2y=1. x = __, y = __",
+        "answer": "[x = 11/7, y = 13/7]",
+        "difficulty": "medium",
+        "question_id": 23,
+        "subject": "algebra"
+    },
+    {
+        "question": "Determine whether the following vector is linearly dependent or linearly independent: (1, 2, \u20133, 1), (3, 7, 1, \u20132), (1, 3, 7, \u20134)?",
+        "answer": "linearly dependent",
+        "difficulty": "difficult",
+        "question_id": 24,
+        "subject": "algebra"
+    },
+    {
+        "question": "The smallest subspace of R3 containing the vectors  (0,\u22123,6) and (0,1,\u22122) is the line whose equations are x=a and z=by where a = __, b = __?",
+        "answer": "a = 0, b = -2",
+        "difficulty": "difficult",
+        "question_id": 25,
+        "subject": "algebra"
+    },
+    {
+        "question": "Find the values of k for which the system of equations : x+ky=1, kx+y=1. Has no solution? k = __, __",
+        "answer": "k = 1, -1",
+        "difficulty": "difficult",
+        "question_id": 26,
+        "subject": "algebra"
     }
 ]

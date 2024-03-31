@@ -1,12 +1,30 @@
 import json
 import random
+import platform
+
+system = platform.system()
 
 class MatchingQuestions:
+    system = platform.system()
+    
+    
     """
-    Represents a collection of matching questions with methods to handle them.
+        Represents a collection of matching questions with methods to handle them.
     """
+
     questions = []
 
+    def to_serializable(self):
+        return {
+            "question": self.question,
+            "row1": self.row1,
+            "row2": self.row2,
+            "answer": self.answer,
+            "difficulty": self.difficulty,
+            "subject": self.subject,
+            "question_id": self.question_id
+        }
+        
     def __init__(self, question, row1, row2, answer, question_id, difficulty, subject):
         """
         Initializes a MatchingQuestions object with provided attributes.
@@ -20,14 +38,15 @@ class MatchingQuestions:
             difficulty (str): Difficulty level of the question.
             subject (str): Subject category of the question.
         """
-
         self.question = question
         self.row1 = row1
         self.row2 = row2
         self.answer = answer
-        self.question_id = question_id
+        self.question_id = int(question_id)
         self.difficulty = difficulty
         self.subject = subject
+        
+        MatchingQuestions.questions.append(self)
 
         MatchingQuestions.questions.append(self)
 
@@ -36,7 +55,12 @@ class MatchingQuestions:
         """
         Parses a JSON file containing matching questions and populates the questions list.
         """
-        with open("MatchingQuestions.json", 'r') as file:
+        if system == "Windows":
+            filedir = "DatabaseFiles\\FillInTheBlank.json"
+        else:
+            filedir = "DatabaseFiles/FillInTheBlank.json"
+        
+        with open(filedir, 'r') as file:
             data = json.load(file)
 
 
@@ -55,9 +79,8 @@ class MatchingQuestions:
         Returns:
             MatchingQuestions or None: The matching question if found, None otherwise.
         """
-
         for i in MatchingQuestions.questions:
-            if id == i.question_id :
+            if id == int(i.question_id) :
                 return i
 
         return None
@@ -73,7 +96,6 @@ class MatchingQuestions:
         Returns:
             MatchingQuestions: A random matching question with the specified subject.
         """
-
         Qs = []
 
         # Take all questions with the specified subject
@@ -103,13 +125,4 @@ class MatchingQuestions:
                 Qs.append(i)
 
         return random.choice(Qs)
-
-
-MatchingQuestions.parseJsonFile()
-
-a = MatchingQuestions.getRandomQuestionBySubject("algebra")
-print(a.question)
-print(a.row1)
-print(a.row2)
-
 
