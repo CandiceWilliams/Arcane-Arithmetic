@@ -92,7 +92,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="nextBtn" fx:id="nextSlide" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="502.0" layoutY="298.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="33.0" stylesheets="@../css/tutorial.css" text="NextBtn">
+            <Button id="nextBtn" fx:id="nextSlide" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="502.0" layoutY="298.0" mnemonicParsing="false" onAction="#nextSlide" prefHeight="16.0" prefWidth="33.0" stylesheets="@../css/tutorial.css" text="NextBtn">
                <graphic>
                   <ImageView id="nextBtn" fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="button">
                      <image>

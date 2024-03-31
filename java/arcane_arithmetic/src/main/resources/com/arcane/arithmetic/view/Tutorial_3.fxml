@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="632.0" styleClass="root" stylesheets="@../css/tutorial.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.TutorialController3">
+   <children>
+      <Pane id="book" layoutX="21.0" layoutY="24.0" prefHeight="426.0" prefWidth="590.0" stylesheets="@../css/tutorial.css">
+         <children>
+            <Pane layoutX="350.0" layoutY="26.0" prefHeight="286.0" prefWidth="179.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="136.0" fitWidth="136.0" layoutX="20.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/imgs/Trophy-10.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" layoutX="29.0" layoutY="238.0" prefHeight="34.0" prefWidth="119.0" spacing="13.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="61.0" layoutY="26.0" prefHeight="286.0" prefWidth="179.0" stylesheets="@../css/tutorial.css">
+               <children>
+                  <Label id="title" fx:id="title" layoutX="22.0" layoutY="35.0" styleClass="text" stylesheets="@../css/tutorial.css" text="How to Win">
+                     <font>
+                        <Font name="VinqueRg-Regular" size="21.0" />
+                     </font>
+                  </Label>
+                  <TextFlow id="textflow" fx:id="textflow" layoutX="9.0" layoutY="109.0" lineSpacing="3.0" prefHeight="119.0" prefWidth="162.0" stylesheets="@../css/tutorial.css" textAlignment="CENTER">
+                     <children>
+                        <Text id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="Complete different questions and race against the clock. Compete with other players on the leaderboard!" />
+                     </children>
+                  </TextFlow>
+               </children>
+            </Pane>
+            <Button id="backBtn" fx:id="backSlide" contentDisplay="GRAPHIC_ONLY" layoutX="37.0" layoutY="290.0" mnemonicParsing="false" onAction="#backSlide" prefHeight="34.0" prefWidth="33.0" text="BackBtn">
+               <graphic>
+                  <ImageView id="backBtn" fitHeight="43.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" styleClass="button">
+                     <image>
+                        <Image url="@../assets/imgs/Icon_Return.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="nextBtn" fx:id="nextSlide" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="502.0" layoutY="298.0" mnemonicParsing="false" onAction="#nextSlide" prefHeight="16.0" prefWidth="33.0" stylesheets="@../css/tutorial.css" text="NextBtn">
+               <graphic>
+                  <ImageView id="nextBtn" fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="button">
+                     <image>
+                        <Image url="@../assets/imgs/Icon_ArrowUp_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

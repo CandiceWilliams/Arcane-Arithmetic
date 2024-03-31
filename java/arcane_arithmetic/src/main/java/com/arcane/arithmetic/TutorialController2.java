@@ -27,7 +27,7 @@ import org.controlsfx.control.PopOver;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class TutorialController {
+public class TutorialController2 {
     private Stage stage;
     private Scene scene;
     @FXML private AnchorPane pane;
@@ -51,134 +51,129 @@ public class TutorialController {
 //        nextImg.setOnAction(fillEvent);
 //
 //    }
-    EventHandler<ActionEvent> fillEvent = new EventHandler<ActionEvent>() {
+    EventHandler<ActionEvent> fiftyEvent = new EventHandler<ActionEvent>() {
         public void handle(ActionEvent e)
         {
             try {
-                switchToQuestionTypeFill(e);
+            	switchToPowerUpTypeFiftyFifty(e);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
         }
     };
 
-    EventHandler<ActionEvent> mcEvent = new EventHandler<ActionEvent>() {
+    EventHandler<ActionEvent> doubleEvent = new EventHandler<ActionEvent>() {
         public void handle(ActionEvent e)
         {
             try {
-                switchToQuestionTypeMC(e);
+            	switchToPowerUpTypeDoubleScore(e);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
         }
     };
 
-    EventHandler<ActionEvent> matchEvent = new EventHandler<ActionEvent>() {
+    EventHandler<ActionEvent> timeEvent = new EventHandler<ActionEvent>() {
         public void handle(ActionEvent e)
         {
             try {
-                switchToQuestionTypeMatching(e);
+            	switchToPowerUpTypeTime(e);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
         }
     };
 
-
-    public void startTutorial(ActionEvent event) throws IOException{
-    	Stage window = new Stage();
-    	window.initModality(Modality.APPLICATION_MODAL);
-        window.resizableProperty().setValue(Boolean.FALSE);
-        pane = (AnchorPane) FXMLLoader.load(getClass().getResource("view/Tutorial_1-1.fxml"));
-
-        scene = new Scene(pane);
-        scene.getStylesheets().add(css);
-        window.setScene(scene);
-        window.showAndWait();
-
-        nextImg.setOnAction(fillEvent);
-
-    }
-
-    public void switchToQuestionTypeMC(ActionEvent event) throws IOException {
+    public void switchToPowerUpTypeDoubleScore(ActionEvent event) throws IOException {
 
         //change text
-        subtitle.setText("Multiple Choice");
+        subtitle.setText("Double Score");
         subtitle.setTextAlignment(TextAlignment.CENTER);
-        Text text = new Text("Choose the best answer out of the options provided.\n" +
+        Text text = new Text("Get double score for each question during a limited time.\n" +
                 "\n" +
-                "Once you are confident with your answer, hit 'Submit'!");
+                "Gotta go fast!");
         textflow.getChildren().clear();
         textflow.getChildren().add(text);
         textflow.setTextAlignment(TextAlignment.CENTER);
         //set button behaviour
         nextImg.setDisable(false);
-        nextImg.setOnAction(fillEvent);
+        nextImg.setOnAction(fiftyEvent);
         prevImg.setDisable(true);
         //change circle colors
         circle1.setFill(focused);
         circle2.setFill(unfocused);
         circle3.setFill(unfocused);
         //change image
-        Image image = new Image(new FileInputStream("src/main/resources/com/arcane/arithmetic/assets/imgs/MC_Color.png"));
+        Image image = new Image(new FileInputStream("src/main/resources/com/arcane/arithmetic/assets/imgs/2x.png"));
         imageView.setImage(image);
         imageView.setFitHeight(136);
         imageView.setFitWidth(136);
 
     }
-    public void switchToQuestionTypeFill(ActionEvent event) throws IOException{
+    public void switchToPowerUpTypeFiftyFifty(ActionEvent event) throws IOException{
         //change text
-        subtitle.setText("Fill-in-the-Blank");
+        subtitle.setText("Fifty Fifty");
         subtitle.setTextAlignment(TextAlignment.CENTER);
-        Text text = new Text("Use your mouse and keyboard to type the correct answers in the blank spots provided.\n" +
+        Text text = new Text("Show only 2 potential answers for your current question.\n" +
                 "\n" +
-                "Once you are confident with your answer, hit 'Submit'!");
+                "Only works for multiple choice!");
         textflow.getChildren().clear();
         textflow.getChildren().add(text);
         textflow.setTextAlignment(TextAlignment.CENTER);
         //set button behaviours
         nextImg.setDisable(false);
         prevImg.setDisable(false);
-        nextImg.setOnAction(matchEvent);
-        prevImg.setOnAction(mcEvent);
+        nextImg.setOnAction(timeEvent);
+        prevImg.setOnAction(doubleEvent);
         //change circle colors
         circle1.setFill(unfocused);
         circle2.setFill(focused);
         circle3.setFill(unfocused);
         //change image
-        Image image = new Image(new FileInputStream("src/main/resources/com/arcane/arithmetic/assets/imgs/fill-in-the-blank.png"));
+        Image image = new Image(new FileInputStream("src/main/resources/com/arcane/arithmetic/assets/imgs/5050.png"));
         imageView.setImage(image);
         imageView.setFitHeight(170);
         imageView.setFitWidth(118);
         imageView.setPreserveRatio(true);
     }
-    public void switchToQuestionTypeMatching(ActionEvent event) throws IOException{
+    public void switchToPowerUpTypeTime(ActionEvent event) throws IOException{
         //change text
-        subtitle.setText("Matching");
+        subtitle.setText("Extra Time");
         subtitle.setTextAlignment(TextAlignment.CENTER);
-        Text text = new Text("Use your mouse to drag each answer to its corresponding question.\n" +
+        Text text = new Text("Add 30 seconds to the clock.\n" +
                 "\n" +
-                "Once you are confident with your answer, hit 'Submit'!");
+                "More time, more points!");
         textflow.getChildren().clear();
         textflow.getChildren().add(text);
         textflow.setTextAlignment(TextAlignment.CENTER);
         //set button behaviours
         nextImg.setDisable(true);
         prevImg.setDisable(false);
-        prevImg.setOnAction(fillEvent);
+        prevImg.setOnAction(fiftyEvent);
         //change circle colors
         circle1.setFill(unfocused);
         circle2.setFill(unfocused);
         circle3.setFill(focused);
         //change image
-        Image image = new Image(new FileInputStream("src/main/resources/com/arcane/arithmetic/assets/imgs/puzzle.png"));
+        Image image = new Image(new FileInputStream("src/main/resources/com/arcane/arithmetic/assets/imgs/clock.png"));
         imageView.setImage(image);
         imageView.setFitHeight(132);
         imageView.setFitWidth(126);
     }
+    
     public void nextSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();
-		Parent root = FXMLLoader.load(getClass().getResource("view/Tutorial_2.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("view/Tutorial_3.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		String tutorialcss = this.getClass().getResource("css/tutorial.css").toExternalForm();
+		scene.getStylesheets().add(tutorialcss);
+		stage.setScene(scene);
+		stage.show();
+    }
+    public void backSlide(ActionEvent event) throws IOException{
+    	SettingsController.settingsCon.loadSound();
+		Parent root = FXMLLoader.load(getClass().getResource("view/Tutorial_1-1.fxml"));
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		String tutorialcss = this.getClass().getResource("css/tutorial.css").toExternalForm();
