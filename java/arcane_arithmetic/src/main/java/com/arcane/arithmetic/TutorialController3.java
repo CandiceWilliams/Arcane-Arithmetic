@@ -42,7 +42,9 @@ public class TutorialController3 {
     String css = this.getClass().getResource("css/tutorial.css").toExternalForm();
     
     public void nextSlide(ActionEvent event) throws IOException{
-    	stage.close();
+    	SettingsController.settingsCon.loadSound();
+		Stage stage = (Stage)backSlide.getScene().getWindow();
+		stage.close();
     }
     public void backSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();

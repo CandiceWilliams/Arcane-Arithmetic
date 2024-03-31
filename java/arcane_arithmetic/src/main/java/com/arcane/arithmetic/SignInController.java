@@ -18,6 +18,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class SignInController {	
@@ -85,14 +86,17 @@ public class SignInController {
 //		}
 //		in.close();
 //		con.disconnect();
+//		System.out.print(content.toString());
 //		if(content.toString()=="{\"Error\":\"User Not Found\"}") {
 //			errorLabel.setVisible(true);
 //		} else if(content.toString()=="{\"Error\":\"No field specified\"}") {
 //			errorLabel.setVisible(true);
 //		} else {
 //			ObjectMapper objectMapper = new ObjectMapper();
-//			User user = objectMapper.readValue(content.toString(), User.class);
-//			if(user.getPassword().equals(password.getText())) {
+//			JsonNode json = objectMapper.readTree(content.toString());
+//			String str = json.at("/password").toString();
+//			str = str.substring(1, str.length() - 1);
+//			if((str.equals(password.getText()))) {
 //				Stage stage = (Stage)loginButton.getScene().getWindow();
 //				stage.close();
 //				Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
@@ -104,6 +108,8 @@ public class SignInController {
 //				errorLabel.setVisible(true);
 //			}
 //		}
+		
+		//temporary without api
 		Stage stage = (Stage)loginButton.getScene().getWindow();
 		stage.close();
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));

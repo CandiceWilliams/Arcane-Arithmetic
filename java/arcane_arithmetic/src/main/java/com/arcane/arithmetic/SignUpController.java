@@ -14,7 +14,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class SignUpController {
@@ -38,9 +40,10 @@ public class SignUpController {
 //    	} else {
 //	    	String newUser = "{\"username\": \"" + username.getText() + "\", \"password\": \""+ password.getText()+
 //	    			"\", \"name\": \""+username.getText() + "\", \"privilege\": \"user\"}";
+//    		String encodedUser = URLEncoder.encode(newUser, "UTF-8");
 //	    	try {
 //	    		String urlString = "http://127.0.0.1:5000/database/users/insert?data=";
-//	    		urlString += newUser;
+//	    		urlString += encodedUser;
 //	    		
 //	    		URL url = new URL(urlString);
 //	    		HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -55,7 +58,7 @@ public class SignUpController {
 //	    		}
 //	    		in.close();
 //	    		con.disconnect();
-//	    		
+//	    		System.out.print(content.toString());
 //	    		if(content.toString()=="{\"Error\":\"Invalid Input\"}") {
 //	    			pwSpecial.setVisible(true);
 //	    		} else if(content.toString()=="{\"Error\":\"User already exists\"}") {
@@ -64,8 +67,7 @@ public class SignUpController {
 //	    			
 //	    		} else {
 //	    			ObjectMapper objectMapper = new ObjectMapper();
-//	    			User user = objectMapper.readValue(content.toString(), User.class);
-//	    			
+//	    			JsonNode json = objectMapper.readTree(content.toString());
 //	    			Stage stage = (Stage)signUpButton.getScene().getWindow();
 //	    			stage.close();
 //	    			Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
@@ -81,6 +83,8 @@ public class SignUpController {
 //	    		e.printStackTrace();
 //	    	}
 //    	}
+    	
+    	//temporary without api
     	Stage stage = (Stage)signUpButton.getScene().getWindow();
 		stage.close();
 		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));

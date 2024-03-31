@@ -1,6 +1,10 @@
 
 import json
 import random
+import platform
+
+
+system = platform.system()
 
 class MCQuestions: 
     """
@@ -8,6 +12,16 @@ class MCQuestions:
     """
 
     questions = []
+    
+    def to_serializable(self):
+        return {
+            "question": self.question,
+            "answer": self.answer,
+            "difficulty": self.difficulty,
+            "question_id": self.question_id,
+            "subject": self.subject,
+            "options": self.options
+        }
 
     def __init__(self, question, answer, question_id, difficulty, subject, options):
         """
@@ -21,7 +35,6 @@ class MCQuestions:
             subject (str): Subject category of the question.
             options (array of str): The list of options for the question.
         """
-
         self.question = question
         self.answer = answer
         self.question_id = question_id
@@ -37,7 +50,16 @@ class MCQuestions:
         Parses a JSON file containing multiple-choice questions and populates the questions list.
         """
 
-        with open("MCQuestions.json", 'r') as file:
+    def parseJsonFile() :
+        """
+        Parses a JSON file containing multiple-choice questions and populates the questions list.
+        """
+        if system == "Windows":
+            filedir = "DatabaseFiles\\FillInTheBlank.json"
+        else:
+            filedir = "DatabaseFiles/FillInTheBlank.json"
+        
+        with open(filedir, 'r') as file:
             data = json.load(file)
 
 
@@ -74,7 +96,6 @@ class MCQuestions:
         Returns:
             MCQuestions: A random multiple-choice question with the specified subject.
         """
-
         Qs = []
 
         #Take all questions with the specified subject
@@ -97,6 +118,17 @@ class MCQuestions:
             MCQuestions: A random multiple-choice question with the specified difficulty level.
         """
 
+    # Returns a random question with the given difficulty level
+    def getRandomQuestionByDifficulty(difficulty): 
+        """
+        Returns a random question with the given difficulty level.
+
+        Args:
+            difficulty (str): The difficulty level of the question to retrieve.
+
+        Returns:
+            MCQuestions: A random multiple-choice question with the specified difficulty level.
+        """
         Qs = []
 
         #Take all questions with the specified difficulty
@@ -106,9 +138,4 @@ class MCQuestions:
 
         return random.choice(Qs)
     
-
-MCQuestions.parseJsonFile()
-print(MCQuestions.getRandomQuestionBySubject("algebra").question)
-print("\n")
-print(MCQuestions.getRandomQuestionByDifficulty("easy").options)
 
