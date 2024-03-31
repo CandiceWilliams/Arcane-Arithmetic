@@ -23,7 +23,7 @@ public class SignUpController {
 	@FXML private javafx.scene.control.Button signUpButton;
 	@FXML private Label existedUsername,usernameTooLong,pwSpecial,pwDiff;
 	@FXML private TextField username,password,confirmPassword; 
-
+	
     public void switchToSignInScene(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
         SignInController SICon = new SignInController();
