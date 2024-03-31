@@ -1,5 +1,6 @@
 package com.arcane.arithmetic;
 
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,10 +8,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -21,7 +25,10 @@ public class InstructorPasswordPromptController {
     private static Stage startMenuStage;
     @FXML private AnchorPane pane;
 
-    @FXML Button backToOptionsButton, nextButton;
+    @FXML private Button backToOptionsButton, nextButton;
+    @FXML private TextField authenticationKeyTextField;
+    @FXML private Label invalidPasswordLabel;
+    private static final String authenticationPassword = "xyz369";
 
     public void popUpWindow(Stage startMenuStage) throws IOException {
         storeStartMenuStage(startMenuStage);
@@ -42,14 +49,23 @@ public class InstructorPasswordPromptController {
         settingsCon.startSettings(event);
     }
 
-    public void switchToInstructorDashboard(ActionEvent event) throws IOException {
-        SettingsController.settingsCon.loadSound();
-        Stage stage = (Stage)nextButton.getScene().getWindow();
-        stage.close();
-        Parent root = FXMLLoader.load(getClass().getResource("view/InstructorDashboard.fxml"));
-        scene = new Scene(root);
-        startMenuStage.setScene(scene);
-        SettingsController.settingsCon.loadFullScreen();
+    public void switchToInstructorDashboard() throws IOException {
+        String txt = authenticationKeyTextField.getText();
+        if (txt.equals(authenticationPassword)) {
+            SettingsController.settingsCon.loadSound();
+            Stage stage = (Stage) nextButton.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("view/InstructorDashboard.fxml"));
+            scene = new Scene(root);
+            startMenuStage.setScene(scene);
+            SettingsController.settingsCon.loadFullScreen();
+        }
+        else {
+            invalidPasswordLabel.setVisible(true);
+            PauseTransition visiblePause = new PauseTransition(Duration.seconds(1));
+            visiblePause.setOnFinished(event -> invalidPasswordLabel.setVisible(false));
+            visiblePause.play();
+        }
     }
 
     public static void storeStartMenuStage(Stage startMenuStage){

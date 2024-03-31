@@ -18,6 +18,7 @@ public class StartMenu extends Application {
         stage.setResizable(false);
         stage.show();
         SettingsController.settingsCon.initSettings(stage);
+        CheatsModePasswordPromptController.cheatsCon.initCheats();
     }
 
     public static void main(String[] args) {
