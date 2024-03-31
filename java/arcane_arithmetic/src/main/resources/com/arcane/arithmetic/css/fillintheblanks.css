@@ -1,0 +1,53 @@
+@font-face {
+	src: url('../assets/fonts/VinqueRg.otf');
+}
+.root{
+	-fx-background-image:url('../assets/imgs/multiplechoice-background.gif');
+	-fx-background-size: stretch;
+}
+.submitButton{
+	-fx-background-color: #ff5ca0;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-text-fill: #ffc9e0;	
+	-fx-font-size: 45;
+	-fx-border-color: #ff2b84;
+	-fx-border-radius: 15 15 15 15;
+	-fx-border-width: 5;
+}
+.submitButton:hover{
+	-fx-background-color: #fa78ae;	
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-font-size: 45;
+}
+.submitButton:pressed{
+	-fx-background-color: #ff4291;
+	-fx-background-radius: 20 20 20 20;
+	-fx-font-family: 'Vinque Rg';
+	-fx-font-size: 45;
+}
+.label{
+	-fx-font-family: "Vinque Rg";
+	-fx-text-fill: white;
+	-fx-font-size: 36;
+	-fx-font-weight: bold;
+}
+.question{
+	-fx-font-family: "Vinque Rg";
+	-fx-text-fill: #fad2f7;
+	-fx-font-size: 36;
+	-fx-font-weight: bold;
+}
+.topbar{
+	-fx-background-image: url('../assets/imgs/topbar.png');
+	-fx-background-size: stretch;
+}
+.bottombar{
+	-fx-background-image: url('../assets/imgs/bottombar.png');
+	-fx-background-size: stretch;
+}
+.mcAnswerBox{
+	-fx-background-image: url('../assets/imgs/multiplechoice-answer-bg.png');
+	-fx-background-size: stretch;
+}

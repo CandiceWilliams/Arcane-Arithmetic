@@ -38,23 +38,22 @@
             ]
         ],
         "difficulty": "easy",
-        "questionID": 68,
         "subject": "statistics",
         "question_id": 1
     },
     {
-        "Question": "Match the following types of modality with their corresponding definition:",
-        "Row1": {
+        "question": "Match the following types of modality with their corresponding definition:",
+        "row1": {
             "a": "Unimodal",
             "b": "Bimodal",
             "c": "Multimodal"
         },
-        "Row2": {
+        "row2": {
             "1": "Distribution has more than one two peaks",
             "2": "Distribution is one that rises to a single peak and then declines",
             "3": "Distribution has two different peaks"
         },
-        "Answer": [
+        "answer": [
             [
                 "a",
                 2
@@ -68,8 +67,7 @@
                 1
             ]
         ],
-        "Difficulty": "easy",
-        "questionID": 69,
+        "difficulty": "easy",
         "subject": "statistics",
         "question_id": 2
     },
@@ -106,7 +104,6 @@
             ]
         ],
         "difficulty": "easy",
-        "questionID": 70,
         "subject": "statistics",
         "question_id": 3
     },
@@ -137,7 +134,6 @@
             ]
         ],
         "difficulty": "medium",
-        "questionID": 78,
         "subject": "statistics",
         "question_id": 4
     },
@@ -174,7 +170,6 @@
             ]
         ],
         "difficulty": "medium",
-        "questionID": 79,
         "subject": "statistics",
         "question_id": 5
     },
@@ -211,7 +206,6 @@
             ]
         ],
         "difficulty": "medium",
-        "questionID": 80,
         "subject": "statistics",
         "question_id": 6
     },
@@ -254,7 +248,6 @@
             ]
         ],
         "difficulty": "difficult",
-        "questionID": 88,
         "subject": "statistics",
         "question_id": 7
     },
@@ -291,7 +284,6 @@
             ]
         ],
         "difficulty": "difficult",
-        "questionID": 89,
         "subject": "statistics",
         "question_id": 8
     },
@@ -322,7 +314,6 @@
             ]
         ],
         "difficulty": "difficult",
-        "questionID": 90,
         "subject": "statistics",
         "question_id": 9
     },
@@ -353,7 +344,6 @@
             ]
         ],
         "difficulty": "easy",
-        "questionID": 38,
         "subject": "calculus",
         "question_id": 10
     },
@@ -390,7 +380,6 @@
             ]
         ],
         "difficulty": "easy",
-        "questionID": 39,
         "subject": "calculus",
         "question_id": 11
     },
@@ -421,7 +410,6 @@
             ]
         ],
         "difficulty": "easy",
-        "questionID": 40,
         "subject": "calculus",
         "question_id": 12
     },
@@ -452,7 +440,6 @@
             ]
         ],
         "difficulty": "medium",
-        "questionID": 48,
         "subject": "calculus",
         "question_id": 13
     },
@@ -483,7 +470,6 @@
             ]
         ],
         "difficulty": "medium",
-        "questionID": 49,
         "subject": "calculus",
         "question_id": 14
     },
@@ -514,7 +500,6 @@
             ]
         ],
         "difficulty": "medium",
-        "questionID": 50,
         "subject": "calculus",
         "question_id": 15
     },
@@ -545,7 +530,6 @@
             ]
         ],
         "difficulty": "difficult",
-        "questionID": 58,
         "subject": "calculus",
         "question_id": 16
     },
@@ -576,7 +560,6 @@
             ]
         ],
         "difficulty": "difficult",
-        "questionID": 59,
         "subject": "calculus",
         "question_id": 17
     },
@@ -607,7 +590,6 @@
             ]
         ],
         "difficulty": "difficult",
-        "questionID": 60,
         "subject": "calculus",
         "question_id": 18
     },
@@ -644,7 +626,6 @@
             ]
         ],
         "difficulty": "easy",
-        "questionID": 8,
         "subject": "algebra",
         "question_id": 19
     },
@@ -693,7 +674,6 @@
             ]
         ],
         "difficulty": "easy",
-        "questionID": 9,
         "subject": "algebra",
         "question_id": 20
     },
@@ -742,7 +722,6 @@
             ]
         ],
         "difficulty": "easy",
-        "questionID": 10,
         "subject": "algebra",
         "question_id": 21
     },
@@ -779,7 +758,6 @@
             ]
         ],
         "difficulty": "medium",
-        "questionID": 18,
         "subject": "algebra",
         "question_id": 22
     },
@@ -810,7 +788,6 @@
             ]
         ],
         "difficulty": "medium",
-        "questionID": 19,
         "subject": "algebra",
         "question_id": 23
     },
@@ -841,7 +818,6 @@
             ]
         ],
         "difficulty": "medium",
-        "questionID": 20,
         "subject": "algebra",
         "question_id": 24
     },
@@ -886,7 +862,6 @@
             ]
         ],
         "difficulty": "difficult",
-        "questionID": 28,
         "subject": "algebra",
         "question_id": 25
     },
@@ -917,7 +892,6 @@
             ]
         ],
         "difficulty": "difficult",
-        "questionID": 29,
         "subject": "algebra",
         "question_id": 26
     },
@@ -948,7 +922,6 @@
             ]
         ],
         "difficulty": "difficult",
-        "questionID": 30,
         "subject": "algebra",
         "question_id": 27
     }
