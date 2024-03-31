@@ -3,7 +3,6 @@ package com.arcane.arithmetic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.AnchorPane;
@@ -27,14 +26,12 @@ public class SettingsController {
 
     private final String css = SettingsController.class.getResource("css/settings.css").toExternalForm();
 
-    private static final String backgroundMusicFilePath =
-            SettingsController.class.getResource("assets/sounds/relaxed-vlog-night-street-131746.mp3").getPath();
+    private static final String backgroundMusicFilePath = "src/main/resources/com/arcane/arithmetic/assets/sounds/relaxed-vlog-night-street-131746.mp3";
     private static final Media backgroundMusicMedia = new Media(new File(backgroundMusicFilePath).toURI().toString());
     private static final MediaPlayer backgroundMediaPlayer = new MediaPlayer(backgroundMusicMedia);
 
 
-    private static final String buttonClickSoundFilePath =
-            SettingsController.class.getResource("assets/sounds/click-button-140881.mp3").getPath();
+    private static final String buttonClickSoundFilePath = "src/main/resources/com/arcane/arithmetic/assets/sounds/relaxed-vlog-night-street-131746.mp3";
     private static final Media buttonClickSoundMedia = new Media(new File(buttonClickSoundFilePath).toURI().toString());
     private static final MediaPlayer buttonClickSoundMediaPlayer = new MediaPlayer(buttonClickSoundMedia);
 

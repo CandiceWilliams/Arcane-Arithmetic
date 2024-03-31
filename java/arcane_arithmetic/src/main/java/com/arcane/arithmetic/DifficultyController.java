@@ -21,20 +21,22 @@ public class DifficultyController {
 
 	public void easy(ActionEvent event) throws IOException {
 		diff = "easy";
+		startGame(event);
 
 	}	
 	public void medium(ActionEvent event) throws IOException {
 		diff = "medium";
-
+		startGame(event);
 	}	
 	public void hard(ActionEvent event) throws IOException {
 		diff = "difficult";
-
+		startGame(event);
 	}	
 	public String getDiff() {
 		return diff;
 	}
 	public void startGame(ActionEvent event) throws IOException {
-		
+		GameLoop game = new GameLoop();
+		game.StartGameLoop(event);
 	}
 }

@@ -19,9 +19,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.Popup;
-import javafx.stage.StageStyle;
-import org.controlsfx.control.PopOver;
+
 
 
 import java.io.FileInputStream;
