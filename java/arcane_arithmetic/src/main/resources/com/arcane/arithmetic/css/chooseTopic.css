@@ -30,3 +30,21 @@
 	-fx-text-fill: #fc74e8;	
 	-fx-font-size: 50;
 }
+.infoButton{
+	-fx-background-color:transparent;
+	-fx-background-image:url('../assets/imgs/info-button.png');
+	-fx-background-size:stretch;
+	-fx-border-color: transparent;
+}
+.infoButton:hover{
+	-fx-background-color:transparent;
+	-fx-background-image:url('../assets/imgs/info-button.png');
+	-fx-background-size:stretch;
+	-fx-border-color: transparent;
+}
+.infoButton:pressed{
+	-fx-background-color:transparent;
+	-fx-background-image:url('../assets/imgs/info-button.png');
+	-fx-background-size:stretch;
+	-fx-border-color: transparent;
+}

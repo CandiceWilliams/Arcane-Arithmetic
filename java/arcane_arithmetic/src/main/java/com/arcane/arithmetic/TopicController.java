@@ -2,7 +2,10 @@ package com.arcane.arithmetic;
 
 import javafx.fxml.FXML;
 
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -35,5 +38,13 @@ public class TopicController {
 		StartController SCCon = new StartController();
 		SCCon.switchToStartMenu(event);
 	}
-
+	public void calculusLink(ActionEvent event) throws IOException, URISyntaxException {
+		Desktop.getDesktop().browse(new URI("https://www.youtube.com/watch?v=HfACrKJ_Y2w"));
+	}
+	public void algebraLink(ActionEvent event) throws IOException, URISyntaxException {
+		Desktop.getDesktop().browse(new URI("http://www.youtube.com/watch?v=JnTa9XtvmfI"));
+	}
+	public void statsLink(ActionEvent event) throws IOException, URISyntaxException {
+		Desktop.getDesktop().browse(new URI("https://www.youtube.com/watch?v=xxpc-HPKN28"));
+	}
 }

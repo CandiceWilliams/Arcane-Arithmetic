@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane stylesheets="@../css/chooseTopic.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.TopicController">
    <center>
       <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/chooseTopic.css">
@@ -43,6 +42,9 @@
                   <Insets />
                </opaqueInsets>
             </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#calculusLink" prefHeight="103.0" prefWidth="103.0" styleClass="infoButton" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#algebraLink" prefHeight="103.0" prefWidth="103.0" styleClass="infoButton" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#statsLink" prefHeight="103.0" prefWidth="103.0" styleClass="infoButton" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </center>
