@@ -17,7 +17,6 @@ public class StartController {
 	@FXML private Button startButton, settingButton;
 	
 	TutorialController tutcon = new TutorialController();
-	SettingsController settingsCon = new SettingsController();
 	SignInController SIcon = new SignInController();
 	ExitController Exitcon = new ExitController();
 	
@@ -29,7 +28,7 @@ public class StartController {
 
 	public void openSettings(ActionEvent event) {
 		SettingsController.settingsCon.loadSound();
-		settingsCon.startSettings(event);
+		SettingsController.settingsCon.startSettings(event);
 	}
 
 	public void openSignIn(ActionEvent event) throws IOException {

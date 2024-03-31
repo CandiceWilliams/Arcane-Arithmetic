@@ -6,18 +6,20 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="720.0" prefWidth="1234.0" stylesheets="@../css/instructorDashboard.css" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.InstructorDashboardController">
+<AnchorPane prefHeight="720.0" prefWidth="1234.0" stylesheets="@../css/instructorDashboard.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.InstructorDashboardController">
    <children>
       <Label layoutX="385.0" layoutY="14.0" prefHeight="80.0" prefWidth="463.0" styleClass="title" text="Instructor Dashboard" />
-      <TableView layoutX="20.0" layoutY="118.0" prefHeight="490.0" prefWidth="1194.0">
+      <TableView fx:id="table" layoutX="20.0" layoutY="118.0" prefHeight="490.0" prefWidth="1194.0">
         <columns>
-          <TableColumn prefWidth="387.19997215270996" text="Username" />
-          <TableColumn minWidth="0.0" prefWidth="326.3999938964844" text="Points" />
-            <TableColumn prefWidth="190.4000244140625" text="Average win rate" />
-            <TableColumn prefWidth="285.5999755859375" text="Average amount of right answers" />
+            <TableColumn fx:id="userID" prefWidth="204.80002975463867" text="User ID" />
+          <TableColumn fx:id="username" prefWidth="220.80001831054688" text="Username" />
+          <TableColumn fx:id="points" minWidth="0.0" prefWidth="147.199951171875" text="Points" />
+            <TableColumn fx:id="averageWinRate" prefWidth="128.0" text="Average win rate" />
+            <TableColumn fx:id="averageRightAnswers" minWidth="0.0" prefWidth="252.0" text="Average amount of right answers" />
+            <TableColumn fx:id="averageWrongAnswers" prefWidth="235.20001220703125" text="Average amount of wrong answers" />
         </columns>
       </TableView>
       <Button layoutX="20.0" layoutY="617.0" mnemonicParsing="false" onAction="#backToMainMenuClick" prefHeight="80.0" prefWidth="1176.0" styleClass="backButton" text="Back to Main Menu" />
+      <Button fx:id="loadTableButton" layoutX="20.0" layoutY="26.0" mnemonicParsing="false" onAction="#loadTable" text="Load Table" />
    </children>
 </AnchorPane>
