@@ -64,7 +64,7 @@ public class SignUpController {
 	    			
 	    		} else {
 	    			ObjectMapper objectMapper = new ObjectMapper();
-	    			User userSU = objectMapper.readValue(content.toString(), User.class);
+	    			User user = objectMapper.readValue(content.toString(), User.class);
 	    			
 	    			Stage stage = (Stage)signUpButton.getScene().getWindow();
 	    			stage.close();

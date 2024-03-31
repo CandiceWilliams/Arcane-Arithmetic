@@ -24,14 +24,14 @@ public class LeaderboardController {
 	@FXML private TableColumn rankCol, usernameCol, pointsCol;
 	String leadboardCss = this.getClass().getResource("css/Leaderboard.css").toExternalForm();
 	
-	public void updateLeaderboard(ActionEvent event) throws IOException {
+	public void updateLeaderboard(ActionEvent event, String username, String points) throws IOException {
 		leaderboardTable.setEditable(false);
-//		rankCol.setCellValueFactory(new PropertyValueFactory<>("rank"));
-//		usernameCol.setCellValueFactory(new PropertyValueFactory<>("username"));
-//		pointsCol.setCellValueFactory(new PropertyValueFactory<>("points"));
-//		leaderboardTable.getColumns().addAll(rankCol,usernameCol,pointsCol);
-		//Data data = new data(rank, username, points);
-		//leaderboardTable.getItems().add(data);
+		rankCol.setCellValueFactory(new PropertyValueFactory<>("rank"));
+		usernameCol.setCellValueFactory(new PropertyValueFactory<>("username"));
+		pointsCol.setCellValueFactory(new PropertyValueFactory<>("points"));
+		leaderboardTable.getColumns().addAll(rankCol,usernameCol,pointsCol);
+//		RankingData data = new RankingData(rank, username, points);
+//		leaderboardTable.getItems().add(data);
 		leaderboardTable.refresh();
 	}
 	public void switchToStart(ActionEvent event) throws IOException {
