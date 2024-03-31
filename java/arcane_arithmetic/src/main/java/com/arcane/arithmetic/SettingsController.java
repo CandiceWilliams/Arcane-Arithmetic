@@ -25,14 +25,13 @@ public class SettingsController {
     @FXML private CheckBox soundCheckBox, musicCheckBox, fullScreenCheckBox;
 
     private final String css = SettingsController.class.getResource("css/settings.css").toExternalForm();
-
-    private static final String backgroundMusicFilePath = "src/main/resources/com/arcane/arithmetic/assets/sounds/relaxed-vlog-night-street-131746.mp3";
-    private static final Media backgroundMusicMedia = new Media(new File(backgroundMusicFilePath).toURI().toString());
+    private static final String backgroundMusicFilePath = "assets/sounds/relaxed-vlog-night-street-131746.mp3";
+    private static final Media backgroundMusicMedia = new Media(SettingsController.class.getResource(backgroundMusicFilePath).toString());
     private static final MediaPlayer backgroundMediaPlayer = new MediaPlayer(backgroundMusicMedia);
 
 
-    private static final String buttonClickSoundFilePath = "src/main/resources/com/arcane/arithmetic/assets/sounds/relaxed-vlog-night-street-131746.mp3";
-    private static final Media buttonClickSoundMedia = new Media(new File(buttonClickSoundFilePath).toURI().toString());
+    private static final String buttonClickSoundFilePath = "assets/sounds/click-button-140881.mp3";
+    private static final Media buttonClickSoundMedia = new Media(SettingsController.class.getResource(buttonClickSoundFilePath).toString());
     private static final MediaPlayer buttonClickSoundMediaPlayer = new MediaPlayer(buttonClickSoundMedia);
 
 
