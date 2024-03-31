@@ -137,6 +137,10 @@ def questionsHandler():
         response = Response(json_string)
         response.headers['Content-Type'] = 'application/json'
         return response
+    
+    
+    
+    
     elif difficulty != None:
         if difficulty not in valid_difficulties:
             response = Response('''{"Error": "Invalid Argument 'difficulty'"}''')

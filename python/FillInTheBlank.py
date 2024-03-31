@@ -43,10 +43,6 @@ class FillInTheBlank:
         self.questions.append(self)
 
 
-    def parseJsonFile():
-        """
-        Parses a JSON file containing fill-in-the-blank questions and populates the questions list.
-        """
 
     def parseJsonFile() :
         """
@@ -69,8 +65,11 @@ class FillInTheBlank:
 
 
     # Returns the question with the given ID
-
     def getQuestionByID(id): 
+        """
+        Returns the fill-in-the-blank question with the given ID.
+
+        Args:
             id (int): The ID of the question to retrieve.
 
         Returns:
