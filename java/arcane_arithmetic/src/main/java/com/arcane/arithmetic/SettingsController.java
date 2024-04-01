@@ -13,6 +13,10 @@ import javafx.scene.media.MediaPlayer;
 import java.io.IOException;
 import java.io.File;
 
+/**
+ * This is the Settings Controller, used for controls and events in the Settings Menu.
+ *
+ */
 public class SettingsController {
     public static SettingsController settingsCon = new SettingsController();
     private static Stage startMenuStage;
@@ -35,6 +39,11 @@ public class SettingsController {
     private static final MediaPlayer buttonClickSoundMediaPlayer = new MediaPlayer(buttonClickSoundMedia);
 
 
+    /**
+     * Initialize the Settings menu
+     * @param startMenuStage
+     * @throws IOException
+     */
     public void initSettings(Stage startMenuStage) throws IOException {
         storeStartMenuStage(startMenuStage);
         window.initModality(Modality.APPLICATION_MODAL);
@@ -46,15 +55,24 @@ public class SettingsController {
         playMusic();
     }
 
+    /**
+     * @param event the settings button is pressed
+     */
     public void startSettings(ActionEvent event) {
         window.showAndWait();
     }
 
+    /**
+     * Sound checkbox
+     */
     public void soundCheckBoxClick(){
         soundOn = soundCheckBox.isSelected();
         loadSound();
     }
 
+    /**
+     * PlaySound() if soundOn is true
+     */
     public void loadSound(){
         // call this method whenever a button is pressed from another class
         if (soundOn) {
@@ -62,6 +80,9 @@ public class SettingsController {
         }
     }
 
+    /**
+     * Play sound
+     */
     public void playSound(){
         boolean playing = buttonClickSoundMediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
         if (playing) buttonClickSoundMediaPlayer.stop();
@@ -70,12 +91,17 @@ public class SettingsController {
     }
 
 
+    /**
+     * Music checkbox
+     */
     public void musicCheckBoxClick(){
         loadSound();
         musicOn = musicCheckBox.isSelected();
         loadMusic();
     }
-
+    /**
+     * playMusic() if musicOn is true
+     */
     public void loadMusic(){
         if (musicOn){
             playMusic();
@@ -84,18 +110,27 @@ public class SettingsController {
             backgroundMediaPlayer.stop();
         }
     }
-
+    
+    /**
+     * Play music 
+     */
     public void playMusic(){
         backgroundMediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         backgroundMediaPlayer.play();
     }
 
+    /**
+     * FullScreen checkbox
+     */
     public void fullScreenCheckBoxClick(){
         loadSound();
         fullScreenOn = fullScreenCheckBox.isSelected();
         loadFullScreen();
     }
-
+    
+    /**
+     * Set maximized true or false
+     */
     public void loadFullScreen(){
         if(fullScreenOn) {
             if (startMenuStage.isMaximized()) startMenuStage.setMaximized(false);
@@ -105,11 +140,20 @@ public class SettingsController {
         }
     }
 
+    /**
+     * Close settings menu
+     * @param event back button is pressed
+     */
     public void back(ActionEvent event) {
         SettingsController.settingsCon.loadSound();
         window.close();
     }
-
+    
+    /**
+     * Open Instructor Dashboard Password Prompt
+     * @param event Instructor Dashboard button is pressed
+     * @throws IOException
+     */
     public void switchToInstructorPasswordPrompt(ActionEvent event) throws IOException {
         SettingsController.settingsCon.loadSound();
         window.close();
@@ -117,6 +161,11 @@ public class SettingsController {
         instructCon.popUpWindow(startMenuStage);
     }
 
+    /**
+     * Open Cheats Mode Password Prompt
+     * @param event Cheats Mode button is pressed
+     * @throws IOException
+     */
     public void switchToCheatsModePasswordPrompt(ActionEvent event) throws IOException {
         SettingsController.settingsCon.loadSound();
         window.close();
@@ -124,6 +173,10 @@ public class SettingsController {
         cheatsCon.popUpWindow();
     }
 
+    /**
+     * Store start menu stage
+     * @param startMenuStage
+     */
     public static void storeStartMenuStage(Stage startMenuStage){
         SettingsController.startMenuStage = startMenuStage;
     }

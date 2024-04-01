@@ -27,6 +27,10 @@ import org.controlsfx.control.PopOver;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/**
+ * This is the Tutorial Controller 2, used for controls and events for the second tutorial scene.
+ *
+ */
 public class TutorialController2 {
     private Stage stage;
     private Scene scene;
@@ -78,6 +82,11 @@ public class TutorialController2 {
         }
     };
 
+    /**
+     * Show Double Score power up text and image
+     * @param event doubleEvent is initialized
+     * @throws IOException
+     */
     public void switchToPowerUpTypeDoubleScore(ActionEvent event) throws IOException {
 
         //change text
@@ -104,6 +113,12 @@ public class TutorialController2 {
         imageView.setFitWidth(136);
 
     }
+    
+    /**
+     * Show Double Score power up text and image
+     * @param event fiftyEvent is initialized
+     * @throws IOException
+     */
     public void switchToPowerUpTypeFiftyFifty(ActionEvent event) throws IOException{
         //change text
         subtitle.setText("Fifty Fifty");
@@ -130,6 +145,11 @@ public class TutorialController2 {
         imageView.setFitWidth(118);
         imageView.setPreserveRatio(true);
     }
+    /**
+     * Show More time power up text and image
+     * @param event timeEvent is initialized
+     * @throws IOException
+     */
     public void switchToPowerUpTypeTime(ActionEvent event) throws IOException{
         //change text
         subtitle.setText("Extra Time");
@@ -154,7 +174,11 @@ public class TutorialController2 {
         imageView.setFitHeight(132);
         imageView.setFitWidth(126);
     }
-    
+    /**
+     * Switch to the next tutorial scene
+     * @param event The next button is pressed
+     * @throws IOException
+     */
     public void nextSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/Tutorial_3.fxml"));
@@ -165,6 +189,11 @@ public class TutorialController2 {
 		stage.setScene(scene);
 		stage.show();
     }
+    /**
+     * Switch to the previous tutorial scene
+     * @param event The back button is pressed
+     * @throws IOException
+     */
     public void backSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/Tutorial_1-1.fxml"));

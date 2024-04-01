@@ -25,6 +25,10 @@ import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/**
+ * This is the Tutorial Controller, used for controls and events for the first tutorial scene.
+ *
+ */
 public class TutorialController {
     private Stage stage;
     private Scene scene;
@@ -49,6 +53,7 @@ public class TutorialController {
 //        nextImg.setOnAction(fillEvent);
 //
 //    }
+    
     EventHandler<ActionEvent> fillEvent = new EventHandler<ActionEvent>() {
         public void handle(ActionEvent e)
         {
@@ -83,6 +88,11 @@ public class TutorialController {
     };
 
 
+    /**
+     * Initialize the tutorial pop up
+     * @param event the tutorial button is pressed
+     * @throws IOException
+     */
     public void startTutorial(ActionEvent event) throws IOException{
     	Stage window = new Stage();
     	window.initModality(Modality.APPLICATION_MODAL);
@@ -98,6 +108,11 @@ public class TutorialController {
 
     }
 
+    /**
+     * Show Multiple Choice text and image tutorial
+     * @param event mcEvent is initialized
+     * @throws IOException
+     */
     public void switchToQuestionTypeMC(ActionEvent event) throws IOException {
 
         //change text
@@ -124,6 +139,11 @@ public class TutorialController {
         imageView.setFitWidth(136);
 
     }
+    /**
+     * Show Fill in the blanks text and image tutorial
+     * @param event fbEvent is initialized
+     * @throws IOException
+     */
     public void switchToQuestionTypeFill(ActionEvent event) throws IOException{
         //change text
         subtitle.setText("Fill-in-the-Blank");
@@ -150,6 +170,11 @@ public class TutorialController {
         imageView.setFitWidth(118);
         imageView.setPreserveRatio(true);
     }
+    /**
+     * Show Matching text and image tutorial
+     * @param event matchEvent is initialized
+     * @throws IOException
+     */
     public void switchToQuestionTypeMatching(ActionEvent event) throws IOException{
         //change text
         subtitle.setText("Matching");
@@ -174,6 +199,12 @@ public class TutorialController {
         imageView.setFitHeight(132);
         imageView.setFitWidth(126);
     }
+    
+    /**
+     * Switch to the next tutorial scene
+     * @param event The next button is pressed
+     * @throws IOException
+     */
     public void nextSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/Tutorial_2.fxml"));

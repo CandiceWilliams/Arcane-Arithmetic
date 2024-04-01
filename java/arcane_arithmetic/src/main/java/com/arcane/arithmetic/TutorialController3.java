@@ -27,6 +27,10 @@ import org.controlsfx.control.PopOver;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/**
+ * This is the Tutorial Controller 3, used for controls and events for the third tutorial scene.
+ *
+ */
 public class TutorialController3 {
     private Stage stage;
     private Scene scene;
@@ -40,12 +44,21 @@ public class TutorialController3 {
     @FXML private Label title, subtitle;
 
     String css = this.getClass().getResource("css/tutorial.css").toExternalForm();
-    
+    /**
+     * Switch to the next tutorial scene
+     * @param event The next button is pressed
+     * @throws IOException
+     */
     public void nextSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();
 		Stage stage = (Stage)backSlide.getScene().getWindow();
 		stage.close();
     }
+    /**
+     * Switch to the previous tutorial scene
+     * @param event The back button is pressed
+     * @throws IOException
+     */
     public void backSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/Tutorial_2.fxml"));

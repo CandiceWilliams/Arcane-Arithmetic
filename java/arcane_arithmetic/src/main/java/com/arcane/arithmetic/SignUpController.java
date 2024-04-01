@@ -19,6 +19,10 @@ import java.net.URLEncoder;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * This is the Sign Up Controller, used for controls and events in the sign up pop up.
+ *
+ */
 public class SignUpController {
 	private Scene scene;
 	private static Stage startMenuStage;
@@ -26,11 +30,22 @@ public class SignUpController {
 	@FXML private Label existedUsername,usernameTooLong,pwSpecial,pwDiff;
 	@FXML private TextField username,password,confirmPassword; 
 	
+    /**
+     * Switch to sign-in scene
+     * @param event switch to sign in button is pressed
+     * @throws IOException
+     */
     public void switchToSignInScene(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
         SignInController SICon = new SignInController();
         SICon.switchToSignInScene(event);
     }
+    /**
+     * Switch to ChooseTopic scene
+     * Save sign-up data to the database
+     * @param event sign-up button is pressed
+     * @throws IOException
+     */
     public void switchToTopic(ActionEvent event) throws IOException {
     	SettingsController.settingsCon.loadSound();
     	if(!password.getText().equals(confirmPassword.getText())) {
@@ -83,16 +98,12 @@ public class SignUpController {
 	    		e.printStackTrace();
 	    	}
     	}
-    	
-//    	//temporary without api
-//    	Stage stage = (Stage)signUpButton.getScene().getWindow();
-//		stage.close();
-//		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
-//		scene = new Scene(root);
-//		startMenuStage.setScene(scene);
-//		SettingsController.settingsCon.loadFullScreen();
 	}
 
+	/**
+	 * Store start menu stage
+	 * @param startMenuStage the original start menu stage
+	 */
 	public static void storeStartMenuStage(Stage startMenuStage){
 		SignUpController.startMenuStage = startMenuStage;
 	}
