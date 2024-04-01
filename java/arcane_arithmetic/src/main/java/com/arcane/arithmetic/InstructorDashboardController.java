@@ -94,15 +94,4 @@ public class InstructorDashboardController {
             e.printStackTrace();
         }
     }
-
-    // CALL THIS AT THE BEGINNING OF A GAME LOOP FOR EACH USER INVOLVED (TO ACCESS USER RECORDS FROM API)
-    public UserRecord fetchUserRecordFromAPI(String userID){
-        return UserRecord.fetchUserRecordFromAPI(userID);
-    }
-
-    // CALL THIS AT THE END OF A GAME LOOP FOR EACH USER INVOLVED (TO UPDATE THEIR USER RECORDS IN API)
-    public void updateUserRecordInAPI(String userID, UserRecord newRecord){
-        UserRecord.deleteUserRecordFromAPI(userID);
-        UserRecord.insertUserRecordIntoAPI(newRecord);
-    }
 }

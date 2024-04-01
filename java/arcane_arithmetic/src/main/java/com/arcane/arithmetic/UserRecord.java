@@ -22,16 +22,6 @@ public class UserRecord {
     // variable used for accessing the API
     private String userID;
 
-    public UserRecord(){
-        setUserID("");
-        setUsername("");
-        setTotalPoints(0);
-        setTotalGamesWon(0);
-        setTotalGamesPlayed(0);
-        setTotalCorrectProblems(0);
-        setTotalIncorrectProblems(0);
-    }
-
     public UserRecord(String userID, String username, int total_points, int total_games_won, int total_games_played, int totalCorrectProblems, int totalIncorrectProblems){
         setUserID(userID);
         setUsername(username);
@@ -159,7 +149,7 @@ public class UserRecord {
         }
     }
 
-    public static UserRecord fetchUserRecordFromAPI(String userID){
+    public static UserRecord fetchUserRecordHelper(String userID){
         try {
             String urlString = "http://127.0.0.1:5000/database/ranks/get?id="+userID;
             // Send the request to the server
@@ -227,5 +217,16 @@ public class UserRecord {
             e.printStackTrace();
             return null;
         }
+    }
+
+    // CALL THIS AT THE BEGINNING OF A GAME LOOP FOR EACH USER INVOLVED (TO ACCESS USER RECORDS FROM API)
+    public static UserRecord fetchUserRecordFromAPI(String userID){
+        return UserRecord.fetchUserRecordHelper(userID);
+    }
+
+    // CALL THIS AT THE END OF A GAME LOOP FOR EACH USER INVOLVED (TO UPDATE THEIR USER RECORDS IN API)
+    public static void updateUserRecordInAPI(String userID, UserRecord newRecord){
+        UserRecord.deleteUserRecordFromAPI(userID);
+        UserRecord.insertUserRecordIntoAPI(newRecord);
     }
 }
