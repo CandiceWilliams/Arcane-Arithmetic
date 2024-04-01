@@ -42,6 +42,7 @@
                   <Font size="40.0" />
                </font>
             </Label>
+            <Button fx:id="loadTableButton" mnemonicParsing="false" onAction="#loadTable" text="Load Table" />
          </children>
       </HBox>
    </children>

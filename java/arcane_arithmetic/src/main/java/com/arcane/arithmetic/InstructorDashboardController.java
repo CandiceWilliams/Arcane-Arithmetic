@@ -53,45 +53,8 @@ public class InstructorDashboardController {
         averageRightAnswers.setCellValueFactory(new PropertyValueFactory<UserRecord,Double>("AverageRight"));
         averageWrongAnswers.setCellValueFactory(new PropertyValueFactory<UserRecord,Double>("AverageWrong"));
         list.clear();
-        updateTableWithUserRecordsFromRanksAPI();
+        ObservableList<UserRecord> tmp = UserRecord.fetchAllUserRecordsFromAPI();
+        list.addAll(tmp); // tmp is never null because it is impossible for "UserRecord.fetchAllUserRecordsFromAPI()" to encounter errors
         table.setItems(list);
-    }
-
-    public void updateTableWithUserRecordsFromRanksAPI() {
-        try {
-            String urlString = "http://127.0.0.1:5000/database/ranks/getall";
-            // Send the request to the server
-            URL url = new URL(urlString);
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("GET");
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuilder content = new StringBuilder();
-            while ((inputLine = in.readLine()) != null) {
-                content.append(inputLine);
-            }
-            // Close the connection
-            in.close();
-            con.disconnect();
-            // Print the response
-            JsonNode arrNode = new ObjectMapper().readTree(content.toString());
-            System.out.println("List of all user records: ");
-            System.out.println(arrNode.toPrettyString());
-            for (final JsonNode node : arrNode) {
-                int totalPoints = Integer.parseInt(node.get("totalPoints").toString());
-                int totalWon = Integer.parseInt(node.get("totalWon").toString());
-                int totalPlayed = Integer.parseInt(node.get("totalPlayed").toString());
-                int totalCorrect = Integer.parseInt(node.get("totalCorrect").toString());
-                int totalIncorrect = Integer.parseInt(node.get("totalIncorrect").toString());
-                String userID = node.get("ownerID").toString();
-                userID = userID.substring(1, userID.length()-1);
-                String username = UserRecord.getUsernameFromUserID(userID);
-                if (username == null) continue;
-                UserRecord toAdd = new UserRecord(userID, username, totalPoints, totalWon, totalPlayed, totalCorrect, totalIncorrect);
-                list.add(toAdd);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
