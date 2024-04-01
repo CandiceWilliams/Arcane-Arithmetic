@@ -60,6 +60,7 @@ public class FillInTheBlanksController{
 
 		question.getChildren().clear();
 		Text text = new Text(quest);
+		text.setFont(Font.font("Garamond", 50));
 		question.getChildren().add(text);
 		question.setTextAlignment(TextAlignment.CENTER);
 		currQuestion = game.getQuestionNum();
