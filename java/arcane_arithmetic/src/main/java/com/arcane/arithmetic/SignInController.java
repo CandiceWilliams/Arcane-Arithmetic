@@ -92,9 +92,13 @@ public class SignInController {
 		} else if(content.toString()=="{\"Error\":\"No field specified\"}") {
 			errorLabel.setVisible(true);
 		} else {
-			ObjectMapper objectMapper = new ObjectMapper();
-			JsonNode json = objectMapper.readTree(content.toString());
-			String str = json.at("/password").toString();
+			JsonNode json =new ObjectMapper().readTree(content.toString());
+			JsonNode tmpNode = json.get("password");
+			if (tmpNode == null){
+				errorLabel.setVisible(true);
+				return;
+			}
+			String str = tmpNode.toString();
 			str = str.substring(1, str.length() - 1);
 			if((str.equals(password.getText()))) {
 				Stage stage = (Stage)loginButton.getScene().getWindow();
