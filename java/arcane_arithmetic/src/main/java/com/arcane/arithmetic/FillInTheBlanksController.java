@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
@@ -22,12 +24,14 @@ public class FillInTheBlanksController{
 	public int pointsNum=0;
 	private Scene scene;
 	@FXML private TextFlow question;
+	@FXML private BorderPane pane;
 	@FXML private Label questionNum, timeRemaining, points;
 	@FXML private TextField ansText;
 	@FXML private Button powerup1,powerup2,powerup3,submitButton;
 	private String answer;
 	private boolean isCorrect = false;
 	GameLoop game = new GameLoop();
+	private Parent root;
 	String css = this.getClass().getResource("css/fillintheblanks.css").toExternalForm();
 
 	EventHandler<ActionEvent> submitAnswer = new EventHandler<ActionEvent>() {
@@ -42,7 +46,10 @@ public class FillInTheBlanksController{
 	};
 
 
-	public boolean displayQuestion(String quest, String answer){
+
+	public boolean displayQuestion(String quest, String answer) throws IOException {
+
+
 		question.getChildren().clear();
 		Text text = new Text(quest);
 		question.getChildren().add(text);
@@ -75,6 +82,15 @@ public class FillInTheBlanksController{
 		else isCorrect = false;
 
 		game.trackQuestionNum();
+	}
+
+	public void setStageAndListeners() throws IOException {
+		Stage stage = new Stage();
+		scene = new Scene(pane);
+		scene.getStylesheets().add(css);
+		stage.setScene(scene);
+		stage.show();
+
 	}
 
 }

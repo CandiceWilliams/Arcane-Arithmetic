@@ -5,9 +5,9 @@
 <?import javafx.scene.text.TextFlow?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.view.FillInTheBlanksController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TextFlow fx:id="question" layoutX="35.0" layoutY="21.0" prefHeight="152.0" prefWidth="506.0" />
-      <TextField fx:id="answer" layoutX="42.0" layoutY="290.0" prefHeight="55.0" prefWidth="514.0" />
+      <TextFlow layoutX="35.0" layoutY="21.0" prefHeight="152.0" prefWidth="506.0" />
+      <TextField layoutX="42.0" layoutY="290.0" prefHeight="55.0" prefWidth="514.0" />
    </children>
 </AnchorPane>
