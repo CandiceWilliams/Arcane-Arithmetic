@@ -19,5 +19,12 @@
         "id": "sUjEPrjZZF",
         "name": "test",
         "privilege": "admin"
+    },
+    {
+        "username": "Candice",
+        "password": "group49",
+        "id": "XyXzfsvXnZ",
+        "name": "Candice",
+        "privilege": "user"
     }
 ]

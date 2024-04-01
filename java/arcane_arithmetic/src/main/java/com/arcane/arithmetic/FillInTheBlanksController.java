@@ -56,6 +56,8 @@ public class FillInTheBlanksController{
 		}
 	};
 	public void displayQuestion(String quest, String answer) throws IOException {
+		initTime();
+
 		question.getChildren().clear();
 		Text text = new Text(quest);
 		question.getChildren().add(text);
@@ -72,6 +74,8 @@ public class FillInTheBlanksController{
 
 
 	private void checkAnswer(ActionEvent event) throws IOException{
+		stopTimeLine();
+
 		if (ansText.getText().equals(this.answer)){
 			isCorrect = true;
 			game.addPoints();

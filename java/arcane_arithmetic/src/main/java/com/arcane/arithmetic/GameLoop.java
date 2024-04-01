@@ -93,7 +93,6 @@ public class GameLoop {
             fbController.setStage(window);
             window.show();
             fbController.displayQuestion(fillQuestion.getQuestion(), fillQuestion.getAnswer());
-            fbController.initTime();
         }
 
         if (type_int == 2){
@@ -107,7 +106,6 @@ public class GameLoop {
 
             MultipleChoiceController mcController = new MultipleChoiceController();
             //isCorrect = mcController.displayQuestion(multQuestion.getQuestion(), multQuestion.getAnswer(), multQuestion.getOptions());
-            mcController.initTime();
         }
     }
 
