@@ -52,9 +52,7 @@ public class MultipleChoiceController {
 		ans3.setText(options.get(2));
 		ans4.setText(options.get(3));
 
-		while(!ans1.isDisabled() || !ans2.isDisabled() || !ans3.isDisabled() || !ans4.isDisabled()){
-			System.out.println("waiting for user");
-		}
+
 		return isCorrect;
 	}
 

@@ -21,13 +21,13 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 import static com.almasb.fxgl.dsl.FXGLForKtKt.getGameTimer;
 
 public class GameLoop {
 
-    TimerCountdown timer = new TimerCountdown();
     DifficultyController diffCon = new DifficultyController();
     TopicController topicCon = new TopicController();
     private int questionsAnswered = 0, type_int = 1;
@@ -39,6 +39,7 @@ public class GameLoop {
     private int totalPts = 0;
     private Stage stage;
     private Scene scene;
+    private Parent root;
 
 
     public void StartGameLoop(ActionEvent event) throws IOException {
@@ -94,13 +95,14 @@ public class GameLoop {
             }
 
             if (type_int == 1){
-                Parent root = FXMLLoader.load(getClass().getResource("view/FillInTheBlanks.fxml"));
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/FillInTheBlanks.fxml")));
                 stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
 
-                System.out.println(fillQuestion.getQuestion());
+                System.out.println(multQuestion.getQuestion());
+                System.out.println(multQuestion.getOptions());
 
                 FillInTheBlanksController fbController = new FillInTheBlanksController();
                 isCorrect = fbController.displayQuestion(fillQuestion.getQuestion(), fillQuestion.getAnswer());
@@ -110,7 +112,7 @@ public class GameLoop {
             }
 
             if (type_int == 2){
-                Parent root = FXMLLoader.load(getClass().getResource("view/MultipleChoice.fxml"));
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/MultipleChoice.fxml")));
                 stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
                 scene = new Scene(root);
                 stage.setScene(scene);
@@ -124,8 +126,6 @@ public class GameLoop {
                     totalPts += 10;
                 }
             }
-
-            questionsAnswered++;
         }
     }
 
@@ -160,6 +160,10 @@ public class GameLoop {
             multQuestion.setOptions(options);
 
         }
+    }
+
+    public void trackQuestionNum(){
+        questionsAnswered++;
     }
 
 

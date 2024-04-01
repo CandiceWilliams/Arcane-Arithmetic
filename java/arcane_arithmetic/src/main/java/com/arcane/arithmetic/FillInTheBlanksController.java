@@ -27,6 +27,7 @@ public class FillInTheBlanksController{
 	@FXML private Button powerup1,powerup2,powerup3,submitButton;
 	private String answer;
 	private boolean isCorrect = false;
+	GameLoop game = new GameLoop();
 	String css = this.getClass().getResource("css/fillintheblanks.css").toExternalForm();
 
 	EventHandler<ActionEvent> submitAnswer = new EventHandler<ActionEvent>() {
@@ -67,13 +68,13 @@ public class FillInTheBlanksController{
 //		}
 //	}
 
-	private boolean checkAnswer(ActionEvent event) throws IOException{
+	private void checkAnswer(ActionEvent event) throws IOException{
 		if (ansText.getText().equals(this.answer)){
 			isCorrect = true;
 		}
 		else isCorrect = false;
 
-		return isCorrect;
+		game.trackQuestionNum();
 	}
 
 }

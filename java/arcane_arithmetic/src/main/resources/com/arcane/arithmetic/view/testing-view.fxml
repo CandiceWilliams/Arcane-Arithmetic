@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.arcane.arithmetic.view.TestingView"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.view.FillInTheBlanksController">
+   <children>
+      <TextFlow fx:id="question" layoutX="35.0" layoutY="21.0" prefHeight="152.0" prefWidth="506.0" />
+      <TextField fx:id="answer" layoutX="42.0" layoutY="290.0" prefHeight="55.0" prefWidth="514.0" />
+   </children>
 </AnchorPane>
