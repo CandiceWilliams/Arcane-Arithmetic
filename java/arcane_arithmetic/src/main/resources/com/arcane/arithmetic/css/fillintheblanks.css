@@ -38,7 +38,11 @@
 	-fx-text-fill: #fad2f7;
 	-fx-font-size: 60;
 	-fx-font-weight: bold;
-}	
+}
+#text{
+    -fx-font-family: 'Garamond';
+    -fx-font-size: 40;
+}
 .topbar{
 	-fx-background-image: url('../assets/imgs/topbar.png');
 	-fx-background-size: stretch;
