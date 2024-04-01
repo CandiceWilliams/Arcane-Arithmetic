@@ -71,51 +71,51 @@ public class SignInController {
     public void switchToTopic(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
 		
-//		String urlString= "http://127.0.0.1:5000/database/users/get?username="+username.getText();
-//		
-//		URL url = new URL(urlString);
-//		HttpURLConnection con = (HttpURLConnection) url.openConnection();
-//		con.setRequestMethod("GET");
-//		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-//		
-//		String inputLine;
-//		StringBuilder content = new StringBuilder();
-//		
-//		while ((inputLine = in.readLine()) != null) {
-//			content.append(inputLine);
-//		}
-//		in.close();
-//		con.disconnect();
-//		System.out.print(content.toString());
-//		if(content.toString()=="{\"Error\":\"User Not Found\"}") {
-//			errorLabel.setVisible(true);
-//		} else if(content.toString()=="{\"Error\":\"No field specified\"}") {
-//			errorLabel.setVisible(true);
-//		} else {
-//			ObjectMapper objectMapper = new ObjectMapper();
-//			JsonNode json = objectMapper.readTree(content.toString());
-//			String str = json.at("/password").toString();
-//			str = str.substring(1, str.length() - 1);
-//			if((str.equals(password.getText()))) {
-//				Stage stage = (Stage)loginButton.getScene().getWindow();
-//				stage.close();
-//				Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
-//				scene = new Scene(root);
-//				startMenuStage.setScene(scene);
-//				SettingsController.settingsCon.loadFullScreen();
-//				errorLabel.setVisible(false);
-//			} else {
-//				errorLabel.setVisible(true);
-//			}
-//		}
+		String urlString= "http://127.0.0.1:5000/database/users/get?username="+username.getText();
 		
-		//temporary without api
-		Stage stage = (Stage)loginButton.getScene().getWindow();
-		stage.close();
-		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
-		scene = new Scene(root);
-		startMenuStage.setScene(scene);
-		SettingsController.settingsCon.loadFullScreen();
+		URL url = new URL(urlString);
+		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		con.setRequestMethod("GET");
+		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		
+		String inputLine;
+		StringBuilder content = new StringBuilder();
+		
+		while ((inputLine = in.readLine()) != null) {
+			content.append(inputLine);
+		}
+		in.close();
+		con.disconnect();
+		System.out.print(content.toString());
+		if(content.toString()=="{\"Error\":\"User Not Found\"}") {
+			errorLabel.setVisible(true);
+		} else if(content.toString()=="{\"Error\":\"No field specified\"}") {
+			errorLabel.setVisible(true);
+		} else {
+			ObjectMapper objectMapper = new ObjectMapper();
+			JsonNode json = objectMapper.readTree(content.toString());
+			String str = json.at("/password").toString();
+			str = str.substring(1, str.length() - 1);
+			if((str.equals(password.getText()))) {
+				Stage stage = (Stage)loginButton.getScene().getWindow();
+				stage.close();
+				Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
+				scene = new Scene(root);
+				startMenuStage.setScene(scene);
+				SettingsController.settingsCon.loadFullScreen();
+				errorLabel.setVisible(false);
+			} else {
+				errorLabel.setVisible(true);
+			}
+		}
+		
+//		//temporary without api
+//		Stage stage = (Stage)loginButton.getScene().getWindow();
+//		stage.close();
+//		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
+//		scene = new Scene(root);
+//		startMenuStage.setScene(scene);
+//		SettingsController.settingsCon.loadFullScreen();
 	}
 
     public void back(ActionEvent event) throws IOException {
