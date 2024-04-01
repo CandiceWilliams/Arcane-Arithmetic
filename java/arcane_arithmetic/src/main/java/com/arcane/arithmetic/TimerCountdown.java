@@ -1,43 +1,39 @@
 package com.arcane.arithmetic;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
 
 public class TimerCountdown extends Label{
-	private static int durationSeconds;
-	private Timeline timeline;
-	
-	public void countdown(int durationSeconds) {
-		TimerCountdown.durationSeconds = durationSeconds;
-		setText(formatTime(durationSeconds));
-		
-		timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				updateCountdown();
-			}
-		}));
-		timeline.setCycleCount(Animation.INDEFINITE);
-		timeline.play();
+	private static int minutes, seconds;
+
+	public static int getRemainingSeconds(){
+		return minutes * 60 + seconds;
 	}
-	public static void addTime(int time) {
-		durationSeconds = durationSeconds + time;
+
+	public static String getCurrentTime() {
+		return String.format("%02d:%02d", minutes, seconds);
 	}
-	private void updateCountdown() {
-		durationSeconds--;
-		if (durationSeconds>=0) {
-			setText(formatTime(durationSeconds));
-		} else {
-			timeline.stop();
-			setText("Time's up!");
+
+	public static void setCurrentTime(int durationSecond){
+		minutes = durationSecond / 60;
+		seconds = durationSecond % 60;
+	}
+
+	public static void updateTime(){
+		if (seconds == 0 && minutes == 0) return;
+		if (seconds > 0){
+			seconds--;
+		}
+		else {
+			minutes--;
+			seconds = 59;
 		}
 	}
-	private String formatTime(int seconds) {
-        int minutes = seconds / 60;
-        int secs = seconds % 60;
-        return String.format("%02d:%02d", minutes, secs);
-    }
+
+	public static void addTime(int v){
+		seconds += v;
+	}
 }

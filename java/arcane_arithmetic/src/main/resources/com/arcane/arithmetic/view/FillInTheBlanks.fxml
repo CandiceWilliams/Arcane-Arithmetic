@@ -71,11 +71,12 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="timeRemaining" alignment="CENTER" prefHeight="78.0" prefWidth="426.0" text="Time Remaining: 60s">
+            <Label fx:id="timeRemaining" alignment="CENTER" prefHeight="78.0" prefWidth="426.0" text="Time Remaining:">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
+            <Text fx:id="timer" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="33.33666944503784" />
             <Label fx:id="points" alignment="CENTER_RIGHT" prefHeight="78.0" prefWidth="426.0" text="Total Points: 0 ">
                <font>
                   <Font size="30.0" />
