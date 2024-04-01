@@ -18,7 +18,6 @@ public class EndGameController {
 	private Scene scene;
 	@FXML private Label pointsWon, rightAnswers, overallScore;
 	@FXML private Button nextButton;
-//	GameLoop game = new GameLoop();
 	
 	public void initialize(ActionEvent event) throws IOException {
 		pointsWon.setText("");
@@ -38,7 +37,5 @@ public class EndGameController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
-		//save data on leaderboard
-		
 	}
 }
