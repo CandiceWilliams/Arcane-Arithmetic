@@ -18,13 +18,11 @@ public class EndGameController {
 	private Scene scene;
 	@FXML private Label pointsWon, rightAnswers, overallScore;
 	@FXML private Button nextButton;
-	LeaderboardController lbCon = new LeaderboardController();
 	
 	public void initialize(ActionEvent event) throws IOException {
 		pointsWon.setText("");
 		rightAnswers.setText("");
 		overallScore.setText("");
-		lbCon.updateLeaderboard(event, null, null);
 	}
 	
 	public void next(ActionEvent event) throws IOException {

@@ -1,9 +1,12 @@
 package com.arcane.arithmetic;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
-
+import java.util.ArrayList;
+import java.util.Collections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -20,20 +23,30 @@ public class LeaderboardController {
 	private Scene scene;
 	private Parent root;
 	@FXML private Label yourRanking;
-	@FXML private TableView leaderboardTable;
-	@FXML private TableColumn rankCol, usernameCol, pointsCol;
-	String leadboardCss = this.getClass().getResource("css/Leaderboard.css").toExternalForm();
-	
-	public void updateLeaderboard(ActionEvent event, String username, String points) throws IOException {
+	@FXML private TableView<RankingData> leaderboardTable;
+	@FXML private TableColumn<RankingData, Integer> rankCol;
+	@FXML private TableColumn<RankingData, String> usernameCol;
+	@FXML private TableColumn<RankingData, Integer> pointsCol;
+	private ObservableList<RankingData> list = FXCollections.observableArrayList();
+
+	public void loadTable(ActionEvent event) throws IOException {
 		leaderboardTable.setEditable(false);
-		rankCol.setCellValueFactory(new PropertyValueFactory<>("rank"));
-		usernameCol.setCellValueFactory(new PropertyValueFactory<>("username"));
-		pointsCol.setCellValueFactory(new PropertyValueFactory<>("points"));
-		leaderboardTable.getColumns().addAll(rankCol,usernameCol,pointsCol);
-//		RankingData data = new RankingData(rank, username, points);
-//		leaderboardTable.getItems().add(data);
-		leaderboardTable.refresh();
+		rankCol.setCellValueFactory(new PropertyValueFactory<RankingData, Integer>("Rank"));
+		usernameCol.setCellValueFactory(new PropertyValueFactory<RankingData, String>("Username"));
+		pointsCol.setCellValueFactory(new PropertyValueFactory<RankingData, Integer>("Points"));
+		list.clear();
+		ObservableList<UserRecord> tmp = UserRecord.fetchAllUserRecordsFromAPI();
+		ArrayList<Pair> arr = new ArrayList<Pair>();
+		for (UserRecord cur : tmp){
+			arr.add(new Pair(cur.getUsername(), cur.getTotalPoints()));
+		}
+		Collections.sort(arr); int sz = arr.size();
+		for (int i = 0; i < sz; i++){
+			list.add(new RankingData(i+1, arr.get(i).username, arr.get(i).points));
+		}
+		leaderboardTable.setItems(list);
 	}
+
 	public void switchToStart(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/StartMenu.fxml"));
@@ -44,4 +57,14 @@ public class LeaderboardController {
 		SettingsController.settingsCon.loadFullScreen();
 	}
 
+	private static class Pair implements Comparable<Pair>{
+		String username; int points;
+		Pair(String username, int points){
+			this.username = username;
+			this.points = points;
+		}
+		public int compareTo(Pair p){
+			return -Integer.compare(points, p.points);
+		}
+	}
 }
