@@ -18,11 +18,18 @@ public class EndGameController {
 	private Scene scene;
 	@FXML private Label pointsWon, rightAnswers, overallScore;
 	@FXML private Button nextButton;
+	GameLoop game = new GameLoop();
 	
 	public void initialize(ActionEvent event) throws IOException {
 		pointsWon.setText("");
 		rightAnswers.setText("");
 		overallScore.setText("");
+	}
+
+	public void displayEndGameScreen(){
+		pointsWon.setText(String.valueOf(game.getTotalPts()));
+		rightAnswers.setText(game.getCorrectAnswers() + "/20");
+		overallScore.setText(String.valueOf(game.getTotalPts()));
 	}
 	
 	public void next(ActionEvent event) throws IOException {

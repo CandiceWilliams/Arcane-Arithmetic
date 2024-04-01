@@ -75,6 +75,8 @@ public class StartController {
 	public void switchToStartMenu(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/StartMenu.fxml"));
+
+
 		stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
 		scene = new Scene(root);
 		stage.setScene(scene);

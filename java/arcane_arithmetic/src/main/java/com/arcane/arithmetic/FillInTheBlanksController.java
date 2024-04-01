@@ -22,8 +22,8 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 public class FillInTheBlanksController{
-	public int num=0;
-	public int pointsNum=0;
+	private int currQuestion;
+	private int totalPts;
 	private Scene scene;
 	private Stage stage;
 	@FXML private TextFlow question;
@@ -55,8 +55,10 @@ public class FillInTheBlanksController{
 		Text text = new Text(quest);
 		question.getChildren().add(text);
 		question.setTextAlignment(TextAlignment.CENTER);
-		questionNum.setText("Question "+game.getQuestionNum()+"/20");
-		points.setText("Total Points "+game.getTotalPts());
+		currQuestion = game.getQuestionNum();
+		questionNum.setText("Question "+currQuestion+"/20");
+		totalPts = game.getTotalPts();
+		points.setText("Total Points "+totalPts);
 		//timeRemaining.setText(String.valueOf(timer.countdown(60)));
 
 		this.answer = answer;
@@ -68,13 +70,30 @@ public class FillInTheBlanksController{
 		if (ansText.getText().equals(this.answer)){
 			isCorrect = true;
 			game.addPoints();
-			points.setText("Total Points "+game.getTotalPts());
+			points.setText("Total Points "+totalPts);
 			game.correctAnswers();
 		}
 		else isCorrect = false;
 
 		game.trackQuestionNum();
-		game.StartGameLoop(event);
+
+		if (currQuestion >= 20){
+
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/EndGame"));
+			Stage endStage = new Stage();
+			scene = new Scene(loader.load());
+			endStage.setScene(scene);
+
+			EndGameController endController = new EndGameController();
+			endController = loader.getController();
+			endStage.show();
+			endController.displayEndGameScreen();
+
+		}
+		else{
+			game.StartGameLoop(event);
+		}
+
 	}
 
 	public Stage getStage(){
