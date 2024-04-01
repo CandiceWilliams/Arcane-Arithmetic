@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
@@ -57,7 +58,8 @@ public class FillInTheBlanksController{
 	};
 	public void displayQuestion(String quest, String answer) throws IOException {
 		initTime();
-
+		timer.setFont(Font.font("Vinque Rg", 36));
+		timer.setFill(Color.WHITE);
 		question.getChildren().clear();
 		Text text = new Text(quest);
 		text.setFont(Font.font("Garamond", 50));
