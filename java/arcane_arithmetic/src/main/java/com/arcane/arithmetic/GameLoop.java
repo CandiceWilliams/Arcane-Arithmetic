@@ -1,6 +1,7 @@
 package com.arcane.arithmetic;
 
 import com.almasb.fxgl.time.TimerAction;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -29,11 +30,12 @@ public class GameLoop {
     TimerCountdown timer = new TimerCountdown();
     DifficultyController diffCon = new DifficultyController();
     TopicController topicCon = new TopicController();
-    private int questionsAnswered = 0, type = 1;
+    private int questionsAnswered = 0, type_int = 1;
     private static final int TOTAL_QUESTIONS = 5;
-    private String difficulty, topic;
+    private String difficulty, topic, type;
     ObjectMapper objMapper = new ObjectMapper();
     Fill_Question fillQuestion = new Fill_Question();
+    MultipleChoice_Question multQuestion = new MultipleChoice_Question();
     private int totalPts = 0;
     private Stage stage;
     private Scene scene;
@@ -44,15 +46,19 @@ public class GameLoop {
         difficulty = diffCon.getDiff();
         System.out.println(difficulty);
 
-
         while(questionsAnswered != TOTAL_QUESTIONS){
 
+            //picks random number from 1-2 (inclusive) representing the type of question. 1 = fill in the blank 2 = multiple choice
+            type_int  = (int)Math.floor(Math.random() * (2 - 1 + 1) + 1);
+            if (type_int == 1){type = "fb";}
+            if(type_int == 2){type = "mc";}
+
             boolean isCorrect = false;
-            String urlString = "http://127.0.0.1:5000/database/questions/get?subject="+topic+"&type=fb";
-            //String urlString = "http://127.0.0.1:5000/database/questions/get?difficulty="+difficulty+"&type=mc&subject="+topic; proper api call
-            //since we can't not have the type, we should instead have a random int type variable. It will cycle throw 3
-            //random numbers 1, 2, 3. The number it lands on will be the type (assume 1 = mc, 2 = fill, 3 = match)
-            //establish connection with database
+
+            //calls to API to store random question based on given parameters
+            String urlString = "http://127.0.0.1:5000/database/questions/get?difficulty="+difficulty+"&type="+type+"&subject="+topic;
+
+
             try {
                 URL url = new URL(urlString);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -77,38 +83,25 @@ public class GameLoop {
                         responseStrBuilder.append((inputStr));
                     }
 
-                    JsonNode json = objMapper.readTree(responseStrBuilder.toString());
-                    String question = json.at("/question").toString();
-                    String answer = json.at("/answer").toString();
-                    String id = json.at("/question_id").toString();
-
-		            question = question.substring(1, question.length() - 1);
-                    answer = answer.substring(1, answer.length() - 1);
-                    //id = id.substring(1, id.length() - 1);
-
-                    fillQuestion.setQuestion(question);
-                    fillQuestion.setAnswer(answer);
-                    fillQuestion.setQuestion_id(Integer.parseInt(id));
-
+                    createQuestion(responseStrBuilder, type_int);
 
                     reader.close();
                     connection.disconnect();
-
-
-                    //fillQuestion = objMapper.readValue(url, Fill_Question.class);
                 }
             }catch (IOException e) {
                 System.out.println("Unable to establish valid connection to API");
                 throw new RuntimeException(e);
             }
 
-            if (type == 1){
+            if (type_int == 1){
                 Parent root = FXMLLoader.load(getClass().getResource("view/FillInTheBlanks.fxml"));
                 stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
                 scene = new Scene(root);
+                stage.setScene(scene);
                 stage.show();
 
                 System.out.println(fillQuestion.getQuestion());
+
                 FillInTheBlanksController fbController = new FillInTheBlanksController();
                 isCorrect = fbController.displayQuestion(fillQuestion.getQuestion(), fillQuestion.getAnswer());
                 if (isCorrect){
@@ -116,9 +109,55 @@ public class GameLoop {
                 }
             }
 
+            if (type_int == 2){
+                Parent root = FXMLLoader.load(getClass().getResource("view/MultipleChoice.fxml"));
+                stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+
+                System.out.println(multQuestion.getQuestion());
+
+                MultipleChoiceController mcController = new MultipleChoiceController();
+                isCorrect = mcController.displayQuestion(multQuestion.getQuestion(), multQuestion.getAnswer(), multQuestion.getOptions());
+                if (isCorrect){
+                    totalPts += 10;
+                }
+            }
+
             questionsAnswered++;
+        }
+    }
 
+    public void createQuestion(StringBuilder strBuilder, int type) throws JsonProcessingException {
+        if (type == 1){  //fill in the blank question format
+            JsonNode json = objMapper.readTree(strBuilder.toString());
+            String question = json.at("/question").toString();
+            String answer = json.at("/answer").toString();
+            String id = json.at("/question_id").toString();
 
+            question = question.substring(1, question.length() - 1);
+            answer = answer.substring(1, answer.length() - 1);
+
+            fillQuestion.setQuestion(question);
+            fillQuestion.setAnswer(answer);
+            fillQuestion.setQuestion_id(Integer.parseInt(id));
+        }
+
+        if (type == 2){  //multiple choice question format
+            JsonNode json = objMapper.readTree(strBuilder.toString());
+            String question = json.at("/question").toString();
+            String answer = json.at("/answer").toString();
+            String id = json.at("/question_id").toString();
+            String options = json.at("/options").toString();
+
+            question = question.substring(1, question.length() - 1);
+            answer = answer.substring(1, answer.length() - 1);
+
+            multQuestion.setQuestion(question);
+            multQuestion.setAnswer(answer);
+            multQuestion.setQuestion_id(Integer.parseInt(id));
+            multQuestion.setOptions(options);
 
         }
     }

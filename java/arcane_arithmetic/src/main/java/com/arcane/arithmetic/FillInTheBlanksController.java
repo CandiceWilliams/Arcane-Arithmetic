@@ -18,11 +18,9 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 public class FillInTheBlanksController{
-	private Stage stage;
-	private Scene scene;
-	private Parent root;
 	public int num=0;
 	public int pointsNum=0;
+	private Scene scene;
 	@FXML private TextFlow question;
 	@FXML private Label questionNum, timeRemaining, points;
 	@FXML private TextField ansText;
