@@ -28,7 +28,7 @@ public class GameLoop {
     Fill_Question fillQuestion = new Fill_Question();
     MultipleChoice_Question multQuestion = new MultipleChoice_Question();
     private static int totalPts = 0, currentQuestion = 1, correctAnswers = 0;
-    private Stage stage;
+    private static Stage window = new Stage();
     private Scene scene;
     private Parent root;
 
@@ -86,35 +86,28 @@ public class GameLoop {
         }
 
         if (type_int == 1){
-
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/FillInTheBlanks.fxml"));
-            Stage stage1 = new Stage();
             scene = new Scene(loader.load());
-            scene.getStylesheets().add("../css/fillintheblanks.css");
-            stage1.setScene(scene);
-
-
+            window.setScene(scene);
             FillInTheBlanksController fbController = loader.getController();
-            fbController.setStage(stage1);
-            stage1.show();
+            fbController.setStage(window);
+            window.show();
             fbController.displayQuestion(fillQuestion.getQuestion(), fillQuestion.getAnswer());
-
+            fbController.initTime();
         }
 
         if (type_int == 2){
             root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/MultipleChoice.fxml")));
-            stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
             scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            window.setScene(scene);
+            window.show();
 
             System.out.println(multQuestion.getQuestion());
             System.out.println(multQuestion.getOptions());
 
             MultipleChoiceController mcController = new MultipleChoiceController();
             //isCorrect = mcController.displayQuestion(multQuestion.getQuestion(), multQuestion.getAnswer(), multQuestion.getOptions());
-
+            mcController.initTime();
         }
     }
 
@@ -178,8 +171,5 @@ public class GameLoop {
     public int getCorrectAnswers(){
         return correctAnswers;
     }
-
-
-
 }
 

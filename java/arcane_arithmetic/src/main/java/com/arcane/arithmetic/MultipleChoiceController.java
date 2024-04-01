@@ -1,5 +1,9 @@
 package com.arcane.arithmetic;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
+import javafx.animation.SequentialTransition;
+import javafx.animation.Timeline;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 
@@ -12,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.util.Duration;
 
 public class MultipleChoiceController {
 	@FXML private Button ans1,ans2,ans3,ans4;
@@ -21,6 +26,7 @@ public class MultipleChoiceController {
 	private List<String> options = new ArrayList<>();
 	private boolean isCorrect;
 	private String answer;
+	private GameLoop game = new GameLoop();
 	String css = this.getClass().getResource("css/multiplechoice.css").toExternalForm();
 
 
@@ -100,4 +106,35 @@ public class MultipleChoiceController {
 		}
 	}
 
+	@FXML private Text timer;
+	private Timeline timeLine;
+	public void initTime(){
+		timeLine = new Timeline(
+				new KeyFrame(Duration.seconds(1),
+						event -> {
+							if (TimerCountdown.getRemainingSeconds() == 0){
+								timer.setText("Time's up!");
+								SequentialTransition seqTransition = new SequentialTransition (
+										new PauseTransition(Duration.millis(1000)) // wait a second
+								);
+								seqTransition.play();
+								game.trackQuestionNum();
+								try {
+									game.StartGameLoop(event);
+								} catch (IOException e) {
+									throw new RuntimeException(e);
+								}
+							}
+							TimerCountdown.updateTime();
+							timer.setText(TimerCountdown.getCurrentTime());
+						}
+				));
+		TimerCountdown.setCurrentTime(180);
+		timer.setText(TimerCountdown.getCurrentTime());
+		timeLine.setCycleCount(Timeline.INDEFINITE);
+		timeLine.play();
+	}
+	public void stopTimeLine(){
+		timeLine.stop();
+	}
 }

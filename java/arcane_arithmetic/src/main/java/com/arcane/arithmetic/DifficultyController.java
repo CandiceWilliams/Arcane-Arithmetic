@@ -57,7 +57,7 @@ public class DifficultyController {
 	 * @throws IOException
 	 */
 	public void hard(ActionEvent event) throws IOException {
-		diff = "hard";
+		diff = "difficult";
 		startGame(event);
 	}	
 	/**
