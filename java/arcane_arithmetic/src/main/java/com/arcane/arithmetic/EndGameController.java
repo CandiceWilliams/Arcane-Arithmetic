@@ -18,7 +18,7 @@ public class EndGameController {
 	private Scene scene;
 	@FXML private Label pointsWon, rightAnswers, overallScore;
 	@FXML private Button nextButton;
-	GameLoop game = new GameLoop();
+//	GameLoop game = new GameLoop();
 	
 	public void initialize(ActionEvent event) throws IOException {
 		pointsWon.setText("");
@@ -26,7 +26,7 @@ public class EndGameController {
 		overallScore.setText("");
 	}
 
-	public void displayEndGameScreen(){
+	public void displayEndGameScreen(GameLoop game){
 		pointsWon.setText(String.valueOf(game.getTotalPts()));
 		rightAnswers.setText(game.getCorrectAnswers() + "/20");
 		overallScore.setText(String.valueOf(game.getTotalPts()));

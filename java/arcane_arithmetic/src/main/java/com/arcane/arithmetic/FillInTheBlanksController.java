@@ -42,6 +42,7 @@ public class FillInTheBlanksController{
 	private boolean isCorrect = false;
 	private GameLoop game = new GameLoop();
 	private Parent root;
+	EndGameController endController = new EndGameController();
 	//String css = this.getClass().getResource("css/fillintheblanks.css").toExternalForm();
 
 
@@ -91,15 +92,13 @@ public class FillInTheBlanksController{
 
 		if (currQuestion >= 20){
 
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/EndGame"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/EndGame.fxml"));
 			Stage endStage = new Stage();
 			scene = new Scene(loader.load());
 			endStage.setScene(scene);
-
-			EndGameController endController = new EndGameController();
 			endController = loader.getController();
 			endStage.show();
-			endController.displayEndGameScreen();
+			endController.displayEndGameScreen(game);
 
 		}
 		else{

@@ -23,6 +23,7 @@ public class GameLoop {
     TopicController topicCon = new TopicController();
     private int type_int = 1;
     private static final int TOTAL_QUESTIONS = 5;
+    private int count;
     private String difficulty, topic, type;
     ObjectMapper objMapper = new ObjectMapper();
     Fill_Question fillQuestion = new Fill_Question();
@@ -50,64 +51,64 @@ public class GameLoop {
         //calls to API to store random question based on given parameters
         String urlString = "http://127.0.0.1:5000/database/questions/get?difficulty="+difficulty+"&type="+type+"&subject="+topic;
 
-
-        try {
-            URL url = new URL(urlString);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("GET");
-            connection.connect();
-
-            //get response code
-            int responseCode = connection.getResponseCode();
-            if (responseCode != 200){
-                throw new RuntimeException("HttpResponseCode: " + responseCode);
-            }
-
-            else{
-                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                StringBuilder responseStrBuilder = new StringBuilder();
-
-                String inputStr;
-                //Scanner scanner = new Scanner(url.openStream());
-
-                //Write all JSON data into a string using a scanner
-                while((inputStr = reader.readLine()) != null){
-                    responseStrBuilder.append((inputStr));
-                }
-
-                createQuestion(responseStrBuilder, type_int);
-
-                reader.close();
-                connection.disconnect();
-            }
-        }catch (IOException e) {
-            System.out.println("Unable to establish valid connection to API");
-            throw new RuntimeException(e);
+	        try {
+	            URL url = new URL(urlString);
+	            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+	            connection.setRequestMethod("GET");
+	            connection.connect();
+	
+	            //get response code
+	            int responseCode = connection.getResponseCode();
+	            if (responseCode != 200){
+	                throw new RuntimeException("HttpResponseCode: " + responseCode);
+	            }
+	
+	            else{
+	                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+	                StringBuilder responseStrBuilder = new StringBuilder();
+	
+	                String inputStr;
+	                //Scanner scanner = new Scanner(url.openStream());
+	
+	                //Write all JSON data into a string using a scanner
+	                while((inputStr = reader.readLine()) != null){
+	                    responseStrBuilder.append((inputStr));
+	                }
+	
+	                createQuestion(responseStrBuilder, type_int);
+	
+	                reader.close();
+	                connection.disconnect();
+	            }
+	        }catch (IOException e) {
+	            System.out.println("Unable to establish valid connection to API");
+	            throw new RuntimeException(e);
+	        }
+	
+	        if (type_int == 1){
+	            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/FillInTheBlanks.fxml"));
+	            scene = new Scene(loader.load());
+	            window.setScene(scene);
+	            FillInTheBlanksController fbController = loader.getController();
+	            fbController.setStage(window);
+	            window.show();
+	            fbController.displayQuestion(fillQuestion.getQuestion(), fillQuestion.getAnswer());
+	            
+	        }
+	
+	        if (type_int == 2){
+	            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/MultipleChoice.fxml")));
+	            scene = new Scene(root);
+	            window.setScene(scene);
+	            window.show();
+	
+	            System.out.println(multQuestion.getQuestion());
+	            System.out.println(multQuestion.getOptions());
+	
+	            MultipleChoiceController mcController = new MultipleChoiceController();
+	            //isCorrect = mcController.displayQuestion(multQuestion.getQuestion(), multQuestion.getAnswer(), multQuestion.getOptions());
+	        }
         }
-
-        if (type_int == 1){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/FillInTheBlanks.fxml"));
-            scene = new Scene(loader.load());
-            window.setScene(scene);
-            FillInTheBlanksController fbController = loader.getController();
-            fbController.setStage(window);
-            window.show();
-            fbController.displayQuestion(fillQuestion.getQuestion(), fillQuestion.getAnswer());
-        }
-
-        if (type_int == 2){
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/MultipleChoice.fxml")));
-            scene = new Scene(root);
-            window.setScene(scene);
-            window.show();
-
-            System.out.println(multQuestion.getQuestion());
-            System.out.println(multQuestion.getOptions());
-
-            MultipleChoiceController mcController = new MultipleChoiceController();
-            //isCorrect = mcController.displayQuestion(multQuestion.getQuestion(), multQuestion.getAnswer(), multQuestion.getOptions());
-        }
-    }
 
     public void createQuestion(StringBuilder strBuilder, int type) throws JsonProcessingException {
         if (type == 1){  //fill in the blank question format
