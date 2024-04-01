@@ -104,20 +104,23 @@ def questionsHandler():
     valid_types = ["mc", "matching", "fb"]
     
     
-    if type not in valid_types:
-        response = Response('''{"Error": "Invalid Argument 'type'"}''')
-        response.headers['Content-Type'] = 'application/json'
-        return response
+    if type != None:
+        if type not in valid_types:
+            response = Response('''{"Error": "Invalid Argument 'type'"}''')
+            response.headers['Content-Type'] = 'application/json'
+            return response
     
-    if subject not in valid_subjects:
-        response = Response('''{"Error": "Invalid Argument 'subject'"}''')
-        response.headers['Content-Type'] = 'application/json'
-        return response
+    if subject != None:
+        if subject not in valid_subjects:
+            response = Response('''{"Error": "Invalid Argument 'subject'"}''')
+            response.headers['Content-Type'] = 'application/json'
+            return response
     
-    if difficulty not in valid_difficulties:
-        response = Response('''{"Error": "Invalid Argument 'difficulty'"}''')
-        response.headers['Content-Type'] = 'application/json'
-        return response
+    if difficulty != None:
+        if difficulty not in valid_difficulties:
+            response = Response('''{"Error": "Invalid Argument 'difficulty'"}''')
+            response.headers['Content-Type'] = 'application/json'
+            return response
     
     if type == None:
         response = Response('''{"Error": "Missing Argument 'type'"}''')
@@ -127,17 +130,18 @@ def questionsHandler():
     if subject != None and difficulty != None:
         questionStorage = []
         
-        for i in MatchingQuestions.questions:
-            if (i.subject == subject and i.difficulty == difficulty):
-                questionStorage.append(i)
-                
-        for i in MCQuestions.questions:
-            if (i.subject == subject and i.difficulty == difficulty):
-                questionStorage.append(i)
-        
-        for i in FillInTheBlank.questions:
-            if (i.subject == subject and i.difficulty == difficulty):
-                questionStorage.append(i)
+        if type == "matching":
+            for i in MatchingQuestions.questions:
+                if (i.subject == subject and i.difficulty == difficulty):
+                    questionStorage.append(i)
+        elif type == "mc":      
+            for i in MCQuestions.questions:
+                if (i.subject == subject and i.difficulty == difficulty):
+                    questionStorage.append(i)
+        elif type == "fb": 
+            for i in FillInTheBlank.questions:
+                if (i.subject == subject and i.difficulty == difficulty):
+                    questionStorage.append(i)
         
         q = random.choice(questionStorage)
         json_string = json.dumps(q, default=lambda o: o.to_serializable(), indent=4)
