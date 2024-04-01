@@ -6,6 +6,9 @@ system = platform.system()
 
 class Record:
     
+    """
+    This class represents a a record for rankings and it includes all essential functions for ranking table
+    """
     
     def __init__(self, totalPoints, totalWon, totalPlayed, totalCorrect, totalIncorrect, ownerID):
         self.totalPoints = int(totalPoints)
@@ -19,6 +22,13 @@ class Record:
         
     
     def insertIntoDB(self):
+            """
+            Inserts a new record into the database file. If a record with the same ownerID already exists, it is replaced.
+            Returns:
+                str: JSON structure of the inserted record.
+            Raises:
+                Exception: If an error occurs during file operations or JSON serialization.
+            """
             if system == "Windows":
                 filedir = "DatabaseFiles\\ranks.json"
             else:
@@ -52,6 +62,13 @@ class Record:
         
         
     def getAll():
+            """
+            Retrieves all records from the database file.
+            Returns:
+                str: Contents of the database file.
+            Raises:
+                FileNotFoundError: If the database file is not found.
+            """
             if system == "Windows":
                 filedir = "DatabaseFiles\\ranks.json"
             else:
@@ -64,6 +81,13 @@ class Record:
             
         
     def getByID(id):
+        """
+        Retrieves a record from the database file based on the provided ID.
+        Args:
+            id (str): The ownerID of the record to retrieve.
+        Returns:
+            str: JSON structure of the retrieved record, or an empty string if not found.
+        """
         if system == "Windows":
             filedir = "DatabaseFiles\\ranks.json"
         else:
@@ -81,6 +105,13 @@ class Record:
         
         
     def deleteByID(id):
+        """
+        Deletes a record from the database file based on the provided ID.
+        Args:
+            id (str): The ownerID of the record to delete.
+        Raises:
+            ValueError: If the provided ID is not found in the database file.
+        """
         if system == "Windows":
             filedir = "DatabaseFiles\\ranks.json"
         else:

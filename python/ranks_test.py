@@ -1,7 +1,24 @@
+# test_ranks.py
+import unittest
 from ranks import Record
 
-r = Record(10, 20, 30, 40, 2, "sss")
+class TestRecord(unittest.TestCase):
+    def test_init(self):
+        totalPoints = 100
+        totalWon = 10
+        totalPlayed = 20
+        totalCorrect = 30
+        totalIncorrect = 10
+        ownerID = "user123"
 
-r.insertIntoDB()
+        record = Record(totalPoints, totalWon, totalPlayed, totalCorrect, totalIncorrect, ownerID)
 
-print(Record.deleteByID("sfsfs")) 
+        self.assertEqual(record.totalPoints, totalPoints)
+        self.assertEqual(record.totalWon, totalWon)
+        self.assertEqual(record.totalPlayed, totalPlayed)
+        self.assertEqual(record.totalCorrect, totalCorrect)
+        self.assertEqual(record.totalIncorrect, totalIncorrect)
+        self.assertEqual(record.ownerID, ownerID)
+
+if __name__ == '__main__':
+    unittest.main()
