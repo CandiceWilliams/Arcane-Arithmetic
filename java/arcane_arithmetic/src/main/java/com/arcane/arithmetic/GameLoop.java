@@ -42,6 +42,7 @@ public class GameLoop {
     private Parent root;
 
 
+
     public void StartGameLoop(ActionEvent event) throws IOException {
         topic = topicCon.getTopic();
         difficulty = diffCon.getDiff();
@@ -55,7 +56,8 @@ public class GameLoop {
             if(type_int == 2){type = "mc";}
 
             boolean isCorrect = false;
-
+            type_int = 1;
+            type = "fb";
             //calls to API to store random question based on given parameters
             String urlString = "http://127.0.0.1:5000/database/questions/get?difficulty="+difficulty+"&type="+type+"&subject="+topic;
 
@@ -95,17 +97,19 @@ public class GameLoop {
             }
 
             if (type_int == 1){
-                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/FillInTheBlanks.fxml")));
-                stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
 
-                System.out.println(multQuestion.getQuestion());
-                System.out.println(multQuestion.getOptions());
 
-                FillInTheBlanksController fbController = new FillInTheBlanksController();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("view/FillInTheBlanks.fxml"));
+                Stage stage1 = new Stage();
+                stage1.setScene(new Scene(loader.load()));
+
+                FillInTheBlanksController fbController = loader.getController();
+
                 isCorrect = fbController.displayQuestion(fillQuestion.getQuestion(), fillQuestion.getAnswer());
+                stage1.showAndWait();
+
+
+
                 if (isCorrect){
                     totalPts += 10;
                 }
@@ -119,6 +123,7 @@ public class GameLoop {
                 stage.show();
 
                 System.out.println(multQuestion.getQuestion());
+                System.out.println(multQuestion.getOptions());
 
                 MultipleChoiceController mcController = new MultipleChoiceController();
                 isCorrect = mcController.displayQuestion(multQuestion.getQuestion(), multQuestion.getAnswer(), multQuestion.getOptions());
