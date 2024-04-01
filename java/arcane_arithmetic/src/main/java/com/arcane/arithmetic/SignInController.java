@@ -21,6 +21,10 @@ import java.net.URL;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * This is the Sign In Controller, used for controls and events in the Sign-in pop up.
+ *
+ */
 public class SignInController {	
 
 	public Stage stage;
@@ -33,6 +37,13 @@ public class SignInController {
 	@FXML private Label errorLabel;
 	@FXML private TextField username,password;
 	
+	
+	/**
+	 * Initialize the sign-in pop up
+	 * @param event the start button is pressed in the start menu
+	 * @param startMenuStage the original start menu stage
+	 * @throws IOException
+	 */
 	public void popUpSignInScene(ActionEvent event, Stage startMenuStage) throws IOException {
 		storeStartMenuStage(startMenuStage); SignUpController.storeStartMenuStage(startMenuStage);
 		Stage window = new Stage();
@@ -45,7 +56,12 @@ public class SignInController {
 		window.setResizable(false);
 		window.showAndWait();
 	}
-
+	
+	/** 
+	 * Switch to sign-in scene
+	 * @param event switch to sign-in button is pressed
+	 * @throws IOException
+	 */
 	public void switchToSignInScene(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
 		root = FXMLLoader.load(getClass().getResource("view/SignIn.fxml"));
@@ -56,7 +72,11 @@ public class SignInController {
 		stage.setScene(scene);
 		stage.show();
 	}
-
+	/** 
+	 * Switch to sign-up scene
+	 * @param event switch to sign-up button is pressed
+	 * @throws IOException
+	 */
 	public void switchToSignUpScene(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
 		root = FXMLLoader.load(getClass().getResource("view/SignUp.fxml"));
@@ -68,6 +88,12 @@ public class SignInController {
 		stage.show();
 	}
 
+	/** 
+	 * Switch to ChooseTopic scene
+	 * Check for sign-in data
+	 * @param event sign-in button is pressed
+	 * @throws IOException
+	 */
     public void switchToTopic(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
 		
@@ -86,10 +112,9 @@ public class SignInController {
 		}
 		in.close();
 		con.disconnect();
-		System.out.print(content.toString());
-		if(content.toString()=="{\"Error\":\"User Not Found\"}") {
+		if(content.toString().equals("{\"Error\": \"User Not Found\"}")) {
 			errorLabel.setVisible(true);
-		} else if(content.toString()=="{\"Error\":\"No field specified\"}") {
+		} else if(content.toString().equals("{\"Error\": \"No field specified\"}")) {
 			errorLabel.setVisible(true);
 		} else {
 			JsonNode json =new ObjectMapper().readTree(content.toString());
@@ -112,22 +137,23 @@ public class SignInController {
 				errorLabel.setVisible(true);
 			}
 		}
-		
-//		//temporary without api
-//		Stage stage = (Stage)loginButton.getScene().getWindow();
-//		stage.close();
-//		Parent root = FXMLLoader.load(getClass().getResource("view/ChooseTopic.fxml"));
-//		scene = new Scene(root);
-//		startMenuStage.setScene(scene);
-//		SettingsController.settingsCon.loadFullScreen();
 	}
 
+    /**
+     * Close the sign-in pop up
+     * @param event back button is pressed
+     * @throws IOException
+     */
     public void back(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
 		Stage stage = (Stage)backButton.getScene().getWindow();
 		stage.close();
     }
-
+    
+	/**
+	 * Store the start menu stage
+	 * @param startMenuStage the original start menu stage
+	 */
 	public static void storeStartMenuStage(Stage startMenuStage){
 		SignInController.startMenuStage = startMenuStage;
 	}

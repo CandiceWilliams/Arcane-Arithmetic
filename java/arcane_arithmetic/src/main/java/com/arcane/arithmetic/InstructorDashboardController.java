@@ -25,6 +25,10 @@ import java.net.URL;
 
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * This is the Instructor Dashboard Controller, used for controls and events for the instructor dashboard.
+ *
+ */
 public class InstructorDashboardController {
     public static InstructorDashboardController instructDashCon = new InstructorDashboardController();
     private Stage window = new Stage();
@@ -40,11 +44,19 @@ public class InstructorDashboardController {
     @FXML private TableColumn<UserRecord, Double> averageRightAnswers;
     @FXML private TableColumn<UserRecord, Double> averageWrongAnswers;
 
+    /**
+     * Return to start menu
+     * @param event back button is pressed
+     * @throws IOException
+     */
     public void backToMainMenuClick(ActionEvent event) throws IOException {
         StartController SCCon = new StartController();
         SCCon.switchToStartMenu(event);
     }
 
+    /**
+     * Update table with UserID, Username, Total points, Average win rate, average right answers and average wrong answers
+     */
     public void loadTable(){
         userID.setCellValueFactory(new PropertyValueFactory<UserRecord,String>("UserID"));
         username.setCellValueFactory(new PropertyValueFactory<UserRecord,String>("Username"));

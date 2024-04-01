@@ -18,6 +18,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+/**
+ * This is the Leaderboard Controller, used for controls and events for the leaderboard scene.
+ *
+ */
 public class LeaderboardController {
 	private Stage stage;
 	private Scene scene;
@@ -29,6 +33,11 @@ public class LeaderboardController {
 	@FXML private TableColumn<RankingData, Integer> pointsCol;
 	private ObservableList<RankingData> list = FXCollections.observableArrayList();
 
+	/**
+	 * Update leaderboard
+	 * @param event the load table button is pressed
+	 * @throws IOException
+	 */
 	public void loadTable(ActionEvent event) throws IOException {
 		leaderboardTable.setEditable(false);
 		rankCol.setCellValueFactory(new PropertyValueFactory<RankingData, Integer>("Rank"));
@@ -47,6 +56,11 @@ public class LeaderboardController {
 		leaderboardTable.setItems(list);
 	}
 
+	/**
+	 * Switch to start menu
+	 * @param event back button is pressed
+	 * @throws IOException
+	 */
 	public void switchToStart(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
 		Parent root = FXMLLoader.load(getClass().getResource("view/StartMenu.fxml"));

@@ -15,6 +15,10 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
+/**
+ * This is the Cheat Mode Password Prompt Controller, used for controls and events in the cheat mode passwrod prompt.
+ *
+ */
 public class CheatsModePasswordPromptController {
 
     public static CheatsModePasswordPromptController cheatsCon = new CheatsModePasswordPromptController();
@@ -26,6 +30,10 @@ public class CheatsModePasswordPromptController {
     private static final String authenticationPassword = "hamburger123";
     private static boolean cheatsOn = false;
 
+    /**
+     * Initialize Cheat Mode Password Prompt
+     * @throws IOException
+     */
     public void initCheats() throws IOException {
         window.initModality(Modality.APPLICATION_MODAL);
         window.resizableProperty().setValue(Boolean.FALSE);
@@ -33,10 +41,18 @@ public class CheatsModePasswordPromptController {
         scene = new Scene(pane);
         window.setScene(scene);
     }
+    /**
+     * Show Cheat Mode Password Prompt pop up
+     * @throws IOException
+     */
     public void popUpWindow() throws IOException {
         window.show();
     }
 
+    /**
+     * Switch back to the settings menu
+     * @param event back button is pressed
+     */
     public void backToOptionsClick(ActionEvent event) {
         SettingsController.settingsCon.loadSound();
         window.close();
@@ -44,6 +60,9 @@ public class CheatsModePasswordPromptController {
         settingsCon.startSettings(event);
     }
 
+    /**
+     * Check for the authentication password
+     */
     public void checkPassword(){
         String txt = authenticationKeyTextField.getText();
         if (txt.equals(authenticationPassword)){
@@ -64,6 +83,9 @@ public class CheatsModePasswordPromptController {
         displayCheatsStatus();
     }
 
+    /**
+     * Deactivate cheats
+     */
     public void deactivateCheatsButtonClick(){
         cheatsOn = false;
         displayCheatsStatus();
@@ -73,6 +95,9 @@ public class CheatsModePasswordPromptController {
         visiblePause.play();
     }
 
+    /**
+     * Display cheats status
+     */
     private void displayCheatsStatus(){
         if (cheatsOn) {
             cheatsOffStatusLabel.setVisible(false);
@@ -84,6 +109,9 @@ public class CheatsModePasswordPromptController {
         }
     }
 
+    /**
+     * @return cheatsON
+     */
     public static boolean isCheatsOn(){
         return cheatsOn;
     }

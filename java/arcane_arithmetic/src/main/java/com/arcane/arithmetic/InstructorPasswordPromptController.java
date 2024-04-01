@@ -18,6 +18,10 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
+/**
+ * This is the Instructor Password Prompt Controller, used for controls and events in the instructor password prompt
+ *
+ */
 public class InstructorPasswordPromptController {
 
     private Stage stage;
@@ -30,6 +34,11 @@ public class InstructorPasswordPromptController {
     @FXML private Label invalidPasswordLabel;
     private static final String authenticationPassword = "xyz369";
 
+    /**
+     * Initialize instructor dashboard password prompt
+     * @param startMenuStage
+     * @throws IOException
+     */
     public void popUpWindow(Stage startMenuStage) throws IOException {
         storeStartMenuStage(startMenuStage);
         Stage window = new Stage();
@@ -41,6 +50,10 @@ public class InstructorPasswordPromptController {
         window.show();
     }
 
+    /**
+     * Return to settings menu
+     * @param event back to options button is pressed
+     */
     public void backToOptionsClick(ActionEvent event) {
         SettingsController.settingsCon.loadSound();
         stage = (Stage)backToOptionsButton.getScene().getWindow();
@@ -49,6 +62,10 @@ public class InstructorPasswordPromptController {
         settingsCon.startSettings(event);
     }
 
+    /**
+     * Switch to the Instructor Dashboard scene when the correct password is entered
+     * @throws IOException
+     */
     public void switchToInstructorDashboard() throws IOException {
         String txt = authenticationKeyTextField.getText();
         if (txt.equals(authenticationPassword)) {
@@ -68,6 +85,10 @@ public class InstructorPasswordPromptController {
         }
     }
 
+    /**
+     * Store start menu stage
+     * @param startMenuStage
+     */
     public static void storeStartMenuStage(Stage startMenuStage){
         InstructorPasswordPromptController.startMenuStage = startMenuStage;
     }

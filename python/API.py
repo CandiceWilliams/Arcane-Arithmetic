@@ -138,7 +138,7 @@ def questionsHandler():
             for i in MCQuestions.questions:
                 if (i.subject == subject and i.difficulty == difficulty):
                     questionStorage.append(i)
-        elif type == "fb": 
+        elif type == "fb":
             for i in FillInTheBlank.questions:
                 if (i.subject == subject and i.difficulty == difficulty):
                     questionStorage.append(i)

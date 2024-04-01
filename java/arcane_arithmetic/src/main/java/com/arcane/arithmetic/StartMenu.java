@@ -7,6 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * This is the start menu, used for loading the game.
+ *
+ */
 public class StartMenu extends Application {
 
     @Override

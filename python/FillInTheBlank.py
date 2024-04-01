@@ -60,7 +60,7 @@ class FillInTheBlank:
 
 
         for obj in data:
-            FillInTheBlank(obj["question"], obj["answer"], obj["question_id"], obj["difficulty"], obj["subject"])
+            FillInTheBlank(obj["question"], obj["answer"], obj["question_id"], obj["difficulty"].replace(" ", ""), obj["subject"])
 
 
 
