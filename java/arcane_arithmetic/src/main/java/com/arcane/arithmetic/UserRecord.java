@@ -17,7 +17,7 @@ public class UserRecord {
     // variables to be displayed in Instructor Dashboard
     private String username;
     private int total_points;
-    private double average_win_rate, average_right, average_wrong;
+    private double average_win_rate = 0, average_right = 0, average_wrong = 0;
 
     // variable used for accessing the API
     private String userID;
