@@ -112,10 +112,10 @@ public class SignInController {
 		}
 		in.close();
 		con.disconnect();
-		System.out.print(content.toString());
-		if(content.toString()=="{\"Error\":\"User Not Found\"}") {
+		System.out.println(content.toString());
+		if(content.toString().equals("{\"Error\": \"User Not Found\"}")) {
 			errorLabel.setVisible(true);
-		} else if(content.toString()=="{\"Error\":\"No field specified\"}") {
+		} else if(content.toString().equals("{\"Error\": \"No field specified\"}")) {
 			errorLabel.setVisible(true);
 		} else {
 			JsonNode json =new ObjectMapper().readTree(content.toString());

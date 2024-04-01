@@ -73,12 +73,12 @@ public class SignUpController {
 	    		}
 	    		in.close();
 	    		con.disconnect();
-	    		System.out.print(content.toString());
-	    		if(content.toString()=="{\"Error\":\"Invalid Input\"}") {
+	    		System.out.println(content.toString());
+	    		if(content.toString().equals("{\"Error\": \"Invalid Input\"}")) {
 	    			pwSpecial.setVisible(true);
-	    		} else if(content.toString()=="{\"Error\":\"User already exists\"}") {
+	    		} else if(content.toString().equals("{\"Error\": \"User already exists\"}")) {
 	    			existedUsername.setVisible(true);
-	    		} else if(content.toString()=="{\"Error\":\"No field specified\"}"){
+	    		} else if(content.toString().equals("{\"Error\": \"No field specified\"}")){
 	    			
 	    		} else {
 	    			ObjectMapper objectMapper = new ObjectMapper();
