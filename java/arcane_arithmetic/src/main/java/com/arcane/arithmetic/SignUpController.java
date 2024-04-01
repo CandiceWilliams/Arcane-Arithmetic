@@ -73,7 +73,6 @@ public class SignUpController {
 	    		}
 	    		in.close();
 	    		con.disconnect();
-	    		System.out.println(content.toString());
 	    		if(content.toString().equals("{\"Error\": \"Invalid Input\"}")) {
 	    			pwSpecial.setVisible(true);
 	    		} else if(content.toString().equals("{\"Error\": \"User already exists\"}")) {
