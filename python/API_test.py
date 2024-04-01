@@ -8,7 +8,6 @@ class TestAPI(TestCase):
         return app
 
     def test_insert_user(self):
-        # Assuming your insertUser route expects a query parameter "data" with user info
         data = {
             "username": "testUser",
             "password": "testPass",
