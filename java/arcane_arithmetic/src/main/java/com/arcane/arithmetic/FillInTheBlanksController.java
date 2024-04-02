@@ -101,7 +101,7 @@ public class FillInTheBlanksController{
 
 		game.trackQuestionNum();
 
-		if (currQuestion >= 20){
+		if (currQuestion >= 8){
 			Stage thisStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			thisStage.close();
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/EndGame.fxml"));
