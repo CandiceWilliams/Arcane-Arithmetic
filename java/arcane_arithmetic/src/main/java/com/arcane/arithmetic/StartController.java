@@ -33,6 +33,7 @@ public class StartController {
 	 * Open the tutorial pop up
 	 * @param event the tutorial button is pressed
 	 * @throws IOException
+	 * @see TutorialController
 	 */
 	public void openTutorial(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -43,6 +44,7 @@ public class StartController {
 	/**
 	 * Open the settings menu
 	 * @param event the settings button is pressed
+	 * @see SettingsController
 	 */
 	public void openSettings(ActionEvent event) {
 		SettingsController.settingsCon.loadSound();
@@ -53,6 +55,7 @@ public class StartController {
 	 * Open the sign in pop up
 	 * @param event start button is pressed
 	 * @throws IOException if error initialising Stage variable
+	 * @see SignInController
 	 */
 	public void openSignIn(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -64,6 +67,7 @@ public class StartController {
 	 * Open the exit pop up
 	 * @param event exit button is pressed
 	 * @throws IOException if error initialising Stage variable
+	 * @see ExitController
 	 */
 	public void openExit(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -75,6 +79,7 @@ public class StartController {
 	 * Switch to start menu
 	 * @param event any back to start menu button is pressed
 	 * @throws IOException
+	 * @see StartMenu
 	 */
 	public void switchToStartMenu(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -92,6 +97,7 @@ public class StartController {
 	 * Switch to choose topic scene
 	 * @param event switch to topic button is pressed
 	 * @throws IOException if error initialising Stage variable
+	 * @see TopicController
 	 */
 	public void switchToTopicScene(ActionEvent event) throws IOException{
 		SettingsController.settingsCon.loadSound();
@@ -107,6 +113,7 @@ public class StartController {
 	 * Switch to the leaderboard scene
 	 * @param event leaderboard button is pressed
 	 * @throws IOException if error initialising Stage variable
+	 * @see LeaderboardController
 	 */
 	public void switchToLeaderboard(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -122,6 +129,7 @@ public class StartController {
 	 * Switch to the choose difficulty scene
 	 * @param event switch to difficulty button is pressed
 	 * @throws IOException if error initialising Stage variable
+	 * @see DifficultyController
 	 */
 	public void switchToDifficulty(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
