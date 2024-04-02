@@ -17,6 +17,8 @@ import java.io.IOException;
 
 /**
  * This is the Cheat Mode Password Prompt Controller, used for controls and events in the cheat mode passwrod prompt.
+ * 
+ * @author Justin Xu
  *
  */
 public class CheatsModePasswordPromptController {
@@ -32,7 +34,7 @@ public class CheatsModePasswordPromptController {
 
     /**
      * Initialize Cheat Mode Password Prompt
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void initCheats() throws IOException {
         window.initModality(Modality.APPLICATION_MODAL);
@@ -43,7 +45,7 @@ public class CheatsModePasswordPromptController {
     }
     /**
      * Show Cheat Mode Password Prompt pop up
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void popUpWindow() throws IOException {
         window.show();
