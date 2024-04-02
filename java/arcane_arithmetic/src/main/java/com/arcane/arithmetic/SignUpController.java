@@ -95,10 +95,22 @@ public class SignUpController {
 	    			pwSpecial.setVisible(false);
 	    			pwDiff.setVisible(false);	
 	    			usernameTooLong.setVisible(false);
+
+					String userID = json.get("id").toString();
+					userID = userID.substring(1,userID.length()-1);
+					String userName = username.getText();
+					int totalPoints = 0;
+					int totalWon = 0;
+					int totalPlayed = 0;
+					int totalCorrect = 0;
+					int totalIncorrect = 0;
+					UserRecord toAdd = new UserRecord(userID, userName, totalPoints, totalWon, totalPlayed, totalCorrect, totalIncorrect);
+					UserRecord.insertUserRecordIntoAPI(toAdd);
+
 					// updating the user id of the current player in EndGameController
 					String tmpStr = json.get("id").toString();
-					String userID = tmpStr.substring(1, tmpStr.length()-1);
-					EndGameController.setCurrentPlayerUserID(userID);
+					String tmpUserID = tmpStr.substring(1, tmpStr.length()-1);
+					EndGameController.setCurrentPlayerUserID(tmpUserID);
 	    		}
 	    	} catch (Exception e) {
 	    		e.printStackTrace();
