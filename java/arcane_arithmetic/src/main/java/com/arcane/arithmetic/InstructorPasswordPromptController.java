@@ -20,7 +20,9 @@ import java.io.IOException;
 
 /**
  * This is the Instructor Password Prompt Controller, used for controls and events in the instructor password prompt
- *
+ * 
+ * @author Justin Xu
+ * 
  */
 public class InstructorPasswordPromptController {
 
@@ -37,7 +39,7 @@ public class InstructorPasswordPromptController {
     /**
      * Initialize instructor dashboard password prompt
      * @param startMenuStage
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void popUpWindow(Stage startMenuStage) throws IOException {
         storeStartMenuStage(startMenuStage);
@@ -64,7 +66,7 @@ public class InstructorPasswordPromptController {
 
     /**
      * Switch to the Instructor Dashboard scene when the correct password is entered
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void switchToInstructorDashboard() throws IOException {
         String txt = authenticationKeyTextField.getText();

@@ -27,7 +27,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * This is the Instructor Dashboard Controller, used for controls and events for the instructor dashboard.
- *
+ * 
+ * @author Justin Xu
+ * 
  */
 public class InstructorDashboardController {
     public static InstructorDashboardController instructDashCon = new InstructorDashboardController();
@@ -47,7 +49,7 @@ public class InstructorDashboardController {
     /**
      * Return to start menu
      * @param event back button is pressed
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void backToMainMenuClick(ActionEvent event) throws IOException {
         StartController SCCon = new StartController();
