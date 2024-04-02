@@ -76,7 +76,7 @@ public class FillInTheBlanksController{
 		question.getChildren().add(text);
 		question.setTextAlignment(TextAlignment.CENTER);
 		currQuestion = game.getQuestionNum();
-		questionNum.setText("Question "+currQuestion+"/20");
+		questionNum.setText("Question "+currQuestion+"/8");
 		totalPts = game.getTotalPts();
 		points.setText("Total Points "+totalPts);
 		this.answer = answer;
