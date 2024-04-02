@@ -7,6 +7,7 @@ Arcane Arithmetics is a game for Grade 12 students to master math concepts like 
   - Version: 3.0.2
   - To install flask, run this command:
     - ```pip3.9 install flask```
+  - API Documentation is located at ../Docs/API
 ## Build and Run
 To build and run the program, ensure you have Maven installed. Then, navigate to the project directory and run the following command: 
 ```mvn clean javafx:run```
