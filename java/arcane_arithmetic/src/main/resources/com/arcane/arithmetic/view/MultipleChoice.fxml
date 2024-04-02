@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<BorderPane stylesheets="@../css/multiplechoice.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.MultipleChoiceController">
+<BorderPane stylesheets="@../css/multiplechoice.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcane.arithmetic.MultipleChoiceConrtroller">
    <center>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" stylesheets="@../css/multiplechoice.css">
          <children>
@@ -29,7 +29,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextFlow fx:id="question" prefHeight="66.0" prefWidth="874.0" styleClass="question" stylesheets="@../css/multiplechoice.css" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <TextFlow fx:id="question" prefHeight="144.0" prefWidth="960.0" styleClass="question" stylesheets="@../css/multiplechoice.css" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
                         <Text fx:id="questionText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="question" text="123123123123131" textAlignment="JUSTIFY" wrappingWidth="395.68359375">
                            <font>
@@ -40,17 +40,17 @@
                   </TextFlow>
                </children>
             </GridPane>
-            <GridPane prefHeight="490.0" prefWidth="1280.0">
+            <GridPane prefHeight="327.0" prefWidth="1280.0">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.7456359863281" minWidth="0.0" prefWidth="150.29969940185546" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="640.0" minWidth="10.0" prefWidth="493.30030059814453" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="514.1718017578125" minWidth="10.0" prefWidth="468.4458984375001" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.8092041015625" minWidth="10.0" prefWidth="163.15410156250005" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="307.7456359863281" minWidth="0.0" prefWidth="84.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="682.0" minWidth="10.0" prefWidth="559.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="610.0" minWidth="10.0" prefWidth="541.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.8092041015625" minWidth="10.0" prefWidth="96.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
-                <RowConstraints maxHeight="202.94755859375" minHeight="10.0" prefHeight="188.73607177734374" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="194.19999999999996" minHeight="10.0" prefHeight="178.86392822265628" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="49.0" minHeight="0.0" prefHeight="49.0" />
+                <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="143.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="194.19999999999996" minHeight="10.0" prefHeight="178.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="61.451696777343756" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
@@ -71,12 +71,11 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="timeRemaining" alignment="CENTER" prefHeight="78.0" prefWidth="426.0" text="Time Remaining:">
+            <Label fx:id="timeRemaining" alignment="CENTER" prefHeight="78.0" prefWidth="426.0" text="Time Remaining: 60s">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Text fx:id="timer" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             <Label fx:id="points" alignment="CENTER_RIGHT" prefHeight="78.0" prefWidth="426.0" text="Total Points: 0 ">
                <font>
                   <Font size="30.0" />

@@ -14,8 +14,12 @@ import java.io.IOException;
 import java.io.File;
 
 /**
- * This is the Settings Controller, used for controls and events in the Settings Menu.
+ * This class is used to control various user settings. Settings include:
+ * <li>sound effects toggle,</li>
+ * <li>music toggle and,</li>
+ * <li>full screen toggle</li>
  *
+ * @author JustinXu
  */
 public class SettingsController {
     public static SettingsController settingsCon = new SettingsController();
@@ -40,9 +44,9 @@ public class SettingsController {
 
 
     /**
-     * Initialize the Settings menu
-     * @param startMenuStage
-     * @throws IOException
+     * Initialize the Settings menu and set modality
+     * @param startMenuStage stores start menu stage so user can navigate back to it once finished
+     * @throws IOException if Stage variable is initialised incorrectly
      */
     public void initSettings(Stage startMenuStage) throws IOException {
         storeStartMenuStage(startMenuStage);
@@ -56,14 +60,16 @@ public class SettingsController {
     }
 
     /**
-     * @param event the settings button is pressed
+     * Listener for when the settings button is pressed
+     * @param event settings button is pressed
      */
     public void startSettings(ActionEvent event) {
         window.showAndWait();
     }
 
     /**
-     * Sound checkbox
+     * UI checkbox that toggles sfx on and off
+     * @see CheckBox
      */
     public void soundCheckBoxClick(){
         soundOn = soundCheckBox.isSelected();
@@ -71,7 +77,9 @@ public class SettingsController {
     }
 
     /**
-     * PlaySound() if soundOn is true
+     *UI checkbox that plays sound if true
+     * @see CheckBox
+     * @see #playSound()
      */
     public void loadSound(){
         // call this method whenever a button is pressed from another class
@@ -81,7 +89,8 @@ public class SettingsController {
     }
 
     /**
-     * Play sound
+     * Starts and stops the UI sounds from being played
+     * @see MediaPlayer
      */
     public void playSound(){
         boolean playing = buttonClickSoundMediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
@@ -92,7 +101,7 @@ public class SettingsController {
 
 
     /**
-     * Music checkbox
+     * UI checkbox that toggles music on and off
      */
     public void musicCheckBoxClick(){
         loadSound();
@@ -100,7 +109,8 @@ public class SettingsController {
         loadMusic();
     }
     /**
-     * playMusic() if musicOn is true
+     * Plays music if music not on. If music is on, stops music
+     * @see MediaPlayer
      */
     public void loadMusic(){
         if (musicOn){
@@ -112,7 +122,8 @@ public class SettingsController {
     }
     
     /**
-     * Play music 
+     *Loops music indefinitely
+     * @see MediaPlayer
      */
     public void playMusic(){
         backgroundMediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
@@ -120,7 +131,8 @@ public class SettingsController {
     }
 
     /**
-     * FullScreen checkbox
+     * UI checkbox that toggles full screen on and off
+     * @see CheckBox;
      */
     public void fullScreenCheckBoxClick(){
         loadSound();
@@ -129,7 +141,8 @@ public class SettingsController {
     }
     
     /**
-     * Set maximized true or false
+     *Loads full screen preferences
+     * @see #fullScreenCheckBoxClick()
      */
     public void loadFullScreen(){
         if(fullScreenOn) {
@@ -152,7 +165,7 @@ public class SettingsController {
     /**
      * Open Instructor Dashboard Password Prompt
      * @param event Instructor Dashboard button is pressed
-     * @throws IOException
+     * @throws IOException if Stage variable not initialised correctly
      */
     public void switchToInstructorPasswordPrompt(ActionEvent event) throws IOException {
         SettingsController.settingsCon.loadSound();
@@ -164,7 +177,7 @@ public class SettingsController {
     /**
      * Open Cheats Mode Password Prompt
      * @param event Cheats Mode button is pressed
-     * @throws IOException
+     * @throws IOException if Stage variable not initialised correctly
      */
     public void switchToCheatsModePasswordPrompt(ActionEvent event) throws IOException {
         SettingsController.settingsCon.loadSound();
@@ -174,8 +187,8 @@ public class SettingsController {
     }
 
     /**
-     * Store start menu stage
-     * @param startMenuStage
+     * Stores start menu stage
+     * @param startMenuStage the start menu (main game window)
      */
     public static void storeStartMenuStage(Stage startMenuStage){
         SettingsController.startMenuStage = startMenuStage;
