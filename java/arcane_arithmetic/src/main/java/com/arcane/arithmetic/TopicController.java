@@ -16,6 +16,10 @@ import javafx.stage.Stage;
 
 /**
  * This is the Topic Controller, used for controls and events in the ChooseTopic scene.
+ * 
+ * @author Ming Chun Chan
+ * @author Justin Xu
+ * @author Candice Williams
  */
 public class TopicController {
 	private static String topic;
@@ -23,7 +27,8 @@ public class TopicController {
 	 * Save calculus as the topic
 	 * Switch to the ChooseDifficulty scene
 	 * @param event the calculus button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
+	 * @see StartController
 	 */
 	public void calculus(ActionEvent event) throws IOException {
 		this.topic = "calculus";
@@ -34,7 +39,8 @@ public class TopicController {
 	 * Save algebra as the topic
 	 * Switch to the ChooseDifficulty scene
 	 * @param event the algebra button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable 
+	 * @see StartController
 	 */
 	public void algebra(ActionEvent event) throws IOException {
 		topic = "algebra";
@@ -45,7 +51,8 @@ public class TopicController {
 	 * Save stats as the topic
 	 * Switch to the ChooseDifficulty scene
 	 * @param event the stats button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
+	 * @see StartController
 	 */
 	public void stats(ActionEvent event) throws IOException {
 		topic = "statistics";
@@ -61,7 +68,8 @@ public class TopicController {
 	/**
 	 * Switch back to the start menu
 	 * @param event
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
+	 * @see StartController
 	 */
 	public void switchToStart(ActionEvent event) throws IOException {
 		StartController SCCon = new StartController();
@@ -70,17 +78,17 @@ public class TopicController {
 	/**
 	 * Open a calculus tutorial link on your browser
 	 * @param event calculus info button is pressed
-	 * @throws IOException
-	 * @throws URISyntaxException
+	 * @throws IOException if error initialising Desktop
+	 * @throws URISyntaxException if URI does not exist
 	 */
-	public void calculusLink(ActionEvent event) throws IOException, URISyntaxException {
+	public void calculusLink(ActionEvent event) throws URISyntaxException, IOException {
 		Desktop.getDesktop().browse(new URI("https://www.youtube.com/watch?v=HfACrKJ_Y2w"));
 	}
 	/**
 	 * Open an algebra tutorial link on your browser
 	 * @param event calculus info button is pressed
-	 * @throws IOException
-	 * @throws URISyntaxException
+	 * @throws IOException if error initialising Desktop
+	 * @throws URISyntaxException if URI does not exist
 	 */
 	public void algebraLink(ActionEvent event) throws IOException, URISyntaxException {
 		Desktop.getDesktop().browse(new URI("http://www.youtube.com/watch?v=JnTa9XtvmfI"));
@@ -88,8 +96,8 @@ public class TopicController {
 	/**
 	 * Open an intro stats tutorial link on your browser
 	 * @param event calculus info button is pressed
-	 * @throws IOException
-	 * @throws URISyntaxException
+	 * @throws IOException if error initialising Desktop
+	 * @throws URISyntaxException if URI does not exist
 	 */
 	public void statsLink(ActionEvent event) throws IOException, URISyntaxException {
 		Desktop.getDesktop().browse(new URI("https://www.youtube.com/watch?v=xxpc-HPKN28"));

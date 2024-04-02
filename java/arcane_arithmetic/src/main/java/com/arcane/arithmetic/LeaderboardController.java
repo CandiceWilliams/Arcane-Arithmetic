@@ -21,6 +21,9 @@ import javafx.stage.Stage;
 /**
  * This is the Leaderboard Controller, used for controls and events for the leaderboard scene.
  *
+ * @author Ming Chun Chan
+ * @author Justin Xu
+ * 
  */
 public class LeaderboardController {
 	private Stage stage;
@@ -36,7 +39,7 @@ public class LeaderboardController {
 	/**
 	 * Update leaderboard
 	 * @param event the load table button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void loadTable(ActionEvent event) throws IOException {
 		leaderboardTable.setEditable(false);
@@ -59,7 +62,7 @@ public class LeaderboardController {
 	/**
 	 * Switch to start menu
 	 * @param event back button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void switchToStart(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();

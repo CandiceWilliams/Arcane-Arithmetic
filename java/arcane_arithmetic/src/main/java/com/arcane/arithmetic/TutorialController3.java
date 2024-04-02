@@ -30,6 +30,8 @@ import java.io.IOException;
 /**
  * This is the Tutorial Controller 3, used for controls and events for the third tutorial scene.
  *
+ * @author Ming Chun Chan
+ * 
  */
 public class TutorialController3 {
     private Stage stage;
@@ -47,7 +49,7 @@ public class TutorialController3 {
     /**
      * Switch to the next tutorial scene
      * @param event The next button is pressed
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void nextSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();
@@ -57,7 +59,7 @@ public class TutorialController3 {
     /**
      * Switch to the previous tutorial scene
      * @param event The back button is pressed
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void backSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();

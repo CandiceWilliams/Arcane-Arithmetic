@@ -30,6 +30,7 @@ import java.io.IOException;
 /**
  * This is the Tutorial Controller 2, used for controls and events for the second tutorial scene.
  *
+ * @author Ming Chun Chan
  */
 public class TutorialController2 {
     private Stage stage;
@@ -85,7 +86,7 @@ public class TutorialController2 {
     /**
      * Show Double Score power up text and image
      * @param event doubleEvent is initialized
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void switchToPowerUpTypeDoubleScore(ActionEvent event) throws IOException {
 
@@ -117,7 +118,7 @@ public class TutorialController2 {
     /**
      * Show Double Score power up text and image
      * @param event fiftyEvent is initialized
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void switchToPowerUpTypeFiftyFifty(ActionEvent event) throws IOException{
         //change text
@@ -148,7 +149,7 @@ public class TutorialController2 {
     /**
      * Show More time power up text and image
      * @param event timeEvent is initialized
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void switchToPowerUpTypeTime(ActionEvent event) throws IOException{
         //change text
@@ -177,7 +178,7 @@ public class TutorialController2 {
     /**
      * Switch to the next tutorial scene
      * @param event The next button is pressed
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void nextSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();
@@ -192,7 +193,7 @@ public class TutorialController2 {
     /**
      * Switch to the previous tutorial scene
      * @param event The back button is pressed
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void backSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();

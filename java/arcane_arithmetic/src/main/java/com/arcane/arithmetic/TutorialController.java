@@ -27,6 +27,8 @@ import java.io.IOException;
 
 /**
  * This is the Tutorial Controller, used for controls and events for the first tutorial scene.
+ * 
+ * @author Candice Williams
  *
  */
 public class TutorialController {
@@ -91,7 +93,7 @@ public class TutorialController {
     /**
      * Initialize the tutorial pop up
      * @param event the tutorial button is pressed
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void startTutorial(ActionEvent event) throws IOException{
     	Stage window = new Stage();
@@ -111,7 +113,7 @@ public class TutorialController {
     /**
      * Show Multiple Choice text and image tutorial
      * @param event mcEvent is initialized
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void switchToQuestionTypeMC(ActionEvent event) throws IOException {
 
@@ -142,7 +144,7 @@ public class TutorialController {
     /**
      * Show Fill in the blanks text and image tutorial
      * @param event fbEvent is initialized
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void switchToQuestionTypeFill(ActionEvent event) throws IOException{
         //change text
@@ -173,7 +175,7 @@ public class TutorialController {
     /**
      * Show Matching text and image tutorial
      * @param event matchEvent is initialized
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void switchToQuestionTypeMatching(ActionEvent event) throws IOException{
         //change text
@@ -203,7 +205,7 @@ public class TutorialController {
     /**
      * Switch to the next tutorial scene
      * @param event The next button is pressed
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void nextSlide(ActionEvent event) throws IOException{
     	SettingsController.settingsCon.loadSound();

@@ -3,7 +3,9 @@ package com.arcane.arithmetic;
 
 /**
  * This is the Ranking Data class, used in updating leaderboard
- *
+ * 
+ * @author Ming Chun Chan
+ * 
  */
 public class RankingData {
 	private int points;

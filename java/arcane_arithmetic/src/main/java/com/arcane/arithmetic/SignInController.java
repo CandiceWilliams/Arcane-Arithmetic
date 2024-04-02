@@ -23,7 +23,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * This is the Sign In Controller, used for controls and events in the Sign-in pop up.
- *
+ * 
+ * @author Justin Xu
+ * @author Ming Chun Chan
+ * 
  */
 public class SignInController {	
 
@@ -42,7 +45,7 @@ public class SignInController {
 	 * Initialize the sign-in pop up
 	 * @param event the start button is pressed in the start menu
 	 * @param startMenuStage the original start menu stage
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void popUpSignInScene(ActionEvent event, Stage startMenuStage) throws IOException {
 		storeStartMenuStage(startMenuStage); SignUpController.storeStartMenuStage(startMenuStage);
@@ -60,7 +63,7 @@ public class SignInController {
 	/** 
 	 * Switch to sign-in scene
 	 * @param event switch to sign-in button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void switchToSignInScene(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -75,7 +78,7 @@ public class SignInController {
 	/** 
 	 * Switch to sign-up scene
 	 * @param event switch to sign-up button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void switchToSignUpScene(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -92,7 +95,7 @@ public class SignInController {
 	 * Switch to ChooseTopic scene
 	 * Check for sign-in data
 	 * @param event sign-in button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
     public void switchToTopic(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -146,7 +149,7 @@ public class SignInController {
     /**
      * Close the sign-in pop up
      * @param event back button is pressed
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void back(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
