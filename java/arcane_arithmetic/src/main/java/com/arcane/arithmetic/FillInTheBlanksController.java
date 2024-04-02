@@ -42,9 +42,9 @@ public class FillInTheBlanksController{
 	private Stage stage;
 	@FXML private TextFlow question;
 	@FXML private BorderPane pane;
-	@FXML private Label questionNum, timeRemaining, points;
+	@FXML private Label questionNum, timeRemaining, points, cheatsOnLabel, cheatsOffLabel, cantSkipLabel;
 	@FXML private TextField ansText;
-	@FXML private Button powerup1,powerup2,powerup3,submitButton;
+	@FXML private Button powerup1,powerup2,powerup3,submitButton, skipQuestionButton;
 	private String answer;
 	private boolean isCorrect = false;
 	private GameLoop game = new GameLoop();
@@ -67,7 +67,7 @@ public class FillInTheBlanksController{
 	 * @throws IOException if error initialising Stage variable
 	 */
 	public void displayQuestion(String quest, String answer) throws IOException {
-		initTime();
+		initTime(); initCheats();
 		timer.setFont(Font.font("Vinque Rg", 36));
 		timer.setFill(Color.WHITE);
 		question.getChildren().clear();
@@ -89,7 +89,7 @@ public class FillInTheBlanksController{
 	 * @throws IOException if error initialising Stage variable
 	 */
 	private void checkAnswer(ActionEvent event) throws IOException{
-		stopTimeLine();
+		timeLine.stop();
 
 		if (ansText.getText().equals(this.answer)){
 			isCorrect = true;
@@ -137,21 +137,21 @@ public class FillInTheBlanksController{
 		timeLine = new Timeline(
 				new KeyFrame(Duration.seconds(1),
 						event -> {
-							if (TimerCountdown.getRemainingSeconds() == 0){
+							if (TimerCountdown.getRemainingSeconds() == -1){
+                                try {
+                                    stopTimeLine();
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+							else if (TimerCountdown.getRemainingSeconds() == 0){
+								TimerCountdown.updateTime();
 								timer.setText("Time's up!");
-								SequentialTransition seqTransition = new SequentialTransition (
-										new PauseTransition(Duration.millis(1000)) // wait a second
-								);
-								seqTransition.play();
-								game.trackQuestionNum();
-								try {
-									game.StartGameLoop(event);
-								} catch (IOException e) {
-									throw new RuntimeException(e);
-								}
 							}
-							TimerCountdown.updateTime();
-							timer.setText(TimerCountdown.getCurrentTime());
+							else {
+								TimerCountdown.updateTime();
+								timer.setText(TimerCountdown.getCurrentTime());
+							}
 						}
 				));
 		TimerCountdown.setCurrentTime(180);
@@ -162,7 +162,57 @@ public class FillInTheBlanksController{
 	/**
 	 * Stop timeline
 	 */
-	public void stopTimeLine(){
+	public void stopTimeLine() throws IOException {
 		timeLine.stop();
+		if (game.getQuestionNum() >= 8){
+			Stage thisStage = getStage();
+			thisStage.close();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/EndGame.fxml"));
+			Stage endStage = new Stage();
+			try {
+				scene = new Scene(loader.load());
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+			endStage.setScene(scene);
+			endController = loader.getController();
+			endStage.show();
+			endController.displayEndGameScreen(game);
+		}
+		else {
+			game.trackQuestionNum();
+			game.StartGameLoop(null);
+		}
+	}
+
+	/**
+	 * initializes the cheat labels
+	 */
+	private void initCheats(){
+		if (CheatsModePasswordPromptController.isCheatsOn()) {
+			cheatsOnLabel.setVisible(true);
+			cheatsOffLabel.setVisible(false);
+		}
+		else {
+			cheatsOnLabel.setVisible(false);
+			cheatsOffLabel.setVisible(true);
+		}
+	}
+
+	/**
+	 * @param event skip button clicked
+	 * @throws IOException because it calls the "checkAnswer" method
+	 */
+	public void skipQuestionClick(ActionEvent event) throws IOException {
+		if (CheatsModePasswordPromptController.isCheatsOn()) {
+			ansText.setText(this.answer);
+			checkAnswer(event);
+		}
+		else {
+			cantSkipLabel.setVisible(true);
+			PauseTransition visiblePause = new PauseTransition(Duration.seconds(1));
+			visiblePause.setOnFinished(e -> cantSkipLabel.setVisible(false));
+			visiblePause.play();
+		}
 	}
 }

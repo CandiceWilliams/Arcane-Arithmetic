@@ -51,7 +51,8 @@ public class TimerCountdown extends Label{
 	 * @see TimerCountdown
 	 */
 	public static void updateTime(){
-		if (seconds == 0 && minutes == 0) return;
+		// -1 total seconds is the minimum (the value -1 is checked in initTime() in FillInTheBlanksController)
+		if (getRemainingSeconds() == -1) return;
 		if (seconds > 0){
 			seconds--;
 		}
