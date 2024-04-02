@@ -35,7 +35,6 @@ public class EndGameController {
 		pointsWon.setText(String.valueOf(game.getTotalPts()));
 		rightAnswers.setText(game.getCorrectAnswers() + "/20");
 		overallScore.setText(String.valueOf(game.getTotalPts()));
-		game.resetStaticVariables();
 
 		// fetching old user record in API
 		UserRecord oldRecord = UserRecord.fetchUserRecordHelper(currentPlayerUserID);
@@ -45,9 +44,9 @@ public class EndGameController {
 		int totalPass = oldRecord.getTotalGamesWon();
 		int totalGamesPlayed = oldRecord.getTotalGamesPlayed();
 		int totalCorrect = oldRecord.getTotalCorrect();
-		int totalIncorrect = 20 - oldRecord.getTotalCorrect();
-//		System.out.println(userID + " " + username + " " + totalPoints + " " + totalPass + " " + totalGamesPlayed + " " + totalCorrect + " " + totalIncorrect);
-//		System.out.println(game.getTotalPts() + " " + game.getCorrectAnswers());
+		int totalIncorrect = oldRecord.getTotalIncorrect();
+		System.out.println(userID + " " + username + " " + totalPoints + " " + totalPass + " " + totalGamesPlayed + " " + totalCorrect + " " + totalIncorrect);
+		System.out.println(game.getTotalPts() + " " + game.getCorrectAnswers());
 
 		// creating new user record for this specific user in API
 		totalPoints += game.getTotalPts();
@@ -55,11 +54,14 @@ public class EndGameController {
 		totalGamesPlayed++;
 		totalCorrect += game.getCorrectAnswers();
 		totalIncorrect += 20 - game.getCorrectAnswers();
-//		System.out.println(userID + " " + username + " " + totalPoints + " " + totalPass + " " + totalGamesPlayed + " " + totalCorrect + " " + totalIncorrect);
+		System.out.println(userID + " " + username + " " + totalPoints + " " + totalPass + " " + totalGamesPlayed + " " + totalCorrect + " " + totalIncorrect);
 		UserRecord newRecord = new UserRecord(userID, username, totalPoints, totalPass, totalGamesPlayed, totalCorrect, totalIncorrect);
 
 		// updating user record in API
 		UserRecord.updateUserRecordInAPI(userID, newRecord);
+
+		// reset GameLoop variables
+		game.resetStaticVariables();
 	}
 	
 	/**
