@@ -32,6 +32,7 @@ public class UserRecord {
     private String userID;
 
     /**
+     * Constructor
      * @param userID Player's id
      * @param username Player's username
      * @param total_points Player's total points
