@@ -29,3 +29,9 @@ To build and run the program, ensure you have Maven installed. Then, navigate to
 - Press Instructor Dashboard
 - Authentication password: xyz369
 - Press load table
+
+## Cheats Mode
+
+- Open settings menu
+- Press Cheats Mode
+- Password: hamburger123
