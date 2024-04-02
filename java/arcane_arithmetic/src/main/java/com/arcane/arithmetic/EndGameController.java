@@ -30,6 +30,7 @@ public class EndGameController {
 		pointsWon.setText(String.valueOf(game.getTotalPts()));
 		rightAnswers.setText(game.getCorrectAnswers() + "/20");
 		overallScore.setText(String.valueOf(game.getTotalPts()));
+		game.resetStaticVariables();
 
 		// fetching old user record in API
 		UserRecord oldRecord = UserRecord.fetchUserRecordHelper(currentPlayerUserID);
@@ -38,8 +39,8 @@ public class EndGameController {
 		int totalPoints = oldRecord.getTotalPoints();
 		int totalPass = oldRecord.getTotalGamesWon();
 		int totalGamesPlayed = oldRecord.getTotalGamesPlayed();
-		int totalCorrect = game.getCorrectAnswers();
-		int totalIncorrect = 20 - game.getCorrectAnswers();
+		int totalCorrect = oldRecord.getTotalCorrect();
+		int totalIncorrect = 20 - oldRecord.getTotalCorrect();
 //		System.out.println(userID + " " + username + " " + totalPoints + " " + totalPass + " " + totalGamesPlayed + " " + totalCorrect + " " + totalIncorrect);
 //		System.out.println(game.getTotalPts() + " " + game.getCorrectAnswers());
 

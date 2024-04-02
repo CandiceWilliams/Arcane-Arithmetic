@@ -102,7 +102,7 @@ public class UserRecord {
         return userID;
     }
 
-    public static void insertUserRecordIntoAPI(UserRecord userRecord) {
+    public static String insertUserRecordIntoAPI(UserRecord userRecord) {
         String newUserRecord  = String.format("{\"totalPoints\": %d, \"totalWon\": %d, \"totalPlayed\": %d, \"totalCorrect\": %d, \"totalIncorrect\": %d, \"ownerID\": \"%s\"}",
                 userRecord.getTotalPoints(), userRecord.getTotalGamesWon(), userRecord.getTotalGamesPlayed(), userRecord.getTotalCorrect(), userRecord.getTotalIncorrect(), userRecord.getUserID());
         try {
@@ -124,12 +124,14 @@ public class UserRecord {
             con.disconnect();
             // Print the response
             System.out.println("Status for inserting user record with userID = " + userRecord.getUserID() + ": " + content.toString());
+            return content.toString();
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
     }
 
-    public static void deleteUserRecordFromAPI(String userID){
+    public static String deleteUserRecordFromAPI(String userID){
         try {
             String urlString = "http://127.0.0.1:5000/database/ranks/delete?id=" + userID;
             // Send the request to the server
@@ -147,8 +149,10 @@ public class UserRecord {
             con.disconnect();
             // Print the response
             System.out.println("Status for deleting userID = " + userID + ": " + content.toString());
+            return content.toString();
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
     }
 

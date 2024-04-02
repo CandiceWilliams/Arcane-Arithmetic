@@ -7,6 +7,7 @@ module com.arcane.arithmetic {
     requires org.controlsfx.controls;
 	requires com.fasterxml.jackson.databind;
     requires java.desktop;
+    requires junit;
 
     opens com.arcane.arithmetic to javafx.fxml;
     exports com.arcane.arithmetic;

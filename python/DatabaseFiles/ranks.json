@@ -1,13 +1,5 @@
 [
     {
-        "totalPoints": 10,
-        "totalWon": 10,
-        "totalPlayed": 10,
-        "totalCorrect": 10,
-        "totalIncorrect": 10,
-        "ownerID": "8nwwEYXxEF"
-    },
-    {
         "totalPoints": 1,
         "totalWon": 3,
         "totalPlayed": 10,
@@ -30,5 +22,13 @@
         "totalCorrect": 1,
         "totalIncorrect": 1,
         "ownerID": "sUjEPrjZZF"
+    },
+    {
+        "totalPoints": 10,
+        "totalWon": 10,
+        "totalPlayed": 10,
+        "totalCorrect": 10,
+        "totalIncorrect": 10,
+        "ownerID": "8nwwEYXxEF"
     }
 ]

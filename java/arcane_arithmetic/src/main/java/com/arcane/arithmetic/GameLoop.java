@@ -170,5 +170,11 @@ public class GameLoop {
     public int getCorrectAnswers(){
         return correctAnswers;
     }
+
+    public void resetStaticVariables(){
+        totalPts = 0;
+        currentQuestion = 1;
+        correctAnswers = 0;
+    }
 }
 
