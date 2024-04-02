@@ -33,7 +33,7 @@ public class EndGameController {
 	 */
 	public void displayEndGameScreen(GameLoop game){
 		pointsWon.setText(String.valueOf(game.getTotalPts()));
-		rightAnswers.setText(game.getCorrectAnswers() + "/20");
+		rightAnswers.setText(game.getCorrectAnswers() + "/8");
 		overallScore.setText(String.valueOf(game.getTotalPts()));
 
 		// fetching old user record in API
@@ -45,16 +45,16 @@ public class EndGameController {
 		int totalGamesPlayed = oldRecord.getTotalGamesPlayed();
 		int totalCorrect = oldRecord.getTotalCorrect();
 		int totalIncorrect = oldRecord.getTotalIncorrect();
-		System.out.println(userID + " " + username + " " + totalPoints + " " + totalPass + " " + totalGamesPlayed + " " + totalCorrect + " " + totalIncorrect);
-		System.out.println(game.getTotalPts() + " " + game.getCorrectAnswers());
+//		System.out.println(userID + " " + username + " " + totalPoints + " " + totalPass + " " + totalGamesPlayed + " " + totalCorrect + " " + totalIncorrect);
+//		System.out.println(game.getTotalPts() + " " + game.getCorrectAnswers());
 
 		// creating new user record for this specific user in API
 		totalPoints += game.getTotalPts();
-		totalPass += game.getCorrectAnswers() >= 10 ? 1 : 0;
+		totalPass += game.getCorrectAnswers() >= 4 ? 1 : 0;
 		totalGamesPlayed++;
 		totalCorrect += game.getCorrectAnswers();
-		totalIncorrect += 20 - game.getCorrectAnswers();
-		System.out.println(userID + " " + username + " " + totalPoints + " " + totalPass + " " + totalGamesPlayed + " " + totalCorrect + " " + totalIncorrect);
+		totalIncorrect += 8 - game.getCorrectAnswers();
+//		System.out.println(userID + " " + username + " " + totalPoints + " " + totalPass + " " + totalGamesPlayed + " " + totalCorrect + " " + totalIncorrect);
 		UserRecord newRecord = new UserRecord(userID, username, totalPoints, totalPass, totalGamesPlayed, totalCorrect, totalIncorrect);
 
 		// updating user record in API

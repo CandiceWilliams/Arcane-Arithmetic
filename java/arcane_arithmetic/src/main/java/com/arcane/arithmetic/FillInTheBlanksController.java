@@ -76,7 +76,7 @@ public class FillInTheBlanksController{
 		question.getChildren().add(text);
 		question.setTextAlignment(TextAlignment.CENTER);
 		currQuestion = game.getQuestionNum();
-		questionNum.setText("Question "+currQuestion+"/20");
+		questionNum.setText("Question "+currQuestion+"/8");
 		totalPts = game.getTotalPts();
 		points.setText("Total Points "+totalPts);
 		this.answer = answer;
@@ -101,7 +101,7 @@ public class FillInTheBlanksController{
 
 		game.trackQuestionNum();
 
-		if (currQuestion >= 20){
+		if (currQuestion >= 8){
 			Stage thisStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			thisStage.close();
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("view/EndGame.fxml"));
