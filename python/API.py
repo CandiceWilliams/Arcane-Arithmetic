@@ -25,8 +25,6 @@ def convertToJsonString(username, password, id, name, privilege):
 
 app = Flask(__name__)
 
-
-
 @app.route("/database/users/insert")
 def insertUser():
     """
