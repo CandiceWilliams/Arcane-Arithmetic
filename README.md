@@ -46,15 +46,15 @@ To build and run the program, ensure you have Maven installed. Then, navigate to
 
 ## User Guide
 - **Start**
- - Sign-up for a new account or sign-in if you already have one
- - Choose a topic
- - Choose a difficulty
- - Enjoy the game
+  - Sign-up for a new account or sign-in if you already have one
+  - Choose a topic
+  - Choose a difficulty
+  - Enjoy the game
 - **Leaderboard**
- - Press load table to load the leaderboard
+  - Press load table to load the leaderboard
 - **Settings**
- - Enable or disable audio and music
- - Maximize or unmaximize the game
+  - Enable or disable audio and music
+  - Maximize or unmaximize the game
 
 ## Instructor Dashboard
 
