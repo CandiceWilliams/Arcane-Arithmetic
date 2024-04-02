@@ -17,6 +17,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Objects;
 
+/**
+ * This is the main game loop for the game.
+ * 
+ * @author Candice Williams
+ * @author Ming Chun Chan
+ * 
+ */
 public class GameLoop {
 
     DifficultyController diffCon = new DifficultyController();
@@ -35,6 +42,10 @@ public class GameLoop {
 
 
 
+    /**
+     * @param event any of the difficulty button is pressed
+     * @throws IOException if error initialising Stage variable
+     */
     public void StartGameLoop(ActionEvent event) throws IOException {
         topic = topicCon.getTopic();
         difficulty = diffCon.getDiff();
@@ -84,7 +95,7 @@ public class GameLoop {
 	            System.out.println("Unable to establish valid connection to API");
 	            throw new RuntimeException(e);
 	        }
-	
+	        //Fill in the blanks questions
 	        if (type_int == 1){
 	            FXMLLoader loader = new FXMLLoader(getClass().getResource("view/FillInTheBlanks.fxml"));
 	            scene = new Scene(loader.load());
@@ -95,7 +106,7 @@ public class GameLoop {
 	            fbController.displayQuestion(fillQuestion.getQuestion(), fillQuestion.getAnswer());
 	            
 	        }
-	
+	        //Multiple Choice questions
 	        if (type_int == 2){
 	            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/MultipleChoice.fxml")));
 	            scene = new Scene(root);
@@ -109,7 +120,12 @@ public class GameLoop {
 	            //isCorrect = mcController.displayQuestion(multQuestion.getQuestion(), multQuestion.getAnswer(), multQuestion.getOptions());
 	        }
         }
-
+    
+    /**
+     * @param strBuilder A string version of the question JSON object
+     * @param type the question type
+     * @throws JsonProcessingException if error processing the json file
+     */
     public void createQuestion(StringBuilder strBuilder, int type) throws JsonProcessingException {
         if (type == 1){  //fill in the blank question format
             JsonNode json = objMapper.readTree(strBuilder.toString());
@@ -117,7 +133,7 @@ public class GameLoop {
             String answer = json.at("/answer").toString();
             String id = json.at("/question_id").toString();
             String subject = json.at("/subject").toString();
-
+ 
             question = question.substring(1, question.length() - 1);
             answer = answer.substring(1, answer.length() - 1);
 

@@ -28,6 +28,13 @@ import javafx.animation.Timeline;
 import javafx.animation.KeyFrame;
 import javafx.util.Duration;
 
+/**
+ * This is the Fill in the blanks Controller, used for controls and events for the fills in the blanks question scene during the game
+ * 
+ * @author Ming Chun Chan
+ * @author Candice Williams
+ *
+ */
 public class FillInTheBlanksController{
 	private int currQuestion;
 	private int totalPts;
@@ -43,10 +50,7 @@ public class FillInTheBlanksController{
 	private GameLoop game = new GameLoop();
 	private Parent root;
 	EndGameController endController = new EndGameController();
-	//String css = this.getClass().getResource("css/fillintheblanks.css").toExternalForm();
-
-
-
+	
 	EventHandler<ActionEvent> submitButtonClick = new EventHandler<ActionEvent>() {
 		public void handle(ActionEvent e)
 		{
@@ -57,6 +61,11 @@ public class FillInTheBlanksController{
 			}
 		}
 	};
+	/**
+	 * @param quest Question text
+	 * @param answer Answer text
+	 * @throws IOException if error initialising Stage variable
+	 */
 	public void displayQuestion(String quest, String answer) throws IOException {
 		initTime();
 		timer.setFont(Font.font("Vinque Rg", 36));
@@ -70,13 +79,15 @@ public class FillInTheBlanksController{
 		questionNum.setText("Question "+currQuestion+"/20");
 		totalPts = game.getTotalPts();
 		points.setText("Total Points "+totalPts);
-		//timeRemaining.setText(String.valueOf(timer.countdown(60)));
-
 		this.answer = answer;
 		submitButton.setOnAction(submitButtonClick);
 	}
 
 
+	/**
+	 * @param event Submit button is pressed
+	 * @throws IOException if error initialising Stage variable
+	 */
 	private void checkAnswer(ActionEvent event) throws IOException{
 		stopTimeLine();
 
@@ -108,16 +119,20 @@ public class FillInTheBlanksController{
 
 	}
 
+	//Getter for stage
 	public Stage getStage(){
 		return stage;
 	}
-
+	//Setter for stage
 	public void setStage(Stage stage){
 		this.stage = stage;
 	}
 
 	@FXML private Text timer;
 	private Timeline timeLine;
+	/**
+	 * Timer label update
+	 */
 	public void initTime(){
 		timeLine = new Timeline(
 				new KeyFrame(Duration.seconds(1),
@@ -144,6 +159,9 @@ public class FillInTheBlanksController{
 		timeLine.setCycleCount(Timeline.INDEFINITE);
 		timeLine.play();
 	}
+	/**
+	 * Stop timeline
+	 */
 	public void stopTimeLine(){
 		timeLine.stop();
 	}
