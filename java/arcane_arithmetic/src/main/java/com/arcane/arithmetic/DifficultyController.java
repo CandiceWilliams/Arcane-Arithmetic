@@ -76,6 +76,7 @@ public class DifficultyController {
 	 * @throws IOException if error initialising Stage variable
 	 */
 	public void startGame(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		GameLoop game = new GameLoop();
 		game.StartGameLoop(event);
 	}

@@ -69,6 +69,7 @@ public class EndGameController {
 	 * @throws IOException if error initialising Stage variable
 	 */
 	public void next(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		Stage thisStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		thisStage.close();
 	}
