@@ -92,6 +92,10 @@ public class SignUpController {
 	    			pwSpecial.setVisible(false);
 	    			pwDiff.setVisible(false);	
 	    			usernameTooLong.setVisible(false);
+					// updating the user id of the current player in EndGameController
+					String tmpStr = json.get("id").toString();
+					String userID = tmpStr.substring(1, tmpStr.length()-1);
+					EndGameController.setCurrentPlayerUserID(userID);
 	    		}
 	    	} catch (Exception e) {
 	    		e.printStackTrace();

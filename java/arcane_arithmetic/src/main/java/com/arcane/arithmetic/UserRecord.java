@@ -13,6 +13,7 @@ import java.util.Objects;
 
 public class UserRecord {
     // variables used for calculations
+    // "winning" a game = passing = getting more than 10 problems correct out of 20
     private int total_games_won, total_games_played; // to calculate average win rate
     private int total_correct_problems, total_incorrect_problems; // to calculate average amount of right and wrong answers
 
@@ -260,11 +261,6 @@ public class UserRecord {
             e.printStackTrace();
             return null;
         }
-    }
-
-    // CALL THIS AT THE BEGINNING OF A GAME LOOP FOR EACH USER INVOLVED (TO ACCESS USER RECORDS FROM API)
-    public static UserRecord fetchUserRecordFromAPI(String userID){
-        return UserRecord.fetchUserRecordHelper(userID);
     }
 
     // CALL THIS AT THE END OF A GAME LOOP FOR EACH USER INVOLVED (TO UPDATE THEIR USER RECORDS IN API)

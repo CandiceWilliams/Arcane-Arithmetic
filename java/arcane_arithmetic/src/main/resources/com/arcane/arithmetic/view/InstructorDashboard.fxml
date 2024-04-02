@@ -14,7 +14,7 @@
             <TableColumn fx:id="userID" prefWidth="204.80002975463867" text="User ID" />
           <TableColumn fx:id="username" prefWidth="220.80001831054688" text="Username" />
           <TableColumn fx:id="points" minWidth="0.0" prefWidth="147.199951171875" text="Points" />
-            <TableColumn fx:id="averageWinRate" prefWidth="128.0" text="Average win rate" />
+            <TableColumn fx:id="averageWinRate" prefWidth="128.0" text="Average pass rate" />
             <TableColumn fx:id="averageRightAnswers" minWidth="0.0" prefWidth="252.0" text="Average amount of right answers" />
             <TableColumn fx:id="averageWrongAnswers" prefWidth="235.20001220703125" text="Average amount of wrong answers" />
         </columns>

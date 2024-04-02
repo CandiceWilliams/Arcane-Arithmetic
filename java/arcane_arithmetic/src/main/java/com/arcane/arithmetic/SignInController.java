@@ -133,6 +133,10 @@ public class SignInController {
 				startMenuStage.setScene(scene);
 				SettingsController.settingsCon.loadFullScreen();
 				errorLabel.setVisible(false);
+				// updating the user id of the current player in EndGameController
+				String tmpStr = json.get("id").toString();
+				String userID = tmpStr.substring(1, tmpStr.length()-1);
+				EndGameController.setCurrentPlayerUserID(userID);
 			} else {
 				errorLabel.setVisible(true);
 			}
