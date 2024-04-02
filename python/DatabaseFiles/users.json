@@ -19,5 +19,12 @@
         "id": "sUjEPrjZZF",
         "name": "test",
         "privilege": "admin"
+    },
+    {
+        "username": "abc",
+        "password": "123",
+        "id": "e58MkfsKaS",
+        "name": "abc",
+        "privilege": "user"
     }
 ]
