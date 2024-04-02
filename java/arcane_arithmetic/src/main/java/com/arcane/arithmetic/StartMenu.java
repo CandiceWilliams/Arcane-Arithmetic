@@ -5,7 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
 
 /**
  * This is the main game window that the user will see when first starting the game.
@@ -50,6 +55,54 @@ public class StartMenu extends Application {
      * @param args argument from cmd
      */
     public static void main(String[] args) {
-        launch();
+    	
+    	// Create and start a new thread for api server
+        Thread thread = new Thread(() -> {
+            try {
+            	Path currRelativePath = Paths.get("");
+            	String currAbsolutePathString = currRelativePath.toAbsolutePath().toString();
+            	System.out.println(currAbsolutePathString);
+                String[] cmd = {
+                        "cmd",
+                        "/c",
+                        "cd /d " + currAbsolutePathString + " && " +
+                        "cd ../.. && " +
+                        "cd python && " +
+                        "python API.py"
+                    };
+            	// Execute command
+            	ProcessBuilder pb= new ProcessBuilder(cmd);
+            	pb.redirectErrorStream(true);
+            	Process process = pb.start();
+            	BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            	String line;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+            	// Wait for the process to finish
+                process.waitFor();
+                
+                // Get exit status
+                int exitStatus = process.exitValue();
+                System.out.println("Exit status: " + exitStatus);
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        // Create and start another thread for gui launch
+        Thread thread2 = new Thread(() -> {
+        	launch();
+        });
+
+        thread.start();
+        thread2.start();
+
+        // Wait for the thread to finish
+        try {
+            thread.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
