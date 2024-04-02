@@ -11,6 +11,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Objects;
 
+/**
+ * This is the user record class, used for instructor dashboard
+ * 
+ * @author Justin Xu
+ *
+ */
 public class UserRecord {
     // variables used for calculations
     // "winning" a game = passing = getting more than 10 problems correct out of 20
@@ -25,6 +31,16 @@ public class UserRecord {
     // variable used for accessing the API
     private String userID;
 
+    /**
+     * Constructor
+     * @param userID Player's id
+     * @param username Player's username
+     * @param total_points Player's total points
+     * @param total_games_won Player's total games won
+     * @param total_games_played Player's total games played
+     * @param totalCorrectProblems Player's total correct problems
+     * @param totalIncorrectProblems Player's total incorrect problems
+     */
     public UserRecord(String userID, String username, int total_points, int total_games_won, int total_games_played, int totalCorrectProblems, int totalIncorrectProblems){
         setUserID(userID);
         setUsername(username);
@@ -102,6 +118,10 @@ public class UserRecord {
         return userID;
     }
 
+    /**
+     * @param userRecord the current user's record
+     * @return a string version of a user JSON fie
+     */
     public static String insertUserRecordIntoAPI(UserRecord userRecord) {
         String newUserRecord  = String.format("{\"totalPoints\": %d, \"totalWon\": %d, \"totalPlayed\": %d, \"totalCorrect\": %d, \"totalIncorrect\": %d, \"ownerID\": \"%s\"}",
                 userRecord.getTotalPoints(), userRecord.getTotalGamesWon(), userRecord.getTotalGamesPlayed(), userRecord.getTotalCorrect(), userRecord.getTotalIncorrect(), userRecord.getUserID());
@@ -131,6 +151,11 @@ public class UserRecord {
         }
     }
 
+    /**
+     * A method to delete a user record
+     * @param userID user's id
+     * @return the deleted string version of the users JSON object
+     */
     public static String deleteUserRecordFromAPI(String userID){
         try {
             String urlString = "http://127.0.0.1:5000/database/ranks/delete?id=" + userID;
@@ -156,6 +181,11 @@ public class UserRecord {
         }
     }
 
+    /**
+     * A helper method to fetch user record
+     * @param userID user's id
+     * @return a userRecord object
+     */
     public static UserRecord fetchUserRecordHelper(String userID){
         try {
             String urlString = "http://127.0.0.1:5000/database/ranks/get?id="+userID;
@@ -238,6 +268,11 @@ public class UserRecord {
         }
     }
 
+    /**
+     * Get a username with its id
+     * @param userID user's id
+     * @return username
+     */
     public static String getUsernameFromUserID(String userID){
         try {
             String urlString = "http://127.0.0.1:5000/database/users/get?id=" + userID;
