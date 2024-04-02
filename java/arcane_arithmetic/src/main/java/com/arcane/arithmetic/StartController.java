@@ -12,7 +12,11 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
- * This is the Start Controller, used for controls and events for the start menu, including other common functions
+ * This is the Start Controller, used for controls and events for the start menu, including other common functions.
+ *
+ * @author Candice Williams
+ * @author Ming Chun Chan
+ * @author Justin Xu
  *
  */
 public class StartController {
@@ -48,7 +52,7 @@ public class StartController {
 	/**
 	 * Open the sign in pop up
 	 * @param event start button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void openSignIn(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -59,7 +63,7 @@ public class StartController {
 	/**
 	 * Open the exit pop up
 	 * @param event exit button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void openExit(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -87,7 +91,7 @@ public class StartController {
 	/**
 	 * Switch to choose topic scene
 	 * @param event switch to topic button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void switchToTopicScene(ActionEvent event) throws IOException{
 		SettingsController.settingsCon.loadSound();
@@ -102,7 +106,7 @@ public class StartController {
 	/**
 	 * Switch to the leaderboard scene
 	 * @param event leaderboard button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void switchToLeaderboard(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -117,7 +121,7 @@ public class StartController {
 	/**
 	 * Switch to the choose difficulty scene
 	 * @param event switch to difficulty button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void switchToDifficulty(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();

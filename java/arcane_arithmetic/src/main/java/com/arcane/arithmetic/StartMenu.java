@@ -12,9 +12,7 @@ import java.io.IOException;
  * It extends the <a href="#{@Application}">{@link Application}</a> class.
  * <br></br>
  * <br></br>
- * @author Arian Firoozfar
  * @author Candice Williams
- * @author Jamie Muha
  * @author Justin Xu
  * @author Ming Chun Chan
  * @version 1.1.0
