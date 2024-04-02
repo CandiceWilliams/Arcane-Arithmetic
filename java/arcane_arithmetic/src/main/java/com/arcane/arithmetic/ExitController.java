@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 /**
  * This is the Exit Controller, used for controls and events for the exit pop up.
  *
+ * @author Ming Chun Chan
+ * 
  */
 public class ExitController {
 	private Scene scene;
@@ -25,7 +27,7 @@ public class ExitController {
 	 * Initialize the exit pop up
 	 * @param event the exit button is pressed
 	 * @param startMenuStage the original start menu stage
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void popUpExitScene(ActionEvent event, Stage startMenuStage) throws IOException {
 		ExitController.startMenuStage = startMenuStage;
@@ -44,7 +46,7 @@ public class ExitController {
 	/**
 	 * Confirm exit
 	 * @param event "yes" button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void confirmExit(ActionEvent event) throws IOException{
 		SettingsController.settingsCon.loadSound();
@@ -55,7 +57,7 @@ public class ExitController {
 	/**
 	 * Back to the main menu
 	 * @param event "no" button is pressed
-	 * @throws IOException
+	 * @throws IOException if error initialising Stage variable
 	 */
 	public void returnToMain(ActionEvent event) throws IOException{
 		SettingsController.settingsCon.loadSound();
