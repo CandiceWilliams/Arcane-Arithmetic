@@ -22,6 +22,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * This is the Sign Up Controller, used for controls and events in the sign up pop up.
  *
+ * @author Justin Xu
+ * @author Ming Chun Chan
+ * 
  */
 public class SignUpController {
 	private Scene scene;
@@ -33,7 +36,7 @@ public class SignUpController {
     /**
      * Switch to sign-in scene
      * @param event switch to sign in button is pressed
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void switchToSignInScene(ActionEvent event) throws IOException {
 		SettingsController.settingsCon.loadSound();
@@ -44,7 +47,7 @@ public class SignUpController {
      * Switch to ChooseTopic scene
      * Save sign-up data to the database
      * @param event sign-up button is pressed
-     * @throws IOException
+     * @throws IOException if error initialising Stage variable
      */
     public void switchToTopic(ActionEvent event) throws IOException {
     	SettingsController.settingsCon.loadSound();
