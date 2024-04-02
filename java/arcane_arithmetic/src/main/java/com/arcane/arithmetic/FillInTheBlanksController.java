@@ -89,7 +89,7 @@ public class FillInTheBlanksController{
 	 * @throws IOException if error initialising Stage variable
 	 */
 	private void checkAnswer(ActionEvent event) throws IOException{
-		timeLine.stop();
+		timeLine.stop(); SettingsController.settingsCon.loadSound();
 
 		if (ansText.getText().equals(this.answer)){
 			isCorrect = true;
@@ -204,6 +204,7 @@ public class FillInTheBlanksController{
 	 * @throws IOException because it calls the "checkAnswer" method
 	 */
 	public void skipQuestionClick(ActionEvent event) throws IOException {
+		SettingsController.settingsCon.loadSound();
 		if (CheatsModePasswordPromptController.isCheatsOn()) {
 			ansText.setText(this.answer);
 			checkAnswer(event);
