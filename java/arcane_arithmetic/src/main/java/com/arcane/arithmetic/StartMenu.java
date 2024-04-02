@@ -28,9 +28,6 @@ public class StartMenu extends Application {
      * <li>the exit button and,</li>
      * <li>the start game button</li>
      *
-     * @author Ming Chun Chan
-     * @author Candice Williams
-     * @author Justin Xu
      * @param stage the primary stage used to display main game window
      * @throws IOException If error occured when loading FXML file.
      * @see javafx.fxml.FXML
@@ -49,7 +46,7 @@ public class StartMenu extends Application {
 
     /**
      * Main menu that launches the JavaFX game
-     * @author Ming Chun Chan
+
      * @param args argument from cmd
      */
     public static void main(String[] args) {
