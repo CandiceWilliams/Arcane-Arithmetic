@@ -40,3 +40,8 @@ An easier way to run the program (For this, you only need Python and a JRE insta
 - Open settings menu
 - Press Cheats Mode
 - Password: hamburger123
+
+# Deleting all users from database
+
+- Open users.json and ranks.json files (located in python/DatabaseFiles)
+- Delete every entry in both files
