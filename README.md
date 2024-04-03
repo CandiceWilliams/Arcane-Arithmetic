@@ -4,6 +4,8 @@
 
 Arcane Arithmetic is a game that my group members and I made for our CS 2212B course at UWO. We used JavaFX to make the game logic, a combination of CSS and JavaFX's Scene Builder for the GUI, and Python for the database. This game is aimed at grade 12 students as a way to help teach them about math topics. The game features 3 subjects: Calculus, Introductory Statistics, and Algebra. Each subject features questions at 3 levels: easy, medium, and hard. It also supports 3 question types: Fill-in-the-Blank, Mutiple Choice, and Matching.
 
+[Here's a link to a youtube video that demonstrates our project capabilities](https://youtu.be/uI_yE-1682g) 
+
 ## Required Libraries and Dependencies
 - **Apache Maven**: Required to build and run the program
   - Version: 3.11.0
