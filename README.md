@@ -14,6 +14,8 @@ Arcane Arithmetics is a game for Grade 12 students to master math concepts like 
 To build and run the program, ensure you have Maven installed and api.py running. Then, navigate to the project directory and run the following command: 
 ```mvn clean javafx:run```
 
+An easier way to run the program (For this, you only need Python and a JRE installed): First, run API.py (e.g. typing "python API.py" in the python folder), then double clicking on the jar file called "Arcane Arithmetic"
+
 ## User Guide
 - **Start**
   - Sign-up for a new account or sign-in if you already have one
